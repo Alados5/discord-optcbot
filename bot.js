@@ -20,7 +20,7 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.content === 'ping') {
-    	message.reply('pong');
+    	message.reply(text);
         fs.appendFile(path, 'pong', function(error) {
             if(error) {
                 console.error("Write error: "+error.message);
