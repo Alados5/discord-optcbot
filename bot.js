@@ -43,9 +43,7 @@ client.on('message', message => {
         message.reply("Preloading");
         
         var bulkdata = message.content.slice(8);
-        var lines = bulkdata.split(';;');
-
-        message.channel.send(lines[1]);
+        var lines = bulkdata.split(';; \n');
         
         for(j=0; j<lines.length; j++) {
             var parts = lines[j].split(' ; ');
