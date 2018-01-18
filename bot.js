@@ -4,6 +4,7 @@ var fs = require("fs");
 
 var alist = {};
 var i = 1;
+var path = "./Test.txt"
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -30,6 +31,18 @@ client.on('message', message => {
         }
         message.channel.send(database);
     }
+    
+    if (message.content === 'Open') {
+
+        fs.open(path, "w", function(error, fd) {
+            if (error) {
+                console.error("open error:  " + error.message);
+            } else {
+                message.reply('It actually worked');
+            }
+        });
+    } 
+    
 });
 
 // THIS  MUST  BE  THIS  WAY
