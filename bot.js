@@ -43,7 +43,7 @@ client.on('message', message => {
         //a.href = URL.createObjectURL(file);
         //a.download = name;
         
-        var file = new Blob([text], {type: type});
+        var file = new Blob(["text here"], {type: 'text/plain'});
         var fileurl = URL.createObjectURL(file);
         message.channel.send(fileurl);
       
