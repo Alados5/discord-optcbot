@@ -10,7 +10,7 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    if(msg.author.bot) return;
+    if(message.author.bot) return;
         
     if (message.content === 'Bot') {
         
