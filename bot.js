@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 var alist = {};
-var i = 0;
+var i = 1;
 
 client.on('ready', () => {
     console.log('I am ready!');
