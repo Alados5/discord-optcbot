@@ -1,10 +1,17 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-var fs = require("fs");
+//var fs = require("fs");
 
 var alist = {};
 var i = 1;
 var path = "./Test.txt"
+
+function download(text, name, type) {
+  var a = document.getElementById("a");
+  var file = new Blob([text], {type: type});
+  a.href = URL.createObjectURL(file);
+  a.download = name;
+}
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -32,24 +39,11 @@ client.on('message', message => {
         message.channel.send(database);
     }
     
-    if (message.content === 'Write') {
-
-        fs.open(path, "w", function(error, fd) {
-            if (error) {
-                console.error("open error:  " + error.message);
-            } else {              
-                message.reply('It opened');
-                
-                fs.writeFile(path, "Testtext", function(error) {
-                    if (error) {
-                        console.error("write error:  " + error.message);
-                    } else {
-                        message.reply('It actually wrote!!');
-                    }
-                });
-   
-            }
-        });
+    if (message.content === 'Download') {
+        
+        //<a href="" id="a">click here to download your file</a>
+        download('file text', 'myfilename.txt', 'text/plain')
+        
     } 
     
 });
