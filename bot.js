@@ -10,9 +10,8 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.content === 'Bot') {
-    	message.reply('Hey');
         list[i] = 'xd';
-        i+=1;
+    	message.reply('Hey');
   	}
 });
 
