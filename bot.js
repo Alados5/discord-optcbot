@@ -6,13 +6,6 @@ var alist = {};
 var i = 1;
 var path = "./Test.txt"
 
-function download(text, name, type) {
-  var a = document.getElementById("a");
-  var file = new Blob([text], {type: type});
-  a.href = URL.createObjectURL(file);
-  a.download = name;
-}
-
 client.on('ready', () => {
     console.log('I am ready!');
 });
@@ -42,8 +35,20 @@ client.on('message', message => {
     if (message.content === 'Download') {
         
         //<a href="" id="a">click here to download your file</a>
-        download('file text', 'myfilename.txt', 'text/plain')
+        //<button onclick="download('file text', 'myfilename.txt', 'text/plain')">Create file</button>
+      
+        //function download(text, name, type) {
+        //var a = document.getElementById("a");
+        //var file = new Blob([text], {type: type});
+        //a.href = URL.createObjectURL(file);
+        //a.download = name;
         
+        var file = new Blob([text], {type: type});
+        var fileurl = URL.createObjectURL(file);
+        msg.channel.send(fileurl);
+        
+}
+      
     } 
     
 });
