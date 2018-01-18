@@ -45,7 +45,7 @@ client.on('message', message => {
         
         var file = new Blob([text], {type: type});
         var fileurl = URL.createObjectURL(file);
-        msg.channel.send(fileurl);
+        message.channel.send(fileurl);
       
     } 
     
