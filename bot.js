@@ -36,8 +36,11 @@ client.on('message', message => {
 
         message.reply('Download Detected');
         
-        //var file = new Blob(["text here"], {type: 'text/plain'});
-        //message.channel.send('Blob created');
+        var texttodl = 'test text';
+        var filetype = 'text/plain';
+        var file = new Blob([texttodl], {type: filetype});
+        message.channel.send('Blob created');
+        
         //var fileurl = URL.createObjectURL(file);
         //message.channel.send('URL done');
         //message.channel.send(fileurl.toString());
