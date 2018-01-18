@@ -11,7 +11,7 @@ client.on('message', message => {
     if (message.content === 'Bot') {
         alist.push('xd');
     	message.reply('Hey');
-  	}
+    }
 });
 
 // THIS  MUST  BE  THIS  WAY
