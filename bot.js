@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+var fs = require("fs");
 
 var alist = {};
 var i = 1;
