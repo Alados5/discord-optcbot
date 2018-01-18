@@ -32,13 +32,22 @@ client.on('message', message => {
         message.channel.send(database);
     }
     
-    if (message.content === 'Open') {
+    if (message.content === 'Write') {
 
         fs.open(path, "w", function(error, fd) {
             if (error) {
                 console.error("open error:  " + error.message);
-            } else {
-                message.reply('It actually worked');
+            } else {              
+                message.reply('It opened');
+                
+                fs.writeFile(path, "Testtext", function(error) {
+                    if (error) {
+                        console.error("write error:  " + error.message);
+                    } else {
+                        message.reply('It actually wrote!!');
+                    }
+                });
+   
             }
         });
     } 
