@@ -13,7 +13,7 @@ client.on('message', message => {
         alist[i.toString()] = {'ID':(100000001*i).toString(), 'Server':"Japan"};
         
     	message.reply('Hey');
-        message.reply(alist[i.toString()]['a']);
+        message.reply(alist[i.toString()]['ID']);
         
         i++;
     }
