@@ -10,6 +10,8 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
+    if(msg.author.bot) return;
+        
     if (message.content === 'Bot') {
         
         message.reply('Working on it!');
