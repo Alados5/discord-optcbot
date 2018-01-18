@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 var alist = [];
+var i = 0;
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -9,8 +10,12 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.content === 'Bot') {
-        alist.push('xd');
+        alist.push(i);
     	message.reply('Hey');
+    }
+    
+    if (message.content === 'AllData') {
+        message.channel.send(alist.toString());
     }
 });
 
