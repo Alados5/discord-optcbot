@@ -21,10 +21,11 @@ client.on('message', message => {
     if (message.content === 'AllData') {
         var database = '';
         for(var key in alist) {
-            database += alist.key+';;';
-            database += alist.key.a+';;';
-            database += alist.key.b+'\n';
-            
+            if (!alist.hasOwnProperty(key)) {
+                database += alist.key+';;';
+                database += alist.key.a+';;';
+                database += alist.key.b+'\n';
+            } 
         }
         message.channel.send(database);
     }
