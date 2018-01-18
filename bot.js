@@ -12,10 +12,13 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.content === 'Bot') {
-        alist[i.toString()] = {'ID':(100000001*i).toString(), 'Server':"Japan"};
         
-    	message.reply('Hey');
-        message.reply(alist[i.toString()]['ID']);
+        message.reply('Working on it!');
+        
+        var useri = 'User'+i.toString()
+        alist[useri] = {'ID':(100000001*i).toString(), 'Server':"Japan", 'Info': "some text here", 'Link':"https://imgur.com"};
+        
+        message.reply(alist[useri]['ID']);
         
         i++;
     }
@@ -25,37 +28,14 @@ client.on('message', message => {
         for(var key in alist) {
             if (alist.hasOwnProperty(key)) {
                 database += key+' ; ';
-                database += alist[key]['ID']+' ; ';
-                database += alist[key]['Server']+'\n';
+                database += alist[key]['ID'] + ' ; ';
+                database += alist[key]['Server'] + ' ; ';
+                database += alist[key]['Info'] + ' ; ';
+                database += alist[ket]['Link'] + '\n';
             } 
         }
         message.channel.send(database);
     }
-    
-    if (message.content === 'Download') {
-
-        message.reply('Download Detected');
-        
-        var texttodl = 'test text';
-        var filetype = 'text/plain';
-        var file = new Blob([texttodl], {type: filetype});
-        message.channel.send('Blob created');
-        
-        //var fileurl = URL.createObjectURL(file);
-        //message.channel.send('URL done');
-        //message.channel.send(fileurl.toString());
-        
-        
-        
-        //function download(text, name, type) {
-        //var a = document.getElementById("a");
-        //var file = new Blob([text], {type: type});
-        //a.href = URL.createObjectURL(file);
-        //a.download = name;
-        
-        //download('file text', 'myfilename.txt', 'text/plain')
-      
-    } 
     
 });
 
