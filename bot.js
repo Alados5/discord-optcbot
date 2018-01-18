@@ -39,8 +39,8 @@ client.on('message', message => {
     if (message.content.split(' ')[0] === 'Preload') {
         message.reply("Preloading");
         
-        var lines = message.content.split(';;');
-        for(i=0; i<lines.length; i++) {
+        var lines = message.content.slice(7).split(';;');
+        for(j=0; j<lines.length; j++) {
             var parts = lines.split(' ; ');
             var useri = parts[0];
             alist[useri] = {'ID':parts[1], 'Server':parts[2], 'Info':parts[3], 'Link':parts[4]};
