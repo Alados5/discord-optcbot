@@ -36,17 +36,21 @@ client.on('message', message => {
 
         message.reply('Download Detected');
         
-        var file = new Blob(["text here"], {type: 'text/plain'});
-        message.channel.send('Blob created');
-        var fileurl = URL.createObjectURL(file);
-        message.channel.send('URL done');
-        message.channel.send(fileurl.toString());
+        //var file = new Blob(["text here"], {type: 'text/plain'});
+        //message.channel.send('Blob created');
+        //var fileurl = URL.createObjectURL(file);
+        //message.channel.send('URL done');
+        //message.channel.send(fileurl.toString());
+        
+        
         
         //function download(text, name, type) {
         //var a = document.getElementById("a");
         //var file = new Blob([text], {type: type});
         //a.href = URL.createObjectURL(file);
         //a.download = name;
+        
+        //download('file text', 'myfilename.txt', 'text/plain')
       
     } 
     
