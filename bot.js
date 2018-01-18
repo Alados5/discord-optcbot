@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-list = [];
-i = 0;
+var list = [];
+var i = 0;
 
 client.on('ready', () => {
     console.log('I am ready!');
