@@ -10,7 +10,7 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.content === 'Bot') {
-        alist[i.toString()] = {'a':i.toString(), 'b':i.toString()};
+        alist[i.toString()] = {'ID':(100000001*i).toString(), 'Server':"Japan"};
         
     	message.reply('Hey');
         message.reply(alist[i.toString()]['a']);
@@ -22,9 +22,9 @@ client.on('message', message => {
         var database = '';
         for(var key in alist) {
             if (alist.hasOwnProperty(key)) {
-                database += key+';;';
-                database += alist[key]['a']+';;';
-                database += alist[key]['b']+'\n';
+                database += key+' ; ';
+                database += alist[key]['ID']+' ; ';
+                database += alist[key]['Server']+'\n';
             } 
         }
         message.channel.send(database);
