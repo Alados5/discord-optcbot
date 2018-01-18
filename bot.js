@@ -13,6 +13,7 @@ client.on('message', message => {
         alist[i.toString()] = {'a':i.toString(), 'b':i.toString()};
         i++;
     	message.reply('Hey');
+        message.reply(alist[i.toString()]['a']);
     }
     
     if (message.content === 'AllData') {
