@@ -11,9 +11,11 @@ client.on('ready', () => {
 client.on('message', message => {
     if (message.content === 'Bot') {
         alist[i.toString()] = {'a':i.toString(), 'b':i.toString()};
-        i++;
+        
     	message.reply('Hey');
         message.reply(alist[i.toString()]['a']);
+        
+        i++;
     }
     
     if (message.content === 'AllData') {
