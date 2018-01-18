@@ -32,7 +32,7 @@ client.on('message', message => {
                 database += alist[key]['ID'] + ' ; ';
                 database += alist[key]['Server'] + ' ; ';
                 database += alist[key]['Info'] + ' ; ';
-                database += alist[key]['Link'] + ' ;; \n';
+                database += alist[key]['Link'] + ';; \n';
             } 
         }
         message.channel.send(database);
@@ -44,13 +44,14 @@ client.on('message', message => {
         
         var bulkdata = message.content.slice(8);
         var lines = bulkdata.split(';;');
-        message.channel.send(lines[0]);
+
+        message.channel.send(lines[1]);
         
-        //for(j=0; j<lines.length; j++) {
-        //    var parts = lines.split(' ; ');
-        //    var useri = parts[0];
-        //    alist[useri] = {'ID':parts[1], 'Server':parts[2], 'Info':parts[3], 'Link':parts[4]};
-        //}
+        for(j=0; j<lines.length; j++) {
+            var parts = lines[j].split(' ; ');
+            var useri = parts[0];
+            alist[useri] = {'ID':parts[1], 'Server':parts[2], 'Info':parts[3], 'Link':parts[4]};
+        }
         
         message.channel.send("Update complete!");
     }
