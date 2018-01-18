@@ -33,22 +33,20 @@ client.on('message', message => {
     }
     
     if (message.content === 'Download') {
+
+        message.reply('Download Detected');
         
-        //<a href="" id="a">click here to download your file</a>
-        //<button onclick="download('file text', 'myfilename.txt', 'text/plain')">Create file</button>
-      
-        //function download(text, name, type) {
-        //var a = document.getElementById("a");
-        //var file = new Blob([text], {type: type});
-        //a.href = URL.createObjectURL(file);
-        //a.download = name;
-        
-        message.channel.send('Download detected');
         var file = new Blob(["text here"], {type: 'text/plain'});
         message.channel.send('Blob created');
         var fileurl = URL.createObjectURL(file);
         message.channel.send('URL done');
         message.channel.send(fileurl.toString());
+        
+        //function download(text, name, type) {
+        //var a = document.getElementById("a");
+        //var file = new Blob([text], {type: type});
+        //a.href = URL.createObjectURL(file);
+        //a.download = name;
       
     } 
     
