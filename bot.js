@@ -43,7 +43,8 @@ client.on('message', message => {
         message.reply("Preloading");
         
         var bulkdata = message.content.slice(8);
-        var lines = bulkdata.split(';; \n');
+        var lines = bulkdata.split(';;');
+        lines = lines.replace('\n', '');
         
         for(j=0; j<lines.length; j++) {
             var parts = lines[j].split(' ; ');
