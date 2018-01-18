@@ -22,9 +22,9 @@ client.on('message', message => {
         var database = '';
         for(var key in alist) {
             if (alist.hasOwnProperty(key)) {
-                database += alist.key+';;';
-                database += alist.key.a+';;';
-                database += alist.key.b+'\n';
+                database += key+';;';
+                database += alist[key]['a']+';;';
+                database += alist[key]['b']+'\n';
             } 
         }
         message.channel.send(database);
