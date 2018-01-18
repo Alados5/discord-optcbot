@@ -21,7 +21,7 @@ client.on('message', message => {
     if (message.content === 'AllData') {
         var database = '';
         for(var key in alist) {
-            if (!alist.hasOwnProperty(key)) {
+            if (alist.hasOwnProperty(key)) {
                 database += alist.key+';;';
                 database += alist.key.a+';;';
                 database += alist.key.b+'\n';
