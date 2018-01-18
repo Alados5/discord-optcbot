@@ -38,18 +38,18 @@ client.on('message', message => {
         message.channel.send(database);
     }
     
-    var ispreload = message.content.slice(0, 7);
+    var ispreload = (message.content.slice(0, 7) == "Preload");
     message.channel.send(ispreload);
     
-    if (ispreload === 'Preload') {
+    if (ispreload) {
         message.reply("Preloading");
         
-        var lines = message.content.slice(7).split(';;');
-        for(j=0; j<lines.length; j++) {
-            var parts = lines.split(' ; ');
-            var useri = parts[0];
-            alist[useri] = {'ID':parts[1], 'Server':parts[2], 'Info':parts[3], 'Link':parts[4]};
-        }
+        //var lines = message.content.slice(7).split(';;');
+        //for(j=0; j<lines.length; j++) {
+        //    var parts = lines.split(' ; ');
+        //    var useri = parts[0];
+        //    alist[useri] = {'ID':parts[1], 'Server':parts[2], 'Info':parts[3], 'Link':parts[4]};
+        //}
         
         message.channel.send("Update complete!");
     }
