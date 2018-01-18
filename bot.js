@@ -43,9 +43,9 @@ client.on('message', message => {
         message.reply("Preloading");
         
         var bulkdata = message.content.slice(8);
-        message.channel.send(bulkdata);
+        var lines = bulkdata.split(';;');
+        message.channel.send(lines[0]);
         
-        //var lines = message.content.slice(7).split(';;');
         //for(j=0; j<lines.length; j++) {
         //    var parts = lines.split(' ; ');
         //    var useri = parts[0];
