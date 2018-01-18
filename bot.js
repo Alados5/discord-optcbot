@@ -39,10 +39,11 @@ client.on('message', message => {
     }
     
     var ispreload = (message.content.slice(0, 7) == "Preload");
-    message.channel.send(ispreload);
-    
     if (ispreload) {
         message.reply("Preloading");
+        
+        var bulkdata = message.content.slice(8);
+        message.channel.send(bulkdata);
         
         //var lines = message.content.slice(7).split(';;');
         //for(j=0; j<lines.length; j++) {
