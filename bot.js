@@ -47,7 +47,12 @@ client.on('message', message => {
         
         for(j=0; j<lines.length; j++) {
             var parts = lines[j].split(' ; ');
-            var useri = parts[0].replace('\n', '');
+            
+            var useri = parts[0]
+            useri = useri.replace('\n', '');
+            if (useri.slice(0,1) == ' ') {
+                useri = useri.slice(1);
+            }    
             
             alist[useri] = {'ID':parts[1], 'Server':parts[2], 'Info':parts[3], 'Link':parts[4]};
         }
