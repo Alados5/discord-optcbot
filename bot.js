@@ -36,7 +36,10 @@ client.on('message', message => {
         message.channel.send(database);
     }
     
-    if (message.content.split(' ')[0] === 'Preload') {
+    var ispreload = message.content.slice(0, 7);
+    message.channel.send(ispreload);
+    
+    if (ispreload === 'Preload') {
         message.reply("Preloading");
         
         var lines = message.content.slice(7).split(';;');
