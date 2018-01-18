@@ -4,7 +4,7 @@ var fs = require("fs");
 
 var alist = {};
 var i = 1;
-var path = "./README.md"
+var path = "./Test.txt"
 
 client.on('ready', () => {
     console.log('I am ready!');
