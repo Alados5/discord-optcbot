@@ -16,7 +16,7 @@ client.on('message', message => {
         message.reply('Working on it!');
         
         var useri = 'User'+i.toString()
-        alist[useri] = {'ID':(100000001*i).toString(), 'Server':"Japan", 'Info': "some text here", 'Link':"https://imgur.com"};
+        alist[useri] = {'ID':(100000001*i).toString(), 'Server':"Japan", 'Info':"Some text here", 'Link':"https://imgur.com"};
         
         message.reply(alist[useri]['ID']);
         
@@ -31,7 +31,7 @@ client.on('message', message => {
                 database += alist[key]['ID'] + ' ; ';
                 database += alist[key]['Server'] + ' ; ';
                 database += alist[key]['Info'] + ' ; ';
-                database += alist[ket]['Link'] + '\n';
+                database += alist[key]['Link'] + '\n';
             } 
         }
         message.channel.send(database);
