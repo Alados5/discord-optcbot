@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-var alist = [];
+var alist = {};
 var i = 0;
 
 client.on('ready', () => {
@@ -10,12 +10,20 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.content === 'Bot') {
-        alist.push(i);
+        alist[i.toString()] = {'a':i.toString(), 'b':i.toString()};
+        i++;
     	message.reply('Hey');
     }
     
     if (message.content === 'AllData') {
-        message.channel.send(alist.toString());
+        var database = '';
+        for(var key in alist) {
+            database += alist.key+';;';
+            database += alist.key.a+';;';
+            database += alist.key.b+'\n';
+            
+        }
+        message.channel.send(database);
     }
 });
 
