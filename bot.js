@@ -3,16 +3,16 @@ const client = new Discord.Client();
 var fs = require("fs");
 
 var path = './IDSave.txt';
-var text = '';
+var text = 'testtext';
 
-fs.readFile(path, "utf8", function(error, data) {
-    if(error) {
-        console.error("Read error: " + error.message);
-    }
-    else {
-        text = data;
-    }
-});
+//fs.readFile(path, "utf8", function(error, data) {
+//    if(error) {
+//        console.error("Read error: " + error.message);
+//    }
+//    else {
+//        text = data;
+//    }
+//});
 
 client.on('ready', () => {
     console.log('I am ready!');
