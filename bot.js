@@ -22,6 +22,7 @@ client.on('message', msg => {
     
   if (command == 'char' || command == 'pj') {
     var chartolook = args.toString();
+    chartolook = chartolook.replace(',','%20');
     msg.channel.send(dbchar+chartolook)
   } 
     
