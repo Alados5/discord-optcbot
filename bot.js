@@ -19,10 +19,10 @@ client.on('message', msg => {
   if (command == 'ayuda') {
     var helptext = "Soy un bot para animar y ayudar en este chat."+
                    "\n Debería estar siempre activo, si no respondo puede que haya algún problema."+
-                   "\n Me puedes llamar con estos comandos:"+
-                   "\n **!ayuda** - Muestra este mensaje"+
-                   "\n **!char** o **!pj** - Busca un personaje o ID en la database"+
-                   "\n **!thejoselu8** - Cabrea a joselu ¡Gratis!";
+                   "\n \n Me puedes llamar con estos comandos:"+
+                   "\n   **!ayuda** - Muestra este mensaje"+
+                   "\n   **!char** o **!pj** - Busca un personaje o ID en la database"+
+                   "\n   **!thejoselu8** - Cabrea a joselu ¡Gratis!";
     
     msg.channel.send({embed: {
       color: 7853583,
@@ -42,6 +42,10 @@ client.on('message', msg => {
 
   if (command == 'thejoselu8') {
     msg.reply('TIIIIOOOO!!!!!')
+  }
+  
+  if (command == 'gettingoverit') {
+    msg.reply('Consejo: coge la serpiente')
   }
 
 //------------------------------------------------------------------------- END MEMES  
