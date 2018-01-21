@@ -18,13 +18,12 @@ client.on('message', msg => {
   
   if (command == 'ayuda') {
     var helptext = 'Comandos:'+
-        '\n !ayuda - activa esto'+
-        '\n !pj o !char - busca un personaje en la database (nombre o #ID)'+
-        '\n !thejoselu8 - cabrea a JoseLu gratis'
+        '\n !ayuda - activa este mensaje.'+
+        '\n !pj o !char - busca un personaje en la database (nombre o #ID).'+
+        '\n !thejoselu8 - ¡cabrea a JoseLu gratis!'
     
     msg.channel.send({embed: {
       color: 7586839,
-      },
       title: "¡Asistente automático en marcha!",
       description: helptext,
       footer: {
