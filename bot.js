@@ -17,14 +17,22 @@ client.on('message', msg => {
 //------------------------------------------------------------------------- START HELP  
   
   if (command == 'ayuda') {
-    //var helptext = 'Comandos:'+
-    //    '\n !ayuda - activa este mensaje.'+
-    //    '\n !pj o !char - busca un personaje en la database (nombre o #ID).'+
-    //    '\n !thejoselu8 - ¡cabrea a JoseLu gratis!';
+    var helptext = "Soy un bot para animar y ayudar en este chat."+
+                   "\n Debería estar siempre activo, si no respondo puede que haya algún problema."+
+                   "\n Me puedes llamar con estos comandos:"+
+                   "\n **!ayuda** - Muestra este mensaje"+
+                   "\n **!char** o **!pj** - Busca un personaje o ID en la database"+
+                   "\n **!thejoselu8** - Cabrea a joselu ¡Gratis!";
     
     msg.channel.send({embed: {
-      color: 16757760,
-      title: "Asistente Automático"      
+      color: 7853583,
+      title: "Asistente Automático",
+      description: helptext,      
+      footer: {
+        text: "Soy un bot creado por Alados5",
+        icon_url: client.user.avatarURL
+      }
+      
     }})
   }  
   
