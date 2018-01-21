@@ -20,16 +20,24 @@ client.on('message', msg => {
     var helptext = 'Comandos:'+
         '\n !ayuda - activa este mensaje.'+
         '\n !pj o !char - busca un personaje en la database (nombre o #ID).'+
-        '\n !thejoselu8 - ¡cabrea a JoseLu gratis!'
+        '\n !thejoselu8 - ¡cabrea a JoseLu gratis!';
     
     msg.channel.send({embed: {
       color: 7586839,
-      title: "¡Asistente automático en marcha!",
-      description: helptext,
       footer: {
         text: "Soy un bot creado por Alados5",
         icon_url: client.user.avatarURL
-      }
+      },
+      fields: [
+        {
+          name: "1",
+          value: "1"
+        },
+        {
+          name: "2",
+          value: "2"
+        }
+      ]
     }})
   }  
   
