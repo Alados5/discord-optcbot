@@ -4,7 +4,7 @@ const client = new Discord.Client();
 
 var prefix = '!';
 var dbchar = 'http://optc-db.github.io/characters/#/search/';
-var dbcharid = 'http://optc-db.github.io/characters/#/view/':
+var dbcharid = 'http://optc-db.github.io/characters/#/view/';
 
 //client.on('ready', () => {
 //  console.log('I am ready!');
@@ -22,11 +22,14 @@ client.on('message', msg => {
   }
     
   if (command == 'char' || command == 'pj') {
-    var chartolook = args.toString();
-    chartolook = chartolook.replace(',','%20');
     
+    var chartolook = args.toString();
+        
     var isaname = isNaN(parseInt(chartolook));
-    if (isaname) msg.channel.send(dbchar+chartolook)
+    if (isaname) {
+      chartolook = chartolook.replace(',','%20');
+      msg.channel.send(dbchar+chartolook)
+    }
     else msg.channel.send(dbcharid+chartolook);
   } 
     
