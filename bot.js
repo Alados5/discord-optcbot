@@ -7,9 +7,7 @@ var dbchar = 'http://optc-db.github.io/characters/#/search/';
 var dbcharid = 'http://optc-db.github.io/characters/#/view/';
 var basetrans = 'http://optc-db.github.io/damage/#/transfer/D';
 
-var dpj = {'1935':['Franky Legend', 'Franky 6*'], '865':['Boa Raid'], '1794':['Lucy Legend', 'Sabo V2', 'Lucy 6*'],
-           '1916':['Luffy TM G4', 'TM G4', 'G4 TM'], '1658':['Kanjuro RR', 'Kanjuro DEX'], '418':['Doffy Raid','Doflamingo Raid'],
-           '1518':['Bellamy Raid','Bellamy QCK']}
+var dpj = require("./database.json");
 var dship = {'33':['Dutchman', 'Flying Dutchman', 'Flying'], '36':['Revolutionary Black Crow','Corvo','Revo Crow']}
 
 function findnum(name, dic) {
