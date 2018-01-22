@@ -7,15 +7,15 @@ var dbchar = 'http://optc-db.github.io/characters/#/search/';
 var dbcharid = 'http://optc-db.github.io/characters/#/view/';
 var basetrans = 'http://optc-db.github.io/damage/#/transfer/D';
 
-var dpj = {1935:'Franky Legend', 865:'Boa Raid'}
-var dship = {33:'Dutchman'}
+var dpj = {'1935':'Franky Legend', '865':'Boa Raid'}
+var dship = {'33':'Dutchman'}
 
 function findnum(name) {
   for (var num in dpj) {
     if (dpj.hasOwnProperty(num)) {
-      var alias = dpj.num;
+      var alias = dpj[num];
       
-      return alias + name
+      return alias + dpj.num
       
       if (alias == name) {
           return num
