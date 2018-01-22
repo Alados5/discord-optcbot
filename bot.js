@@ -14,6 +14,9 @@ function findnum(name) {
   for (var num in dpj) {
     if (dpj.hasOwnProperty(num)) {
       var alias = dpj.num;
+      
+      return alias + name
+      
       if (alias == name) {
           return num
       }
@@ -27,8 +30,6 @@ function getdblink(content) {
   var contlist = content.split(';;');
   var chars = contlist.shift().split(';');
   if (chars.length != 6) return "You didn't put a complete team!"
-  
-  return chars[0] + chars[1] + chars[2] + chars[3] + chars[4] + chars[5];
   
   for(var char=0; char<chars.length; char++) {
     var charid = findnum(chars[char]);
