@@ -10,10 +10,10 @@ var basetrans = 'http://optc-db.github.io/damage/#/transfer/D';
 var dpj = {'1935':'Franky Legend', '865':'Boa Raid'}
 var dship = {'33':'Dutchman'}
 
-function findnum(name) {
-  for (var num in dpj) {
-    if (dpj.hasOwnProperty(num)) {
-      var alias = dpj[num];    
+function findnum(name, dic) {
+  for (var num in dic) {
+    if (dic.hasOwnProperty(num)) {
+      var alias = dic[num];    
       if (alias == name) {
           return num
       }
@@ -29,7 +29,7 @@ function getdblink(content) {
   if (chars.length != 6) return "You didn't put a complete team!"
   
   for(var char=0; char<chars.length; char++) {
-    var charid = findnum(chars[char]);
+    var charid = findnum(chars[char], dpj);
     link += charid.toString();
     link += ':99,';
   }
