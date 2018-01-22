@@ -5,6 +5,45 @@ const client = new Discord.Client();
 var prefix = '!';
 var dbchar = 'http://optc-db.github.io/characters/#/search/';
 var dbcharid = 'http://optc-db.github.io/characters/#/view/';
+var basetrans = 'http://optc-db.github.io/damage/#/transfer/D';
+
+var dpj = {1935:['1935', 'Franky Legend', 'Franky 6*'], 865:['865', 'Boa Raid']}
+var dship = {33:['Dutchman', 'Flying', 'Flying Dutchman']}
+
+function findnum(name, dic) {
+  for (var num in dic) {
+    if (dic.hasOwnProperty(num)) {
+      for (var alias in dic[num]) {
+        if (alias == name) {
+          return num
+        }
+      }
+    }
+  }
+  return 1
+}  
+
+function getdblink(content) {
+  var link = '';
+  var contlist = content.split(';;');
+  var chars = contlist.shift().split(';');
+  if (chars.length != 6) return "You didn't put a complete team!"
+  
+  for(char=0; char<chars.length; char++) {
+    var charid = findnum(chars[char], dpj);
+    link += charid.toString();
+    link += ':99,';
+  }
+  link = link.slice(0,-1);
+  link += 'C';
+  
+  var shipid = findnum(contlist[0], dship);
+  link += shipid.toString();
+  link += ',10B0D0E1365Q0L0G0R63S100H'
+  
+  return link
+  
+}  
 
 client.on('message', msg => {
   if(msg.author.bot || !msg.content.startsWith(prefix)) return;
@@ -63,7 +102,17 @@ client.on('message', msg => {
     else msg.channel.send(dbcharid+chartolook);
   } 
 
-//------------------------------------------------------------------------- END CHAR/PJ   
+//------------------------------------------------------------------------- END CHAR/PJ
+
+//------------------------------------------------------------------------- START GETLINK  
+
+  if (command == 'getlink') {
+    var glink = getdblink(msg.content.slice(9));
+    msg.channel.send(glink)
+  }  
+  
+//------------------------------------------------------------------------- END GETLINK   
+  
   
 });
 
