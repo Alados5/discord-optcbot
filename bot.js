@@ -13,8 +13,8 @@ var dship = {33:['Dutchman', 'Flying', 'Flying Dutchman']}
 function findnum(name, dic) {
   for (var num in dic) {
     if (dic.hasOwnProperty(num)) {
-      for (var alias in dic[num]) {
-        if (alias == name) {
+      for (var alias=0; alias<dic[num].length(); alias++) {
+        if (dic[num][alias] == name) {
           return num
         }
       }
@@ -24,7 +24,7 @@ function findnum(name, dic) {
 }  
 
 function getdblink(content) {
-  var link = '';
+  var link = basetrans;
   var contlist = content.split(';;');
   var chars = contlist.shift().split(';');
   if (chars.length != 6) return "You didn't put a complete team!"
