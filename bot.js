@@ -8,7 +8,7 @@ var dbcharid = 'http://optc-db.github.io/characters/#/view/';
 var basetrans = 'http://optc-db.github.io/damage/#/transfer/D';
 
 var dpj = {'1935':['Franky Legend', 'Franky 6*'], '865':['Boa Raid']}
-var dship = {'33':['Dutchman']}
+var dship = {'33':['Dutchman', 'Flying Dutchman', 'Flying']}
 
 function findnum(name, dic) {
   for (var num in dic) {
@@ -38,7 +38,9 @@ function getdblink(content) {
   link = link.slice(0,-1);
   link += 'C';
   
-  var shipid = 33;
+  if (contlist.length == 0) return "You didn't put a ship!"
+  
+  var shipid = findnum(contlist[0], dship);
   link += shipid.toString();
   link += ',10B0D0E1365Q0L0G0R63S100H'
   
