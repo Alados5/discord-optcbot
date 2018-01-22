@@ -13,16 +13,13 @@ var dship = {'33':'Dutchman'}
 function findnum(name) {
   for (var num in dpj) {
     if (dpj.hasOwnProperty(num)) {
-      var alias = dpj[num];
-      
-      return alias + dpj.num
-      
+      var alias = dpj[num];    
       if (alias == name) {
           return num
       }
     }
   }
-  return 4
+  return '4'
 }  
 
 function getdblink(content) {
