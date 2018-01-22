@@ -28,6 +28,8 @@ function getdblink(content) {
   var chars = contlist.shift().split(';');
   if (chars.length != 6) return "You didn't put a complete team!"
   
+  return chars[0] + chars[1] + chars[2] + chars[3] + chars[4] + chars[5];
+  
   for(var char=0; char<chars.length; char++) {
     var charid = findnum(chars[char]);
     link += charid.toString();
