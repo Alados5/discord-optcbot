@@ -28,12 +28,17 @@ function getdblink(content) {
   var link = basetrans;
   var contlist = content.split(';;');
   var chars = contlist.shift().split(';');
+  var cottons = contlist.shift().split(';');
   if (chars.length != 6) return "You didn't put a complete team!"
+  if (cottons.length != 6) cottons = ['','','','','','']
   
   for(var char=0; char<chars.length; char++) {
     var charid = findnum(chars[char], dpj);
+    var charcc = cottons[char].toString();
     link += charid.toString();
-    link += ':99,';
+    link += ':99:';
+    link += charcc;
+    link += ',';
   }
   link = link.slice(0,-1);
   link += 'C';
