@@ -31,27 +31,23 @@ function getdblink(content) {
   if (chars.length != 6) return "You didn't put a complete team!"
   
   var cottons = contlist.shift();
-  var ccnan = isNaN(parseInt(cottons));
-  if (cottons == 'Full') cottons = ['100:100:0','100:100:0','100:100:0','100:100:0','100:100:0','100:100:0']
-  else if (cottons == 'Captains') cottons = ['100:100:0','100:100:0','0:0:0','0:0:0','0:0:0','0:0:0']
-  else if (!ccnan) {
-    var cci = [];
-    for(l=0; l<cottons.length; l++) {
-      var li = cottons.charAt(l);
-      if (li == '1') cci.push('100:100:0')
-      else cci.push('0:0:0')
-    }
-    cottons = cci;
+  var cci = [];
+  for(l=0; l<cottons.length; l++) {
+    var li = cottons.charAt(l);
+    if (li == 'A') cci.push('100:0:0')
+    else if (li == 'H') cci.push('0:100:0')
+    else if (li == 'R') cci.push('0:0:100')
+    else if (li == '2') cci.push('100:100:0')
+    else if (li == '3') cci.push('100:50:50')
+    else if (li == 'X') cci.push('500:500:500')
+    else cci.push('0:0:0')
   }
-  else {
-    cottons = cottons.split(';');
-    if (cottons.length != 6) cottons = ['','','','','','']
-  }
+  cottons = cci;
   
   for(var char=0; char<chars.length; char++) {
     var charid = findnum(chars[char], dpj);
-    var charcc = cottons[char].toString();
-    link += charid.toString();
+    var charcc = cottons[char];
+    link += charid;
     link += ':99:';
     link += charcc;
     link += ',';
