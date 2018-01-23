@@ -28,9 +28,25 @@ function getdblink(content) {
   var link = basetrans;
   var contlist = content.split(';;');
   var chars = contlist.shift().split(';');
-  var cottons = contlist.shift().split(';');
   if (chars.length != 6) return "You didn't put a complete team!"
-  if (cottons.length != 6) cottons = ['','','','','','']
+  
+  var cottons = contlist.shift();
+  var ccnan = isNaN(parseInt(cottons));
+  if (cottons == 'Full') cottons = ['100:100:0','100:100:0','100:100:0','100:100:0','100:100:0','100:100:0']
+  else if (cottons == 'Captains') cottons = ['100:100:0','100:100:0','0:0:0','0:0:0','0:0:0','0:0:0']
+  else if (!ccnan) {
+    var cci = [];
+    for(l=0; l<cottons.length; l++) {
+      var li = cottons.charAt(l);
+      if (li == '1') cci.push('100:100:0')
+      else cci.push('0:0:0')
+    }
+    cottons = cci;
+  }
+  else {
+    cottons = cottons.split(';');
+    if (cottons.length != 6) cottons = ['','','','','','']
+  }
   
   for(var char=0; char<chars.length; char++) {
     var charid = findnum(chars[char], dpj);
