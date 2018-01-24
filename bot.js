@@ -73,11 +73,8 @@ function getdblink(content) {
 //------------------------------------------------------------------------- START SKILLUP FS  
 
 function fact(i) {
-  var prod = 1;
-  for(j=1; j<(i+1); j++) {
-    prod *= j;
-  }
-  return prod
+  if(i==0) return 1
+  else return i*fact(i-1)
 }
 
 function Bin_f(k, n, p) {
