@@ -2,10 +2,15 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 //var fs = require("fs");
 
+import { ProbSkill , NCopies } from "./skillup";
+
 var prefix = '!';
+
 var dbchar = 'http://optc-db.github.io/characters/#/search/';
 var dbcharid = 'http://optc-db.github.io/characters/#/view/';
 var basetrans = 'http://optc-db.github.io/damage/#/transfer/D';
+
+//------------------------------------------------------------------------- START GETLINK FS
 
 var dpj = require("./database.json");
 var dship = {'33':['Dutchman', 'Flying Dutchman', 'Flying'], '36':['Revolutionary Black Crow','Corvo','Revo Crow']}
@@ -64,6 +69,8 @@ function getdblink(content) {
   return link
   
 }  
+
+//------------------------------------------------------------------------- END GETLINK FS
 
 client.on('message', msg => {
   if(msg.author.bot || !msg.content.startsWith(prefix)) return;
@@ -131,8 +138,22 @@ client.on('message', msg => {
     msg.channel.send(glink)
   }  
   
-//------------------------------------------------------------------------- END GETLINK   
+//------------------------------------------------------------------------- END GETLINK
   
+//------------------------------------------------------------------------- START SKILLUP
+  
+  if (command == 'skillup') {
+    //ProbSkill(k, n, Event, OC)
+    if(args.length < 3) return msg.reply("Enter valid data!")
+    var k = args[0];
+    var n = args[1];
+    if(args.length >= 3) var Event = args[2];
+    if(args.length >= 4) var OC = args[3];
+    var probability = ProbSkill(k, n, Event, OC);
+    msg.channel.reply(probability)
+  }
+  
+//------------------------------------------------------------------------- END SKILLUP
   
 });
 
