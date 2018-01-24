@@ -133,7 +133,7 @@ client.on('message', msg => {
                    "\n \n Me puedes llamar con estos comandos:"+
                    "\n   **!ayuda** - Muestra este mensaje"+
                    "\n   **!char** o **!pj** - Busca un personaje o ID en la database"+
-                   "\n   **!skillup K N - Calcula la probabilidad de obtener K niveles con N copias"+
+                   "\n   **!skillup K N** - Calcula la probabilidad de obtener K niveles con N copias"+
                    "\n   **!thejoselu8** - Cabrea a joselu ¡Gratis!";
     
     msg.channel.send({embed: {
@@ -237,7 +237,7 @@ client.on('message', msg => {
     //Calculates the number N of copies needed to get k or more successes (skillups)
     //with a probability of x (default at 75%)
     var copies = 1;
-    while(copies<200) {
+    while(copies<150) {
       var realprob = ProbSkill(k, copies, Event, OC);
       if(realprob >= x) { break; }
       msg.channel.send(copies+" copies. Prob: "+realprob)
@@ -245,7 +245,7 @@ client.on('message', msg => {
     }
     
     x *= 100;
-    msg.channel.send("To be a "+x+"% sure of having "+k+" skillups, you'll need: "+copies+" copies.")
+    msg.channel.send("To be a "+x+"% sure of having "+k+" skillups, you'll need: "+copies+" copies")
     
   }
   
