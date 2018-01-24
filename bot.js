@@ -117,7 +117,7 @@ function ProbSkill(k, n, event, OC) {
 
 //Calculates the number N of copies needed to get k or more successes (skillups)
 //with a probability of x (default at 75%)
-function NCopies(k, x=0.75, event, OC) {
+function NCopies(k, x, event, OC) {
   var n = 1;
   while n<200 {
     var t = ProbSkill(k, n, event, OC);
