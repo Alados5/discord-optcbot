@@ -205,16 +205,20 @@ client.on('message', msg => {
     if(args.length < 2) return msg.reply("Enter valid data!")
     var k = args[0];
     var n = args[1];
-    if(args.length >= 4) {
+    
+    if(args.length == 2) {
+      var probability = ProbSkill(k, n);
+    }
+    else if(args.length == 3) {
+      var Event = args[2];
+      var probability = ProbSkill(k, n, Event);
+    }
+    else if(args.length >= 4) {
       var Event = args[2];
       var OC = args[3];
       var probability = ProbSkill(k, n, Event, OC);
     }
-    else if(args.length >= 3) {
-      var Event = args[2];
-      var probability = ProbSkill(k, n, Event);
-    }
-    else var probability = ProbSkill(k, n);
+    
     probability *= 100;
     msg.channel.send("The chance of having "+k+" skillups or more with "+n+" copies is: "+probability+"%")
   }
