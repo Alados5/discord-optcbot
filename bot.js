@@ -119,10 +119,10 @@ function ProbSkill(k, n, event, OC) {
 //with a probability of x (default at 75%)
 function NCopies(k, x, event, OC) {
   var n = 1;
-  while n<200 {
+  while(n<200) {
     var t = ProbSkill(k, n, event, OC);
     if(t >= x) return n
-    n += 1;
+    n++;
   }
   return n
 }
