@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 //var fs = require("fs");
 
-import { ProbSkill , NCopies } from "./skillup";
+import { ProbSkill , NCopies } from "./skillup.js";
 
 var prefix = '!';
 
