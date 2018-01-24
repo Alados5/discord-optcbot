@@ -105,12 +105,12 @@ function Bin_R(k, n, p) {
 //Probability of getting k skillups with n copies, with event or not, OC rates or not
 //OC rates are 1/5 (2/5 with event), normal rates are 1/6 (1/3 with event)
 function ProbSkill(k, n, event, OC) {
-  if(event == True) {
-    if(OC == True) return Bin_R(k, n, 2/5)
+  if(event == 'S' || event == 'Y') {
+    if(OC == 'S' || OC == 'Y') return Bin_R(k, n, 2/5)
     else return Bin_R(k, n, 1/3)
   }
   else {
-    if(OC == True) return Bin_R(k, n, 1/5)
+    if(OC == 'S' || OC == 'Y') return Bin_R(k, n, 1/5)
     else return Bin_R(k, n, 1/6)
   }
 }
@@ -119,11 +119,11 @@ function ProbSkill(k, n, event, OC) {
 //with a probability of x (default at 75%)
 function NCopies(k, x, event, OC) {
   var n = 1;
-//  while n<200 {
-//    var t = ProbSkill(k, n, event, OC);
-//    if(t >= x) break
-//    n += 1;
-//  }
+  while n<200 {
+    var t = ProbSkill(k, n, event, OC);
+    if(t >= x) return n
+    n += 1;
+  }
   return n
 }
 
@@ -205,8 +205,19 @@ client.on('message', msg => {
     if(args.length < 2) return msg.reply("Enter valid data!")
     var k = args[0];
     var n = args[1];
-    var Event = args[2];
-    var OC = args[3];
+    
+    if(args.length == 2) {
+      var Event = 'Y';
+      var OC = 'Y';
+    }
+    else if(args.length == 3) {
+      var Event = args[2];
+      var OC = 'Y';
+    }
+    else {
+      var Event = args[2];
+      var OC = args[3];
+    }
     
     var probability = ProbSkill(k, n, Event, OC);
     
