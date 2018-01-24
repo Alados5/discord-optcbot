@@ -74,7 +74,7 @@ function getdblink(content) {
 
 function fact(i) {
   var prod = 1;
-  for(j=0; j<(i+1); j++) {
+  for(j=1; j<(i+1); j++) {
     prod *= j;
   }
   return prod
