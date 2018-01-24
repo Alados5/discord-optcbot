@@ -115,19 +115,6 @@ function ProbSkill(k, n, event, OC) {
   }
 }
 
-//Calculates the number N of copies needed to get k or more successes (skillups)
-//with a probability of x (default at 75%)
-function NCopies(k, x, event, OC) {
-  var n = 1;
-  while(n<200) {
-    var t = ProbSkill(k, n, event, OC);
-    if(t >= x) return n
-    n++;
-  }
-  return n
-}
-
-
 //------------------------------------------------------------------------- END SKILLUP FS
 
 client.on('message', msg => {
@@ -246,7 +233,15 @@ client.on('message', msg => {
       var OC = args[3];
     }
     
-    var copies = NCopies(k, x, Event, OC)
+    //Calculates the number N of copies needed to get k or more successes (skillups)
+    //with a probability of x (default at 75%)
+    var copies = 1;
+    while(copies<200) {
+      var realprob = ProbSkill(k, copies, Event, OC);
+      if(realprob >= x) { break; }
+      copies++;
+    }
+    
     msg.channel.send("To be a "+x+"% sure of having "+k+"skillups, you'll need "+copies+"copies.")
     
   }
