@@ -171,7 +171,7 @@ client.on('message', msg => {
     var n = args[1];
     if(args.length >= 3) var Event = args[2];
     if(args.length >= 4) var OC = args[3];
-    var probability = fact(k);
+    var probability = Bin_f(k, n, 0.5);
     msg.channel.send(probability)
   }
   
