@@ -206,18 +206,18 @@ client.on('message', msg => {
     var k = args[0];
     var n = args[1];
     
-    //if(args.length == 2) {
-    //  var Event = 'Y';
-    //  var OC = 'Y';
-    //}
-    //else if(args.length == 3) {
-    //  var Event = args[2];
-    //  var OC = 'Y';
-    //}
-    //else {
-    var Event = args[2];
-    var OC = args[3];
-    //}
+    if(args.length == 2) {
+      var Event = 'Y';
+      var OC = 'Y';
+    }
+    else if(args.length == 3) {
+      var Event = args[2];
+      var OC = 'Y';
+    }
+    else {
+      var Event = args[2];
+      var OC = args[3];
+    }
     
     var probability = ProbSkill(k, n, Event, OC);
     
