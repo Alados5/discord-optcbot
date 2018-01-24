@@ -104,7 +104,7 @@ function Bin_R(k, n, p) {
 
 //Probability of getting k skillups with n copies, with event or not, OC rates or not
 //OC rates are 1/5 (2/5 with event), normal rates are 1/6 (1/3 with event)
-function ProbSkill(k, n, event=True, OC=True) {
+function ProbSkill(k, n, event, OC) {
   if(event) {
     if(OC) return Bin_R(k, n, 2/5)
     else return Bin_R(k, n, 1/3)
@@ -117,15 +117,15 @@ function ProbSkill(k, n, event=True, OC=True) {
 
 //Calculates the number N of copies needed to get k or more successes (skillups)
 //with a probability of x (default at 75%)
-//function NCopies(k, x, event, OC) {
-//  var n = 1;
+function NCopies(k, x, event, OC) {
+  var n = 1;
 //  while n<200 {
 //    var t = ProbSkill(k, n, event, OC);
 //    if(t >= x) break
 //    n += 1;
 //  }
-//  return n
-//}
+  return n
+}
 
 
 //------------------------------------------------------------------------- END SKILLUP FS
@@ -212,11 +212,11 @@ client.on('message', msg => {
     }
     else if(args.length == 3) {
       var Event = args[2];
-      var OC = undefined;
+      var OC = True;
     }
     else if(args.length == 2) {
-      var Event = undefined;
-      var OC = undefined;
+      var Event = True;
+      var OC = True;
     }
     var probability = ProbSkill(k, n, Event, OC);
     
