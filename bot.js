@@ -104,7 +104,7 @@ function Bin_R(k, n, p) {
 
 //Probability of getting k skillups with n copies, with event or not, OC rates or not
 //OC rates are 1/5 (2/5 with event), normal rates are 1/6 (1/3 with event)
-function ProbSkill(k, n, event=False, OC=True) {
+function ProbSkill(k, n, event, OC) {
   if(event) {
     if(OC) return Bin_R(k, n, 2/5)
     else return Bin_R(k, n, 1/3)
@@ -117,7 +117,7 @@ function ProbSkill(k, n, event=False, OC=True) {
 
 //Calculates the number N of copies needed to get k or more successes (skillups)
 //with a probability of x (default at 75%)
-function NCopies(k, x=0.75, event=True, OC=True) {
+function NCopies(k, x=0.75, event, OC) {
   var n = 1;
   while n<200 {
     var t = ProbSkill(k, n, event, OC);
@@ -205,16 +205,16 @@ client.on('message', msg => {
     if(args.length < 2) return msg.reply("Enter valid data!")
     var k = args[0];
     var n = args[1];
-    if(args.length >= 4) {
-      var Event = args[2];
-      var OC = args[3];
-      var probability = ProbSkill(k, n, Event, OC);
-    }
-    else if(args.length >= 3) {
-      var Event = args[2];
-      var probability = ProbSkill(k, n, Event);
-    }
-    else var probability = ProbSkill(k, n);
+    //if(args.length >= 4) {
+    var Event = args[2];
+    var OC = args[3];
+    var probability = ProbSkill(k, n, Event, OC);
+    //}
+    //else if(args.length >= 3) {
+    //  var Event = args[2];
+    //  var probability = ProbSkill(k, n, Event);
+    //}
+    //else var probability = ProbSkill(k, n);
     probability *= 100;
     msg.channel.send("The chance of having "+k+" skillups or more with "+n+" copies is: "+probability+"%")
   }
