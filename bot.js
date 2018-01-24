@@ -235,15 +235,14 @@ client.on('message', msg => {
     }
     
     //Calculates the number N of copies needed to get k or more successes (skillups)
-    //with a probability of x (default at 75%)
-    var copies = 1;
-    while(copies<150) {
-      var realprob = ProbSkill(k, copies, Event, OC);
+    //with a probability of x (recommended 75%)
+    for(ci=1; ci<100; ci++) {
+      var realprob = ProbSkill(k, ci, Event, OC);
+      var copies = ci;
+      msg.channel.send(copies+" copies - Prob: "+realprob)
       if(realprob >= x) { break; }
-      msg.channel.send(copies+" copies. Prob: "+realprob)
-      copies++;
     }
-    
+
     x *= 100;
     msg.channel.send("To be a "+x+"% sure of having "+k+" skillups, you'll need: "+copies+" copies")
     
