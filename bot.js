@@ -98,8 +98,8 @@ function Bin_F(k, n, p) {
 }
 
 //Returns the remaining probability R=Pr(X>=k)=Pr(X>(k-1))=1-Pr(X<=(k-1))
-function R(k, n, p) {
-  return 1-F(k-1, n, p)
+function Bin_R(k, n, p) {
+  return 1-Bin_F(k-1, n, p)
 }
 
 //------------------------------------------------------------------------- END SKILLUP FS
@@ -181,7 +181,7 @@ client.on('message', msg => {
     var n = args[1];
     if(args.length >= 3) var Event = args[2];
     if(args.length >= 4) var OC = args[3];
-    var probability = Bin_f(k, n, 0.5);
+    var probability = Bin_R(k, n, 0.5);
     msg.channel.send(probability)
   }
   
