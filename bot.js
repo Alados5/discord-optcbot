@@ -242,7 +242,8 @@ client.on('message', msg => {
       copies++;
     }
     
-    msg.channel.send("To be a "+x+"% sure of having "+k+"skillups, you'll need "+copies+"copies.")
+    x *= 100;
+    msg.channel.send("To be a "+x+"% sure of having "+k+" skillups, you'll need: "+copies+" copies.")
     
   }
   
