@@ -208,22 +208,24 @@ client.on('message', msg => {
     
     msg.channel.send(args.length)
     
-    if(args.length >= 4) {
-      var Event = args[2];
-      var OC = args[3];
+    if(args.length == 2) {
+      var Event = True;
+      var OC = True;
     }
-    else if(args.length == 3) {
+    if(args.length == 3) {
       var Event = args[2];
       var OC = True;
     }
     else {
-      var Event = True;
-      var OC = True;
+      var Event = args[2];
+      var OC = args[3];
     }
+    
     var probability = ProbSkill(k, n, Event, OC);
     
     probability *= 100;
     msg.channel.send("The chance of having "+k+" skillups or more with "+n+" copies is: "+probability+"%")
+    
   }
   
 //------------------------------------------------------------------------- END SKILLUP
