@@ -80,6 +80,17 @@ function fact(i) {
   return prod
 }
 
+function Bin_f(k, n, p) {
+  var nf = fact(n);
+  var kf = fact(k);
+  var nkf = fact(n-k);
+  var combi = nf/(kf*nkf);
+  var pro1 = Math.pow(p, k);
+  var pro2 = Math.pow((1-p), (n-k));
+  var prob = combi * pro1 * pro2;
+  return prob
+}
+
 
 //------------------------------------------------------------------------- END SKILLUP FS
 
@@ -155,13 +166,13 @@ client.on('message', msg => {
   
   if (command == 'skillup') {
     //ProbSkill(k, n, Event, OC)
-    if(args.length < 3) return msg.reply("Enter valid data!")
+    if(args.length < 2) return msg.reply("Enter valid data!")
     var k = args[0];
     var n = args[1];
     if(args.length >= 3) var Event = args[2];
     if(args.length >= 4) var OC = args[3];
-    var probability = fact(k);
-    msg.channel.reply(probability)
+    var probability = Bin_f(k, n, 0.5);
+    msg.channel.send(probability)
   }
   
 //------------------------------------------------------------------------- END SKILLUP
