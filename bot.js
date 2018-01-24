@@ -72,6 +72,14 @@ function getdblink(content) {
 
 //------------------------------------------------------------------------- END GETLINK FS
 
+function fact(i) {
+  var prod = 1;
+  for(j=0; j<(i+1); j++) {
+    prod *= j;
+  }
+  return prod
+}
+
 client.on('message', msg => {
   if(msg.author.bot || !msg.content.startsWith(prefix)) return;
     
@@ -149,7 +157,7 @@ client.on('message', msg => {
     var n = args[1];
     if(args.length >= 3) var Event = args[2];
     if(args.length >= 4) var OC = args[3];
-    var probability = ProbSkill(k, n, Event, OC);
+    var probability = fact(k);
     msg.channel.reply(probability)
   }
   
