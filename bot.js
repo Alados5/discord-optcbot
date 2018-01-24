@@ -215,11 +215,10 @@ client.on('message', msg => {
   }
   
   if (command == 'copies') {
-    //NCopies(k, x, event, OC)
     if(args.length < 2) return msg.reply("Enter valid data!")
     var k = args[0];
     var x = args[1];
-    x /= 100;
+    var probbase = x/100;
     
     if(args.length == 2) {
       var Event = 'Y';
@@ -234,16 +233,16 @@ client.on('message', msg => {
       var OC = args[3];
     }
     
+    msg.channel.send(k+" skillups - Prob: "+probbase+" - Event: "+Event+" - OC: "+OC)
     //Calculates the number N of copies needed to get k or more successes (skillups)
     //with a probability of x (recommended 75%)
     for(ci=1; ci<100; ci++) {
       var realprob = ProbSkill(k, ci, Event, OC);
       var copies = ci;
       msg.channel.send(copies+" copies - Prob: "+realprob)
-      if(realprob >= x) { break; }
+      if(realprob >= probbase) { break; }
     }
 
-    x *= 100;
     msg.channel.send("To be a "+x+"% sure of having "+k+" skillups, you'll need: "+copies+" copies")
     
   }
