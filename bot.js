@@ -206,6 +206,8 @@ client.on('message', msg => {
     var k = args[0];
     var n = args[1];
     
+    msg.channel.send(args.length)
+    
     if(args.length >= 4) {
       var Event = args[2];
       var OC = args[3];
@@ -214,7 +216,7 @@ client.on('message', msg => {
       var Event = args[2];
       var OC = True;
     }
-    else if(args.length == 2) {
+    else {
       var Event = True;
       var OC = True;
     }
