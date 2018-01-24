@@ -123,7 +123,7 @@ function NCopies(k, x, event, OC) {
   //  var t = ProbSkill(k, n, event, OC);
   //  if(t >= x) return n
   //  n += 1;
-  }
+  //}
   return n
 }
 
