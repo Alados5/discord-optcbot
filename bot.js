@@ -205,9 +205,19 @@ client.on('message', msg => {
     if(args.length < 2) return msg.reply("Enter valid data!")
     var k = args[0];
     var n = args[1];
-    var Event = args[2];
-    var OC = args[3];
-    msg.channel.send(OC);
+    
+    if(args.length >= 4) {
+      var Event = args[2];
+      var OC = args[3];
+    }
+    else if(args.length == 3) {
+      var Event = args[2];
+      var OC = undefined;
+    }
+    else if(args.length == 2) {
+      var Event = undefined;
+      var OC = undefined;
+    }
     var probability = ProbSkill(k, n, Event, OC);
     
     probability *= 100;
