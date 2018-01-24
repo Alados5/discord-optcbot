@@ -2,8 +2,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 //var fs = require("fs");
 
-import { ProbSkill , NCopies } from "./skillup.js";
-
 var prefix = '!';
 
 var dbchar = 'http://optc-db.github.io/characters/#/search/';
@@ -72,6 +70,8 @@ function getdblink(content) {
 
 //------------------------------------------------------------------------- END GETLINK FS
 
+//------------------------------------------------------------------------- START SKILLUP FS  
+
 function fact(i) {
   var prod = 1;
   for(j=0; j<(i+1); j++) {
@@ -79,6 +79,9 @@ function fact(i) {
   }
   return prod
 }
+
+
+//------------------------------------------------------------------------- END SKILLUP FS
 
 client.on('message', msg => {
   if(msg.author.bot || !msg.content.startsWith(prefix)) return;
