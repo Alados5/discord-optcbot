@@ -104,7 +104,7 @@ function Bin_R(k, n, p) {
 
 //Probability of getting k skillups with n copies, with event or not, OC rates or not
 //OC rates are 1/5 (2/5 with event), normal rates are 1/6 (1/3 with event)
-function ProbSkill(k, n, event, OC) {
+function ProbSkill(k, n, event=True, OC=True) {
   if(event) {
     if(OC) return Bin_R(k, n, 2/5)
     else return Bin_R(k, n, 1/3)
