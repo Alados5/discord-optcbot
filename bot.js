@@ -226,6 +226,31 @@ client.on('message', msg => {
     
   }
   
+  if (command == 'copies') {
+    //NCopies(k, x, event, OC)
+    if(args.length < 2) return msg.reply("Enter valid data!")
+    var k = args[0];
+    var x = args[1];
+    x /= 100;
+    
+    if(args.length == 2) {
+      var Event = 'Y';
+      var OC = 'Y';
+    }
+    else if(args.length == 3) {
+      var Event = args[2];
+      var OC = 'Y';
+    }
+    else {
+      var Event = args[2];
+      var OC = args[3];
+    }
+    
+    var copies = NCopies(k, x, Event, OC)
+    msg.channel.send("To be a "+x+"% sure of having "+k+"skillups, you'll need "+copies+"copies.")
+    
+  }
+  
 //------------------------------------------------------------------------- END SKILLUP
   
 });
