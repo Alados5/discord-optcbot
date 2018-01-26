@@ -6,12 +6,14 @@ var prefix = '!';
 
 var dbchar = 'http://optc-db.github.io/characters/#/search/';
 var dbcharid = 'http://optc-db.github.io/characters/#/view/';
+var dbcharpic = 'https://onepiece-treasurecruise.com/wp-content/uploads/c';
+var dbcharicon = 'https://onepiece-treasurecruise.com/wp-content/uploads/f';
 var basetrans = 'http://optc-db.github.io/damage/#/transfer/D';
-
-//------------------------------------------------------------------------- START GETLINK FS
 
 var dpj = require("./database.json");
 var dship = {'33':['Dutchman', 'Flying Dutchman', 'Flying'], '36':['Revolutionary Black Crow','Corvo','Revo Crow']}
+
+//------------------------------------------------------------------------- START GETLINK FS
 
 function findnum(name, dic) {
   for (var num in dic) {
@@ -133,7 +135,12 @@ client.on('message', msg => {
                    "\n \n Me puedes llamar con estos comandos:"+
                    "\n   **!ayuda** - Muestra este mensaje"+
                    "\n   **!char** o **!pj** - Busca un personaje o ID en la database"+
-                   "\n   **!skillup K N** - Calcula la probabilidad de obtener K niveles con N copias"+
+                   "\n   **!icon** - Muestra el icono de un personaje (por número de ID)"+
+                   "\n   **!art** o **!pic - Muestra el artwork de un personaje (por número de ID)"+
+                   "\n   **!skillup K N E D** - Calcula la probabilidad de obtener K niveles con N copias"+
+                   "\n         E y D son parámetros opcionales, activados ('S') por defecto."+
+                   "\n         E indica si hay Skillup x2 o no 'S' si sí, 'N' si no"+
+                   "\n         D indica el chance de skillup, 'S' para 1/5 (optc-db), 'N' para 1/6"+
                    "\n   **!thejoselu8** - Cabrea a joselu ¡Gratis!";
     
     msg.channel.send({embed: {
@@ -176,6 +183,17 @@ client.on('message', msg => {
   } 
 
 //------------------------------------------------------------------------- END CHAR/PJ
+  
+//------------------------------------------------------------------------- START ICON  
+
+  if (command == 'icon') {
+    var chartolook = msg.content.slice(6);
+    var charid = findnum(chartolook, dpj);
+    var iconlink = dbcharicon + charid;
+    msg.channel.send(iconlink)
+  }  
+  
+//------------------------------------------------------------------------- END ICON
 
 //------------------------------------------------------------------------- START GETLINK  
 
