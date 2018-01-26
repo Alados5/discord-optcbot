@@ -136,7 +136,7 @@ client.on('message', msg => {
                    "\n   **!ayuda** - Muestra este mensaje"+
                    "\n   **!char** o **!pj** - Busca un personaje o ID en la database"+
                    "\n   **!icon** - Muestra el icono de un personaje (por número de ID)"+
-                   "\n   **!art** o **!pic - Muestra el artwork de un personaje (por número de ID)"+
+                   "\n   **!art** o **!pic** - Muestra el artwork de un personaje (por número de ID)"+
                    "\n   **!skillup K N E D** - Calcula la probabilidad de obtener K niveles con N copias"+
                    "\n         E y D son parámetros opcionales, activados ('S') por defecto."+
                    "\n         E indica si hay Skillup x2 o no 'S' si sí, 'N' si no"+
@@ -189,11 +189,22 @@ client.on('message', msg => {
   if (command == 'icon') {
     var chartolook = msg.content.slice(6);
     var charid = findnum(chartolook, dpj);
-    var iconlink = dbcharicon + charid;
+    var iconlink = dbcharicon + charid + '.png';
     msg.channel.send(iconlink)
   }  
   
 //------------------------------------------------------------------------- END ICON
+  
+//------------------------------------------------------------------------- START ART
+
+  if (command == 'art' || command == 'pic') {
+    var chartolook = msg.content.slice(5);
+    var charid = findnum(chartolook, dpj);
+    var artlink = dbcharpic + charid + '.png';
+    msg.channel.send(iconlink)
+  }  
+  
+//------------------------------------------------------------------------- END ART
 
 //------------------------------------------------------------------------- START GETLINK  
 
