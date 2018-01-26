@@ -26,7 +26,7 @@ function findnum(name, dic) {
       }
     }
   }
-  return '4'
+  return '0004'
 }  
 
 function getdblink(content) {
