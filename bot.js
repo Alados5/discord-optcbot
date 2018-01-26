@@ -201,7 +201,7 @@ client.on('message', msg => {
     var chartolook = msg.content.slice(5);
     var charid = findnum(chartolook, dpj);
     var artlink = dbcharpic + charid + '.png';
-    msg.channel.send(iconlink)
+    msg.channel.send(artlink)
   }  
   
 //------------------------------------------------------------------------- END ART
