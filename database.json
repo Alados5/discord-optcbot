@@ -2,8 +2,8 @@
   "0001":["1", "luffy tutorial"],
   "0002":["2", "luffy gum-gum pistol", "luffy base"],
   "0003":["3", "luffy gum-gum bazooka", "luffy bazooka"],
-  "0004":["4", "Luffy Gear 2", "Luffy G2", "Luffy Gear 2nd"],
-  "0005":["5", "zoro Base"],
+  "0004":["4", "luffy gear 2", "luffy g2", "luffy gear 2nd"],
+  "0005":["5", "zoro base"],
   "0006":["6", "Zoro Three Thousand Worlds", "Zoro 3000 Worlds"],
   "0007":["7", "Zoro Pound Phoenix", "Zoro Skypiea"],
   "0008":["8", "Zoro Ashura Ichibugin", "Zoro Ashura"],
@@ -32,7 +32,10 @@
   "0219":["219", "Zoro Lion Song", "Zoro LS"],
   "0221":["221", "Nami Happiness Punch", "Towel Nami", "Nami Towel"],
   "0223":["223", "Usopp Impact", "Usopp Impact Dial", "Impact Dial Usopp"],
+  "0225":["225", "Sanji Mr. Prince", "Mr. Prince", "Mr Prince"],
   "0227":["227", "Dracule Mihawk", "Mihawk Raid", "Raidhawk", "DEXHawk", "Mihawk DEX"],
+  "0232":["232", "Hina FN", "Hina Black Cage"],
+  "0247":["247", "Chopperman", "Kawaii"],
   "0249":["249", "Monster Chopper", "MC", "Tony Tony Chopper Post Rampage"],
   "0251":["251", "Marco the Phoenix", "Marco Base", "Marco PSY"],
   "0253":["253", "Jozu", "Diamond Jozu", "Jozu QCK", "Jozu RR"],
@@ -59,5 +62,7 @@
   
   "1921":["1921", "Zoro 6*+", "Zoro 6+", "Zoro Legend Plus", "Zoro+"],
   
-  "1935":["1935", "Franky Legend", "Franky 6*"]
+  "1935":["1935", "Franky Legend", "Franky 6*"],
+  
+  "1941":["1941", "Ace TM", "Ace Treasure Map", "Ace Aventura"]
 }
