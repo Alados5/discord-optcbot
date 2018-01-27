@@ -4,9 +4,9 @@
   "0003":["3", "luffy gum-gum bazooka", "luffy bazooka"],
   "0004":["4", "luffy gear 2", "luffy g2", "luffy gear 2nd"],
   "0005":["5", "zoro base"],
-  "0006":["6", "Zoro Three Thousand Worlds", "Zoro 3000 Worlds"],
-  "0007":["7", "Zoro Pound Phoenix", "Zoro Skypiea"],
-  "0008":["8", "Zoro Ashura Ichibugin", "Zoro Ashura"],
+  "0006":["6", "zoro three thousand worlds", "zoro 3000 worlds"],
+  "0007":["7", "zoro pound phoenix", "zoro skypiea"],
+  "0008":["8", "zoro ashura ichibugin", "zoro ashura"],
   "0009":["9", "Nami Base"],
   "0010":["10", "Nami Tornado Tempo"],
   "0011":["11", "Nami Mirage Tempo"],
@@ -42,27 +42,27 @@
   "0255":["255", "Vista", "Vista Flower Sword", "Vista INT", "Vista RR"],
   "0257":["257", "Izo", "Izo Flintlock Pistols", "Izo DEX", "Izo RR"],
   "0259":["259", "Blamenco", "Blamenco the Mallet", "Blamenco STR", "Blamenco RR"],
-  "0261":["261", "Whitebeard", "WB", "WB Legend", "Whitebeard Legend", "Edward Newgate"],
+  "0261":["261", "whitebeard", "wb", "wb legend", "whitebeard legend", "edward newgate"],
 
-  "0418":["418", "Doffy Raid","Doflamingo Raid"],
+  "0418":["418", "doffy raid","doflamingo raid"],
 
-  "0865":["865", "Boa Raid"],
+  "0865":["865", "boa raid"],
 
-  "1492":["1492", "Sabo 6*+", "Sabo 6+", "Sabo Legend Plus", "Sabo+", "Sabo Legend v1"],
+  "1492":["1492", "sabo 6*+", "sabo 6+", "sabo legend plus", "sabo+", "sabo legend v1"],
 
-  "1518":["1518", "Bellamy Raid","Bellamy QCK"],
+  "1518":["1518", "bellamy raid","bellamy qck"],
 
-  "1658":["1658", "Kanjuro RR", "Kanjuro DEX"],
+  "1658":["1658", "kanjuro RR", "kanjuro dex"],
 
-  "1794":["1794", "Lucy Legend", "Sabo Legend v2", "Lucy 6*"],
+  "1794":["1794", "lucy legend", "sabo legend v2", "lucy 6*"],
 
-  "1910":["1910", "Doffy Legend v2", "Doflamingo Legend V2", "Doffy 6* v2"],
+  "1910":["1910", "doffy legend v2", "doflamingo legend V2", "doffy 6* v2"],
 
-  "1916":["1916", "Luffy TM G4", "TM G4", "G4 TM"],
+  "1916":["1916", "luffy tm", "luffy tm g4", "tm g4", "g4 tm"],
   
-  "1921":["1921", "Zoro 6*+", "Zoro 6+", "Zoro Legend Plus", "Zoro+"],
+  "1921":["1921", "zoro 6*+", "zoro 6+", "zoro legend plus", "zoro+"],
   
-  "1935":["1935", "Franky Legend", "Franky 6*"],
+  "1935":["1935", "franky legend", "franky 6*"],
   
-  "1941":["1941", "Ace TM", "Ace Treasure Map", "Ace Aventura"]
+  "1941":["1941", "ace tm", "ace treasure map", "ace aventura"]
 }
