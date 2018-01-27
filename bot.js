@@ -50,7 +50,7 @@ function getdblink(content) {
   cottons = cci;
   
   for(var char=0; char<chars.length; char++) {
-    var charid = findnum(chars[char], dpj);
+    var charid = findnum(chars[char].toLowerCase(), dpj);
     var charcc = cottons[char];
     link += charid;
     link += ':99:';
@@ -187,7 +187,7 @@ client.on('message', msg => {
 //------------------------------------------------------------------------- START ICON  
 
   if (command == 'icon') {
-    var chartolook = msg.content.slice(6);
+    var chartolook = msg.content.slice(6).toLowerCase();
     var charid = findnum(chartolook, dpj);
     var iconlink = dbcharicon + charid + '.png';
     msg.channel.send(iconlink)
@@ -198,7 +198,7 @@ client.on('message', msg => {
 //------------------------------------------------------------------------- START ART
 
   if (command == 'art' || command == 'pic') {
-    var chartolook = msg.content.slice(5);
+    var chartolook = msg.content.slice(5).toLowerCase();
     var charid = findnum(chartolook, dpj);
     var artlink = dbcharpic + charid + '.png';
     msg.channel.send(artlink)
