@@ -409,7 +409,7 @@
   
   "1747":["1747", "boa hancock strawhat luffy's accomplice", "boa hancock 6* v2", "boa legend v2", "boa legend psy", "korea boa"],
   
-  "1751":["1751", "law legend v2", "law 6* v2", "law qck", "trafalgar law legend v2", "trafalgar law 6* v2", "warlord of the sea trafalgar law aim for joker", "law injection shot", "law striker"],
+  "1751":["1751", "law legend v2", "law 6* v2", "law qck", "trafalgar law legend v2", "trafalgar law 6* v2", "warlord of the sea trafalgar law aim for joker", "law injection shot", "law striker", "korea law"],
 
   "1794":["1794", "lucy legend", "sabo legend v2", "lucy 6*"],
   
@@ -417,23 +417,27 @@
   
   "1832":["1832", "vinsmoke judge", "vinsmoke jajji", "vinsmoke judge germa 66 science combat force", "judge", "judge legend", "judge 6*", "jajji"],
   
-  "1847":["1847"],
-  "1869":["1869"],
-  "1880":["1880"],
-  "1881":["1881"],
-  "1883":["1883"],
+  "1847":["1847", "sengoku+", "sengoku 6*+", "sengoku 6+", "sengoku the buddha marine fleet admiral", "worst superevo", "goku+"],
+  
+  "1869":["1869", "issho next generation navy hq greatest military power", "fujitora v2", "fuji legend v2", "fuji 6* v2"],
+  
+  "1880":["1880", "hody jones false crusader rampaging recklessly", "hody+", "hody jones 6*+", "hody 6+", "hody 6*+", "hody legend plus"],
+  "1881":["1881", "hawk eyes mihawk the black blade yoru", "inthawk+", "inthawk 6*+", "inthawk 6+", "mihawk legend plus"],
+  "1883":["1883", "dark king rayleigh an old soldier watching over an era", "ray v2", "ray 6* v2", "rayleigh legend v2", "ray legend v2"],
 
-  "1910":["1910", "doffy legend v2", "doflamingo legend V2", "doffy 6* v2"],
+  "1910":["1910", "heavenly demon doflamingo ruler of the bird cage", "doffy legend v2", "doflamingo legend v2", "doffy 6* v2"],
 
   "1916":["1916", "luffy tm", "luffy tm g4", "tm g4", "g4 tm"],
   
-  "1921":["1921", "zoro 6*+", "zoro 6+", "zoro legend plus", "zoro+"],
-  "1922":["1922", "law qck 6*+", "law qck 6+", "law v2 6+", "law v2 6*+", "trafalgar law the clan of d"],
+  "1921":["1921", "pirate hunter zoro the strawhat pirates reborn", "zoro 6*+", "zoro 6+", "zoro legend plus", "zoro+", "ichidai sanzen daisen sekai"],
+  "1922":["1922", "law qck 6*+", "law qck 6+", "law v2 6+", "law v2 6*+", "trafalgar law the clan of d", "korea law 6*+"],
   
-  "1927":["1927"],
-  "1928":["1928"],
+  "1927":["1927", "sir crocodile remains of an utopian dream", "croco 6*+", "crocodile 6*+", "thejoselu8 6*+", "6+ croc"],
+  "1928":["1928", "bartolomeo the cannibal straw hat grand fleet - son's cup", "barto 6*+", "bartolomeo 6*+", "6+ barto"],
   
-  "1935":["1935", "franky legend", "franky 6*"],
+  "1935":["1935", "franky future country's super weapon", "franky legend", "franky 6*", "franky megazord"],
   
-  "1941":["1941", "ace tm", "ace treasure map", "ace aventura"]
+  "1941":["1941", "ace tm", "ace treasure map", "ace aventura"],
+  
+  "1951":["1951", "nico robin archaeologist revealing the void century", "robin legend", "nico robin 6*", "6* robin", "robin 6*"]
 }
