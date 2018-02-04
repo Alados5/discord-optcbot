@@ -107,9 +107,13 @@ function Bin_R(k, n, p) {
 //Probability of getting k skillups with n copies, with event or not, OC rates or not
 //OC rates are 1/5 (2/5 with event), normal rates are 1/6 (1/3 with event)
 function ProbSkill(k, n, event, OC) {
-  if(event == 'S' || event == 'Y') {
+  if(event == '2') {
     if(OC == 'S' || OC == 'Y') return Bin_R(k, n, 2/5)
     else return Bin_R(k, n, 1/3)
+  }
+  if(event == '3') {
+    if(OC == 'S' || OC == 'Y') return Bin_R(k, n, 3/5)
+    else return Bin_R(k, n, 1/2)
   }
   else {
     if(OC == 'S' || OC == 'Y') return Bin_R(k, n, 1/5)
@@ -138,9 +142,10 @@ client.on('message', msg => {
                    "\n   **!icon** - Muestra el icono de un personaje (por número de ID)"+
                    "\n   **!art** o **!pic** - Muestra el artwork de un personaje (por número de ID)"+
                    "\n   **!skillup K N E D** - Calcula la probabilidad de obtener K niveles con N copias"+
-                   "\n         E y D son parámetros opcionales, activados ('S') por defecto."+
-                   "\n         E indica si hay Skillup x2 o no 'S' si sí, 'N' si no"+
-                   "\n         D indica el chance de skillup, 'S' para 1/5 (optc-db), 'N' para 1/6"+
+                   "\n       E y D son parámetros opcionales."+
+                   "\n         E indica si hay evento de skillup, '2' si es x2 y '3' si es x3."+
+                   "\n           Por defecto está activado en x2, cualquier otro texto será x1."+
+                   "\n         D indica el chance base de skillup, 'S' para 1/5 (optc-db), 'N' para 1/6"+
                    "\n   **!thejoselu8** - Cabrea a joselu ¡Gratis!";
     
     msg.channel.send({embed: {
@@ -224,7 +229,7 @@ client.on('message', msg => {
     var n = args[1];
     
     if(args.length == 2) {
-      var Event = 'Y';
+      var Event = '2';
       var OC = 'Y';
     }
     else if(args.length == 3) {
@@ -239,7 +244,10 @@ client.on('message', msg => {
     var probability = ProbSkill(k, n, Event, OC);
     
     probability *= 100;
-    msg.channel.send("The chance of having "+k+" skillups or more with "+n+" copies is: "+probability+"%")
+    if(Event != '2' && Event != '3') {
+      Event = '1'
+    }
+    msg.channel.send("The chance of having "+k+" skillups or more with "+n+" copies is: "+probability+"% \n Calculations done with Skillup x"+Event)
     
   }
   
@@ -250,7 +258,7 @@ client.on('message', msg => {
     var probbase = x/100;
     
     if(args.length == 2) {
-      var Event = 'Y';
+      var Event = '2';
       var OC = 'Y';
     }
     else if(args.length == 3) {
