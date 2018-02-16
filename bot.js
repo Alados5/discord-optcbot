@@ -145,9 +145,9 @@ client.on('message', msg => {
                    "\n Debería estar siempre activo, si no respondo puede que haya algún problema."+
                    "\n \n Me puedes llamar con estos comandos:"+
                    "\n   **!ayuda** - Muestra este mensaje"+
-                   "\n   **!char** o **!pj** - Busca un personaje o ID en la database"+
-                   "\n   **!icon** - Muestra el icono de un personaje (por número de ID)"+
-                   "\n   **!art** o **!pic** - Muestra el artwork de un personaje (por número de ID)"+
+                   "\n   **!char** o **!pj** - Busca un personaje o ID en la database (link)"+
+                   "\n   **!icon** - Muestra el icono de un personaje (Ej.: !icon Croco Legend)"+
+                   "\n   **!art** o **!pic** - Muestra el artwork de un personaje (Ej.: !art Croco Legend)"+
                    "\n   **!skillup K N E D** - Calcula la probabilidad de obtener K niveles con N copias"+
                    "\n       E y D son parámetros opcionales."+
                    "\n         E indica si hay evento de skillup, '2' si es x2 y '3' si es x3."+
@@ -165,7 +165,22 @@ client.on('message', msg => {
       }
       
     }})
-  }  
+  }
+  
+  if (command == 'directos') {
+    msg.channel.send("**__HORARIO DIRECTOS THEJOSELU8 EN TWITCH__**"+
+                     "\n \n MARTES y JUEVES de 20:30h a 22:30h \n SÁBADOS y DOMINGOS de 15:00h a 18:00h")
+  }
+  
+  if (command == 'eventoactivo') {
+    var image = "https://media.discordapp.net/attachments/391192337562468354/400302400151486477/Screenshot_20180109-085808.jpg?width=1293&height=541"
+    msg.channel.send(image)
+  }
+  
+  if (command == 'guiasn') {
+    var enlace = "https://docs.google.com/document/d/1pIUvQwcItefsjQkPgDdwg7BsYvc_M5kUY_8mFy-1eqM/edit?usp=sharing"
+    msg.channel.send(enlace)
+  }
   
 //------------------------------------------------------------------------- END HELP    
   
