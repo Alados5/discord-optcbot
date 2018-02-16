@@ -124,7 +124,7 @@ function ProbSkill(k, n, event, OC) {
 //------------------------------------------------------------------------- END SKILLUP FS
 
 client.on('ready', () => {
-  client.user.setPlayingGame("!ayuda")
+  client.user.setGame("!ayuda")
 });
 
 
