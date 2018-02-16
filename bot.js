@@ -149,7 +149,8 @@ client.on('message', msg => {
                    "\n   **!char** o **!pj** - Busca un personaje o ID en la database (link)"+
                    "\n   **!icon** - Muestra el icono de un personaje (Ej.: !icon Croco Legend)"+
                    "\n   **!art** o **!pic** - Muestra el artwork de un personaje (Ej.: !art Croco Legend)"+
-                   "\n   **!eventoactivo** - Muestra una ayuda para diferenciar Skillup de Supersuccess en la Japo"+
+                   "\n   **!getlink** - Crea un equipo en la calculadora de la database (**__WIP__**)"+
+                   "\n   **!eventoactivo** - Muestra una ayuda para diferenciar Skillup de Supersuccess en JP"+
                    "\n   **!guiasn** - Envía un enlace a la Guía del Supernova (by Alados5 & DaniHolgado)"+
                    "\n   **!skillup K N E D** - Calcula la probabilidad de obtener K niveles con N copias"+
                    "\n       E y D son parámetros opcionales."+
