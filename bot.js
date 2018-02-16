@@ -143,17 +143,22 @@ client.on('message', msg => {
   if (command == 'ayuda') {
     var helptext = "Soy un bot para animar y ayudar en este chat."+
                    "\n Debería estar siempre activo, si no respondo puede que haya algún problema."+
-                   "\n \n Me puedes llamar con estos comandos:"+
+                   "\n \n Me puedes llamar con estos comandos:"+      
                    "\n   **!ayuda** - Muestra este mensaje"+
+                   "\n \n **__COMANDOS DE OPTC__**"+
                    "\n   **!char** o **!pj** - Busca un personaje o ID en la database (link)"+
                    "\n   **!icon** - Muestra el icono de un personaje (Ej.: !icon Croco Legend)"+
                    "\n   **!art** o **!pic** - Muestra el artwork de un personaje (Ej.: !art Croco Legend)"+
+                   "\n   **!eventoactivo** - Muestra una ayuda para diferenciar Skillup de Supersuccess en la Japo"+
+                   "\n   **!guiasn** - Envía un enlace a la Guía del Supernova (by Alados5 & DaniHolgado)"+
                    "\n   **!skillup K N E D** - Calcula la probabilidad de obtener K niveles con N copias"+
                    "\n       E y D son parámetros opcionales."+
                    "\n         E indica si hay evento de skillup, '2' si es x2 y '3' si es x3."+
                    "\n           Por defecto está activado en x2, cualquier otro texto será x1."+
                    "\n         D indica el chance base de skillup, 'S' para 1/5 (optc-db), 'N' para 1/6"+
-                   "\n   **!thejoselu8** - Cabrea a joselu ¡Gratis!";
+                   "\n \n **__COMANDOS DE THEJOSELU8__**"+
+                   "\n   **!thejoselu8** - Cabrea a joselu ¡Gratis!"+
+                   "\n   **!directos** - Muestra el horario de los directos";
     
     msg.channel.send({embed: {
       color: 7853583,
