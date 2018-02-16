@@ -11,7 +11,7 @@ var dbcharicon = 'https://onepiece-treasurecruise.com/wp-content/uploads/f';
 var basetrans = 'http://optc-db.github.io/damage/#/transfer/D';
 
 var dpj = require("./database.json");
-var dship = {'33':['Dutchman', 'Flying Dutchman', 'Flying'], '36':['Revolutionary Black Crow','Corvo','Revo Crow']}
+var dship = require("./ships.json");
 
 //------------------------------------------------------------------------- START GETLINK FS
 
@@ -26,7 +26,7 @@ function findnum(name, dic) {
       }
     }
   }
-  return '0004'
+  return 'X'
 }  
 
 function getdblink(content) {
@@ -51,6 +51,7 @@ function getdblink(content) {
   
   for(var char=0; char<chars.length; char++) {
     var charid = findnum(chars[char].toLowerCase(), dpj);
+    if (charid == 'X') return 'Invalid Character Name!'
     var charcc = cottons[char];
     link += charid;
     link += ':99:';
@@ -63,7 +64,8 @@ function getdblink(content) {
   if (contlist.length == 0) return "You didn't put a ship!"
   
   var shipid = findnum(contlist[0], dship);
-  link += shipid.toString();
+  if (shipid == 'X') return 'Invalid Ship Name!'
+  link += shipid;
   link += ',10B0D0E1365Q0L0G0R63S100H'
   
   return link
@@ -199,6 +201,7 @@ client.on('message', msg => {
   if (command == 'icon') {
     var chartolook = msg.content.slice(6).toLowerCase();
     var charid = findnum(chartolook, dpj);
+    if (charid == 'X') return msg.channel.send('Character Name Error')
     var iconlink = dbcharicon + charid + '.png';
     msg.channel.send(iconlink)
   }  
@@ -210,6 +213,7 @@ client.on('message', msg => {
   if (command == 'art' || command == 'pic') {
     var chartolook = msg.content.slice(5).toLowerCase();
     var charid = findnum(chartolook, dpj);
+    if (charid == 'X') return msg.channel.send('Character Name Error')
     var artlink = dbcharpic + charid + '.png';
     msg.channel.send(artlink)
   }  
