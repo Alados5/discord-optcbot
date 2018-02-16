@@ -123,6 +123,11 @@ function ProbSkill(k, n, event, OC) {
 
 //------------------------------------------------------------------------- END SKILLUP FS
 
+client.on('ready', () => {
+  client.user.setPlayingGame("!ayuda")
+});
+
+
 client.on('message', msg => {
   if(msg.author.bot || !msg.content.startsWith(prefix)) return;
     
