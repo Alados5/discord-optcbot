@@ -173,12 +173,12 @@ client.on('message', msg => {
   }
   
   if (command == 'eventoactivo') {
-    var image = "https://media.discordapp.net/attachments/391192337562468354/400302400151486477/Screenshot_20180109-085808.jpg?width=1293&height=541"
+    var image = "https://media.discordapp.net/attachments/391192337562468354/400302400151486477/Screenshot_20180109-085808.jpg?width=1293&height=541";
     msg.channel.send(image)
   }
   
   if (command == 'guiasn') {
-    var enlace = "https://docs.google.com/document/d/1pIUvQwcItefsjQkPgDdwg7BsYvc_M5kUY_8mFy-1eqM/edit?usp=sharing"
+    var enlace = "https://docs.google.com/document/d/1pIUvQwcItefsjQkPgDdwg7BsYvc_M5kUY_8mFy-1eqM/edit?usp=sharing";
     msg.channel.send(enlace)
   }
   
