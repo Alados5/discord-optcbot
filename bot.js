@@ -194,8 +194,8 @@ client.on('message', msg => {
     //var utc = fecha.getTime();
        
     //var utc = 1519045200000; //Caven
-    var utc = 1519563600000; //Shanks
-    //var utc = 1520427600000; //YWB
+    //var utc = 1519563600000; //Shanks
+    var utc = 1520427600000; //YWB
     
     var ref = 1518750000000; //Friday Feb 16th, 2018 04:00h (GMT+1)
     var ambushorder = ["Cavendish", "Shanks", "YWB"];
