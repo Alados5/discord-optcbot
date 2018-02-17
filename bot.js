@@ -189,8 +189,8 @@ client.on('message', msg => {
   }
   
   if (command == 'time') {
-    var time = new Date();
-    msg.channel.send(time)
+    var d = new Date();
+    msg.channel.send(d.toString())
   }
   
 //------------------------------------------------------------------------- END HELP    
