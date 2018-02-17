@@ -190,14 +190,14 @@ client.on('message', msg => {
   }
   
   if (command == 'ambush') {
-    //var fecha = new Date();
+    var fecha = new Date();
+    //var utc = fecha.getTime();
+       
+    var utc = 1519045200000; //Caven
+    //var utc = 1519563600000; //Shanks
+    //var utc = 1520427600000; //YWB
     
-    var fecha = 1519045200000; //Caven
-    //var fecha = 1519563600000; //Shanks
-    //var fecha = 1520427600000; //YWB
-    
-    var utc = fecha.getTime();
-    var ref = 1518750000000; //Friday Feb 16th, 2018 04:00 (GMT+1)
+    var ref = 1518750000000; //Friday Feb 16th, 2018 04:00h (GMT+1)
     var ambushorder = ["Cavendish", "Shanks", "YWB"];
     var oneweek = 604800000;
     
