@@ -151,9 +151,10 @@ client.on('message', msg => {
                    "\n   **!art** o **!pic** - Muestra el artwork de un personaje (Ej.: !art Croco Legend)"+
                    "\n   **!getlink** - Crea un equipo en la calculadora de la database (**__WIP__**)"+
                    "\n   **!eventoactivo** - Muestra una ayuda para diferenciar Skillup de Supersuccess en JP"+
+                   "\n   **!ambush** - Responde qué Ambush hay activo (Raids) en la Japo"+        
                    "\n   **!guiasn** - Envía un enlace a la Guía del Supernova (by Alados5 & DaniHolgado)"+
                    "\n   **!skillup K N E D** - Calcula la probabilidad de obtener K niveles con N copias"+
-                   "\n       E y D son parámetros opcionales."+
+                   "\n       E y D son parámetros opcionales:"+
                    "\n         E indica si hay evento de skillup, '2' si es x2 y '3' si es x3."+
                    "\n           Por defecto está activado en x2, cualquier otro texto será x1."+
                    "\n         D indica el chance base de skillup, 'S' para 1/5 (optc-db), 'N' para 1/6"+
@@ -188,7 +189,7 @@ client.on('message', msg => {
     msg.channel.send(enlace)
   }
   
-  if (command == 'time') {
+  if (command == 'ambush') {
     var fecha = new Date();
     var utc = fecha.getTime();
     var ref = 1518750000000; //Friday Feb 16th, 2018 04:00 (GMT+1)
