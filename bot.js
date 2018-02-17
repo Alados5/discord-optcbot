@@ -188,6 +188,11 @@ client.on('message', msg => {
     msg.channel.send(enlace)
   }
   
+  if (command == 'time') {
+    var time = new Date();
+    msg.channel.send(time)
+  }
+  
 //------------------------------------------------------------------------- END HELP    
   
 //------------------------------------------------------------------------- START MEMES
