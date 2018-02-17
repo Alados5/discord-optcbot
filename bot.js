@@ -189,8 +189,26 @@ client.on('message', msg => {
   }
   
   if (command == 'time') {
-    var d = new Date();
-    msg.channel.send(d.toString())
+    var fecha = new Date();
+    var utc = fecha.getTime();
+    var ref = 1518750000000; //Friday Feb 16th, 2018 04:00 (GMT+1)
+    var ambushorder = ["Cavendish", "Shanks", "YWB"];
+    var oneweek = 604800000;
+    
+    var diftoref = utc - ref;
+    var weeks = Math.floor(diftoref/oneweek);
+    var remain = weeks%3;
+    
+    var text = "Si hay algún Raid, el Ambush de hoy es: ";
+    if (remain == 0) {
+      msg.channel.send(text+ambushorder[0])
+    }
+    else if (remain == 1) {
+      msg.channel.send(text+ambushorder[1])
+    }
+    else {
+      msg.channel.send(text+ambushorder[2])
+    }
   }
   
 //------------------------------------------------------------------------- END HELP    
