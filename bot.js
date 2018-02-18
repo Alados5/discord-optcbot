@@ -324,7 +324,7 @@ client.on('message', msg => {
         },
         {
           name: "\n __SPECIAL ABILITY__",
-          value: '**' + charinfo.specialName + '** \n' + charinfo.special
+          value: '***' + charinfo.specialName + '*** \n' + charinfo.special
         }
       ]
     }})
