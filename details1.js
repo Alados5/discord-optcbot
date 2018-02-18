@@ -1,4 +1,4 @@
-{
+details1 = {
     1: {
         special: "Deals 5x character's ATK in STR damage to one enemy",
         specialName: "Spinning Gum Punch"
