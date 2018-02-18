@@ -288,9 +288,15 @@ client.on('message', msg => {
     var charinfo = db0[charid];
     //Info Names: captain, captainNotes, specialName, special, specialNotes, sailor, limit, potential
     //Captain can be string or object with {"base":"...", "level1":"...", etc}
+    //Sailor can also be a string or object like: {"base":"None", "level1":"...", etc} 
     //Limit is the limit tree, like: [{"description":"..."}, {"description":"..."}, etc]
     //Potential are the LB Abilities, like: [{"Name":"...", "description":["Level 1: ...", etc]}, etc]
     
+    if (!charinfo.captain) charinfo.captain = 'None'
+    if (!charinfo.special) {
+      charinfo.special = ''
+      charinfo.specialName = 'None'
+    }
     if (!charinfo.sailor) charinfo.sailor = 'None'
     
     msg.channel.send({embed: {
@@ -305,20 +311,20 @@ client.on('message', msg => {
       },
       fields: [
         {
-          name: "\n **CHARACTER**",
+          name: "\n __CHARACTER__",
           value: msg.content.slice(4)
         },
         {
-          name: "\n **__CAPTAIN ABILITY__**",
-          value: "Captain Ability Here"
+          name: "\n __CAPTAIN ABILITY__",
+          value: charinfo.captain
         },
         {
           name: "\n __SAILOR ABILITY__",
           value: charinfo.sailor
         },
         {
-          name: "\n **__SPECIAL ABILITY__**",
-          value: charinfo.specialName + '\n' + charinfo.special
+          name: "\n __SPECIAL ABILITY__",
+          value: charinfo.specialName.bold() + '\n' + charinfo.special
         }
       ]
     }})
