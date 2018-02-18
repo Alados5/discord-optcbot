@@ -344,16 +344,13 @@ client.on('message', msg => {
     var charicon = 'https://onepiece-treasurecruise.com/wp-content/uploads/f' + charid0 + '.png';
       
     var charcd = cdlist[charid-1];
-    charcd = charcd[0].toString() + ' -> ' + charcd[1].toString();
-    msg.channel.send(charcd)
     if (charcd = null || !charcd) {
       charcd = 'N/A';
     }
     else {
-      //charcd = charcd[0].toString() + ' -> ' charcd[1].toString() + ' turns';
-      charcd = charcd.toString();
+      charcd = charcd[0].toString() + ' -> ' + charcd[1].toString() + ' turns';
+      //charcd = charcd.toString();
     }
-    msg.channel.send(charcd)
       
     msg.channel.send({embed: {
       color: 42751,
@@ -380,7 +377,7 @@ client.on('message', msg => {
         },
         {
           name: "\n __Special Ability__",
-          value: '***' + charinfo.specialName + '*** \n' + charinfo.special + '\n __Cooldown:__ '
+          value: '***' + charinfo.specialName + '*** \n' + charinfo.special + '\n __Cooldown:__ ' + charcd
         }
       ]
     }})
