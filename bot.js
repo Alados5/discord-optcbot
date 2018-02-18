@@ -345,12 +345,14 @@ client.on('message', msg => {
     var charcd = cdlist[charid-1];
     if (charcd = null || !charcd) {
       charcd = 'N/A';
+      var haselse = 'Nope';
     }
     else {
       //charcd = charcd[0].toString() + ' -> ' charcd[1].toString() + ' turns';
       charcd = charcd.toString()
+      var haselse = 'Yep';
     }
-    msg.channel.send(charcd)
+    msg.channel.send(charcd + haselse)
       
     msg.channel.send({embed: {
       color: 42751,
