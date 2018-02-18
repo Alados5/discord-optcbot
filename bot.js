@@ -10,16 +10,16 @@ var dbcharpic = 'https://onepiece-treasurecruise.com/wp-content/uploads/c';
 var dbcharicon = 'https://onepiece-treasurecruise.com/wp-content/uploads/f';
 var basetrans = 'http://optc-db.github.io/damage/#/transfer/D';
 
-var dpj = require("./database.json");
-var dship = require("./ships.json");
+var dpj = require("./database/names.json");
+var dship = require("./database/ships.json");
 
-var db1 = require("./details1");
+var db1 = require("./database/details1");
 db1 = db1.db1;
-var db2 = require("./details2");
+var db2 = require("./database/details2");
 db2 = db2.db2;
-var db3 = require("./details3");
+var db3 = require("./database/details3");
 db3 = db3.db3;
-var db4 = require("./details4");
+var db4 = require("./database/details4");
 db4 = db4.db4;
 
 function merge(obj, src) {
@@ -33,7 +33,7 @@ var db12 = merge(db1, db2);
 var db34 = merge(db3, db4);
 var fulldb = merge(db12, db34);
 
-var cdlist = require("./cooldowns");
+var cdlist = require("./database/cooldowns");
 cdlist = cdlist.cdlist;
 
 //------------------------------------------------------------------------- START GETLINK FS
