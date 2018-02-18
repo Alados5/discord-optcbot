@@ -342,15 +342,12 @@ client.on('message', msg => {
     }
     
     var charicon = 'https://onepiece-treasurecruise.com/wp-content/uploads/f' + charid0 + '.png';
-    var charcd = cdlist[charid-1];
-    charcd = charcd[0].toString() + ' -> ' + charcd[1].toString();
-    msg.channel.send(charcd)
-      
-    if (charcd = null || !charcd) {
+    var charcd = cdlist[charid-1];      
+    if (charcd == null || !charcd) {
       charcd = 'N/A';
     }
     else {
-      charcd = charcd;
+      charcd = charcd[0].toString() + ' -> ' + charcd[1].toString() + ' turns';
     }
     msg.channel.send(charcd)
       
