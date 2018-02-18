@@ -1,6 +1,6 @@
 //Copied from the optc-db.github.io database files. All credit goes to them.
 
-var db2 = {
+var db3 = {
     1001: {
         captain: "Boosts ATK of all characters proportionally to the crew's current HP. Heals for 1.5x his RCV at the end of the turn each time you hit a Good. Heals for .5x his RCV at the end of the turn each time you hit a Great",
         captainNotes: "#{captainProportional : higher : 1 + 1 * (remaining HP) / (total HP) : 2 : 1 }",
@@ -12395,4 +12395,4 @@ var db2 = {
     
 };
 
-module.exports.db2 = db2;
+module.exports.db3 = db3;
