@@ -306,6 +306,8 @@ client.on('message', msg => {
         if (charCA.hasOwnProperty(CAlevel)) {
           var desc = charCA[CAlevel];
           ctext += CAlevel + ": " + desc + '\n';
+        }
+      }
       charinfo.captain = ctext;
     }
     if (typeof charinfo.sailor == "object") {
@@ -315,6 +317,8 @@ client.on('message', msg => {
         if (charSA.hasOwnProperty(SAlevel)) {
           var desc = charSA[SAlevel];
           stext += SAlevel + ": " + desc + '\n';
+        }
+      }
       charinfo.sailor = stext;
     }
     
