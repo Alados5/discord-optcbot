@@ -344,7 +344,7 @@ client.on('message', msg => {
     var charicon = 'https://onepiece-treasurecruise.com/wp-content/uploads/f' + charid0 + '.png';
       
     var charcd = cdlist[charid-1];
-    var charcd = charcd[0].toString() + ' -> ' + charcd[1].toString;
+    charcd = charcd[0].toString() + ' -> ' + charcd[1].toString();
     msg.channel.send(charcd)
     if (charcd = null || !charcd) {
       charcd = 'N/A';
