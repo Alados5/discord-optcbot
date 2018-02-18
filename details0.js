@@ -1,1 +1,1 @@
-details0 = "test text";
+db0 = "test text";
