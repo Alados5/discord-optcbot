@@ -286,8 +286,40 @@ client.on('message', msg => {
     charid = parseInt(charid);
     
     var charinfo = db0[charid];
+    //Info Names: captain, captainNotes, specialName, special, specialNotes, sailor, limit, potential
+    //Captain can be string or object with {"base":"...", "level1":"...", etc}
+    //Limit is the limit tree, like: [{"description":"..."}, {"description":"..."}, etc]
+    //Potential are the LB Abilities, like: [{"Name":"...", "description":["Level 1: ...", etc]}, etc]
     
-    msg.channel.send(charinfo.specialName + "\n" + charinfo.special)
+    msg.channel.send({embed: {
+      color: 42751,
+      title: "OPTC Database - Character Info",
+      description: "Info registered at optc-db.github.io \n"+
+      "All credit goes to them for their incredible work! \n"+
+      "If you see me offline, ask why!",
+      footer: {
+        text: "I'm a bot created by Alados5",
+        icon_url: client.user.avatarURL
+      },
+      fields: [
+        {
+          name: "CHARACTER",
+          value: chartolook
+        },
+        {
+          name: "CAPTAIN ABILITY",
+          value: "Captain Ability Here"
+        },
+        {
+          name: "SAILOR ABILITY",
+          value: "Sailor Ability Here"
+        },
+        {
+          name: "SPECIAL ABILITY",
+          value: charinfo.special
+        }
+      ]
+    }})
     
   }
   
