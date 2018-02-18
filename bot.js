@@ -160,7 +160,7 @@ client.on('message', msg => {
                    "\n \n Me puedes llamar con estos comandos:"+      
                    "\n   **!ayuda** - Muestra este mensaje"+
                    "\n \n **__COMANDOS DE OPTC__**"+
-                   "\n   __NOTA:__ Muchos dependen de una lista de nombres/IDs que aún no está completa!"+     
+                   "\n   __NOTA:__ Muchos dependen de una lista de IDs que aún no está completa!"+     
                    "\n   **!char** o **!pj** - Busca un personaje o ID en la database (link)"+
                    "\n   **!db** - Responde con la info de un personaje en la database (mensaje)"+        
                    "\n   **!icon** - Muestra el icono de un personaje (Ej.: !icon Croco Legend)"+
