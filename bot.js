@@ -160,12 +160,12 @@ client.on('message', msg => {
                    "\n \n Me puedes llamar con estos comandos:"+      
                    "\n   **!ayuda** - Muestra este mensaje"+
                    "\n \n **__COMANDOS DE OPTC__**"+
-                   "\n   __NOTA:__ Muchos dependen de una lista de nombres e IDs que aún no está completa!!"+     
+                   "\n   __NOTA:__ Muchos dependen de una lista de nombres/IDs que aún no está completa!"+     
                    "\n   **!char** o **!pj** - Busca un personaje o ID en la database (link)"+
                    "\n   **!db** - Responde con la info de un personaje en la database (mensaje)"+        
                    "\n   **!icon** - Muestra el icono de un personaje (Ej.: !icon Croco Legend)"+
                    "\n   **!art** o **!pic** - Muestra el artwork de un personaje (Ej.: !art Croco Legend)"+
-                   "\n   **!getlink** - Crea un equipo en la calculadora de la database (**__WIP__**)"+
+                   "\n   **!getlink** - Crea un equipo en la calculadora de la database (link)"+
                    "\n   **!eventoactivo** - Muestra una ayuda para diferenciar Skillup de Supersuccess en JP"+
                    "\n   **!ambush** - Responde qué Ambush hay activo (Raids) en la Japo"+        
                    "\n   **!guiasn** - Envía un enlace a la Guía del Supernova (by Alados5 & DaniHolgado)"+
