@@ -284,9 +284,9 @@ client.on('message', msg => {
     if (charid == 'X') return msg.channel.send('Character Name Error')
     charid = parseInt(charid);
     
-    var charinfo = d0.details0[charid];
+    var charinfo = d0.details0;
     
-    msg.channel.send(charinfo[specialName] + "\n" + charinfo[special]) 
+    msg.channel.send(charinfo)
     
   }
   
