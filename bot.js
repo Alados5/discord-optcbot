@@ -13,7 +13,8 @@ var basetrans = 'http://optc-db.github.io/damage/#/transfer/D';
 var dpj = require("./database.json");
 var dship = require("./ships.json");
 
-var d0 = require("./details0");
+var db0 = require("./details0");
+db0 = db0.db0;
 
 //------------------------------------------------------------------------- START GETLINK FS
 
@@ -284,9 +285,9 @@ client.on('message', msg => {
     if (charid == 'X') return msg.channel.send('Character Name Error')
     charid = parseInt(charid);
     
-    var charinfo = d0.db0;
+    var charinfo = db0[charid];
     
-    msg.channel.send(charinfo)
+    msg.channel.send(charinfo.specialName + "\n" + charinfo.special)
     
   }
   
