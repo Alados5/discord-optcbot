@@ -15,6 +15,17 @@ var dship = require("./ships.json");
 
 var db1 = require("./details1");
 db1 = db1.db1;
+var db2 = require("./details2");
+db2 = db2.db2;
+
+function merge(obj, src) {
+    for (var key in src) {
+        if (src.hasOwnProperty(key)) obj[key] = src[key];
+    }
+    return obj;
+}
+
+var fulldb = merge(db1, db2);
 
 //------------------------------------------------------------------------- START GETLINK FS
 
@@ -286,7 +297,7 @@ client.on('message', msg => {
     if (charid == 'X') return msg.channel.send('Character Name Error')
     charid = parseInt(charid);
     
-    var charinfo = db1[charid];
+    var charinfo = fulldb[charid];
     //Info Names: captain, captainNotes, specialName, special, specialNotes, sailor, limit, potential
     //Captain can be string or object with {"base":"...", "level1":"...", etc}
     //Sailor can also be a string or object like: {"base":"None", "level1":"...", etc} 
