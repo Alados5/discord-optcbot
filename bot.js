@@ -13,8 +13,8 @@ var basetrans = 'http://optc-db.github.io/damage/#/transfer/D';
 var dpj = require("./database.json");
 var dship = require("./ships.json");
 
-var db0 = require("./details0");
-db0 = db0.db0;
+var db1 = require("./details1");
+db1 = db1.db1;
 
 //------------------------------------------------------------------------- START GETLINK FS
 
@@ -280,12 +280,13 @@ client.on('message', msg => {
 //------------------------------------------------------------------------- START DATABASE  
   
   if (command == 'db') {
-    var chartolook = msg.content.slice(4).toLowerCase();
+    var charname = msg.content.slice(4);
+    var chartolook = charname.toLowerCase();
     var charid = findnum(chartolook, dpj);
     if (charid == 'X') return msg.channel.send('Character Name Error')
     charid = parseInt(charid);
     
-    var charinfo = db0[charid];
+    var charinfo = db1[charid];
     //Info Names: captain, captainNotes, specialName, special, specialNotes, sailor, limit, potential
     //Captain can be string or object with {"base":"...", "level1":"...", etc}
     //Sailor can also be a string or object like: {"base":"None", "level1":"...", etc} 
@@ -335,15 +336,15 @@ client.on('message', msg => {
       fields: [
         {
           name: "\n __CHARACTER__",
-          value: msg.content.slice(4) + "\n"
+          value: "ID: " + charid + ' - ' + charname + "\n ."
         },
         {
           name: "\n __CAPTAIN ABILITY__",
-          value: charinfo.captain + "\n"
+          value: charinfo.captain + "\n ."
         },
         {
           name: "\n __SAILOR ABILITY__",
-          value: charinfo.sailor + "\n"
+          value: charinfo.sailor + "\n ."
         },
         {
           name: "\n __SPECIAL ABILITY__",
