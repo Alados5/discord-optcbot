@@ -336,26 +336,26 @@ client.on('message', msg => {
     
     msg.channel.send({embed: {
       color: 42751,
-      title: "__OPTC Database - Character Info__",
+      title: "OPTC DATABASE - CHARACTER INFO",
       footer: {
         text: "Bot by Alados5 | Info by optc-db.github.io",
         icon_url: client.user.avatarURL
       },
       fields: [
         {
-          name: "\n __CHARACTER__",
-          value: "ID: " + charid + ' - **' + charname + "** \n  "
+          name: "\n __Character__",
+          value: "ID: " + charid + ' - **' + charname + "** \n ~"
         },
         {
-          name: "\n __CAPTAIN ABILITY__",
-          value: charinfo.captain + "\n  "
+          name: "\n __Captain Ability__",
+          value: charinfo.captain + "\n ~"
         },
         {
-          name: "\n __SAILOR ABILITY__",
-          value: charinfo.sailor + "\n  "
+          name: "\n __Sailor Ability__",
+          value: charinfo.sailor + "\n ~"
         },
         {
-          name: "\n __SPECIAL ABILITY__",
+          name: "\n __Special Ability__",
           value: '***' + charinfo.specialName + '*** \n' + charinfo.special
         }
       ]
