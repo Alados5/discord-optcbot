@@ -343,8 +343,9 @@ client.on('message', msg => {
     
     var charicon = 'https://onepiece-treasurecruise.com/wp-content/uploads/f' + charid0 + '.png';
       
-    msg.channel.send(cdlist[0])
-    var charcd = cdlist[charid-1];
+    var listid = charid-1;
+    msg.channel.send(listid)
+    var charcd = cdlist[listid];
     if (charcd = null || !charcd) {
       charcd = 'N/A';
     }
