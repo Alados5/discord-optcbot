@@ -1,4 +1,4 @@
-details1 = {
+var db1 = {
     1: {
         special: "Deals 5x character's ATK in STR damage to one enemy",
         specialName: "Spinning Gum Punch"
@@ -6885,3 +6885,5 @@ details1 = {
     },
 
 };
+
+module.exports.db1 = db1;
