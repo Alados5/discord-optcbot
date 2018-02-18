@@ -1,3 +1,5 @@
+//Copied from the optc-db.github.io database files. All credit goes to them.
+
 var db1 = {
     1: {
         special: "Deals 5x character's ATK in STR damage to one enemy",
