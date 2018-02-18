@@ -297,6 +297,7 @@ client.on('message', msg => {
     var chartolook = charname.toLowerCase();
     var charid = findnum(chartolook, dpj);
     if (charid == 'X') return msg.channel.send('Character Name Error')
+    var charid0 = charid;
     charid = parseInt(charid);
     
     var charinfo = fulldb[charid];
@@ -337,12 +338,16 @@ client.on('message', msg => {
       charinfo.sailor = stext;
     }
     
+    var charicon = 'https://onepiece-treasurecruise.com/wp-content/uploads/f' + charid0 + '.png';
     msg.channel.send({embed: {
       color: 42751,
       title: "OPTC DATABASE - CHARACTER INFO",
       footer: {
         text: "Bot by Alados5 | Info by optc-db.github.io",
         icon_url: client.user.avatarURL
+      },
+      thumbnail: {
+        "url":charicon
       },
       fields: [
         {
