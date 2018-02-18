@@ -325,26 +325,23 @@ client.on('message', msg => {
     
     msg.channel.send({embed: {
       color: 42751,
-      title: "OPTC Database - Character Info",
-      description: "Info registered at optc-db.github.io \n"+
-      "All credit goes to them for their incredible work! \n"+
-      "If you see me offline, ask why! \n",
+      title: "__OPTC Database - Character Info__",
       footer: {
-        text: "I'm a bot created by Alados5",
+        text: "Bot by Alados5 | Info by optc-db.github.io",
         icon_url: client.user.avatarURL
       },
       fields: [
         {
           name: "\n __CHARACTER__",
-          value: "ID: " + charid + ' - ' + charname + "\n ."
+          value: "ID: " + charid + ' - **' + charname + "** \n  "
         },
         {
           name: "\n __CAPTAIN ABILITY__",
-          value: charinfo.captain + "\n ."
+          value: charinfo.captain + "\n  "
         },
         {
           name: "\n __SAILOR ABILITY__",
-          value: charinfo.sailor + "\n ."
+          value: charinfo.sailor + "\n  "
         },
         {
           name: "\n __SPECIAL ABILITY__",
