@@ -27,6 +27,9 @@ function merge(obj, src) {
 
 var fulldb = merge(db1, db2);
 
+var cdlist = require("./cooldowns");
+cdlist = cdlist.cdlist;
+
 //------------------------------------------------------------------------- START GETLINK FS
 
 function findnum(name, dic) {
@@ -339,6 +342,12 @@ client.on('message', msg => {
     }
     
     var charicon = 'https://onepiece-treasurecruise.com/wp-content/uploads/f' + charid0 + '.png';
+    var charcd = cdlist[charid-1];
+    if (charcd = null) charcd = 'N/A';
+    else {
+      charcd = charcd[0].toString() + ' -> ' charcd[1].toString() + ' turns';
+    }
+      
     msg.channel.send({embed: {
       color: 42751,
       title: "OPTC DATABASE - CHARACTER INFO",
@@ -364,7 +373,7 @@ client.on('message', msg => {
         },
         {
           name: "\n __Special Ability__",
-          value: '***' + charinfo.specialName + '*** \n' + charinfo.special
+          value: '***' + charinfo.specialName + '*** \n' + charinfo.special + '\n __Cooldown:__ ' + charcd
         }
       ]
     }})
