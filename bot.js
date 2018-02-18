@@ -13,6 +13,8 @@ var basetrans = 'http://optc-db.github.io/damage/#/transfer/D';
 var dpj = require("./database.json");
 var dship = require("./ships.json");
 
+var d0 = require("./details0.js");
+
 //------------------------------------------------------------------------- START GETLINK FS
 
 function findnum(name, dic) {
@@ -273,6 +275,22 @@ client.on('message', msg => {
   }  
   
 //------------------------------------------------------------------------- END GETLINK
+  
+//------------------------------------------------------------------------- START DATABASE  
+  
+  if (command == 'db') {
+    var chartolook = msg.content.slice(4).toLowerCase();
+    var charid = findnum(chartolook, dpj);
+    if (charid == 'X') return msg.channel.send('Character Name Error')
+    charid = parseInt(charid);
+    
+    var charinfo = d0.details0[charid];
+    
+    msg.channel.send(charinfo[specialName] + "\n" + charinfo[special]) 
+    
+  }
+  
+//------------------------------------------------------------------------- END DATABASE    
   
 //------------------------------------------------------------------------- START SKILLUP
   
