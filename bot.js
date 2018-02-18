@@ -299,6 +299,25 @@ client.on('message', msg => {
     }
     if (!charinfo.sailor) charinfo.sailor = 'None'
     
+    if (typeof charinfo.captain == "object") {
+      var charCA = charinfo.captain;
+      var ctext = "**Limit Breakable Captain Ability** \n";   
+      for (var CAlevel in charCA) {
+        if (charCA.hasOwnProperty(CAlevel)) {
+          var desc = charCA[CAlevel];
+          ctext += CAlevel + ": " + desc + '\n';
+      charinfo.captain = ctext;
+    }
+    if (typeof charinfo.sailor == "object") {
+      var charSA = charinfo.sailor;
+      var stext = "**Limit Breakable Sailor Ability** \n";   
+      for (var SAlevel in charSA) {
+        if (charSA.hasOwnProperty(SAlevel)) {
+          var desc = charSA[SAlevel];
+          stext += SAlevel + ": " + desc + '\n';
+      charinfo.sailor = stext;
+    }
+    
     msg.channel.send({embed: {
       color: 42751,
       title: "OPTC Database - Character Info",
@@ -312,15 +331,15 @@ client.on('message', msg => {
       fields: [
         {
           name: "\n __CHARACTER__",
-          value: msg.content.slice(4) + ' :STR: ' + '<:STR:414604105898655745>' 
+          value: msg.content.slice(4) + "\n"
         },
         {
           name: "\n __CAPTAIN ABILITY__",
-          value: charinfo.captain
+          value: charinfo.captain + "\n"
         },
         {
           name: "\n __SAILOR ABILITY__",
-          value: charinfo.sailor
+          value: charinfo.sailor + "\n"
         },
         {
           name: "\n __SPECIAL ABILITY__",
