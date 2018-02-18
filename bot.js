@@ -349,7 +349,6 @@ client.on('message', msg => {
     else {
       charcd = charcd[0].toString() + ' -> ' + charcd[1].toString() + ' turns';
     }
-    msg.channel.send(charcd)
       
     msg.channel.send({embed: {
       color: 42751,
@@ -376,7 +375,7 @@ client.on('message', msg => {
         },
         {
           name: "\n __Special Ability__",
-          value: '***' + charinfo.specialName + '*** \n' + charinfo.special + '\n __Cooldown:__ '
+          value: '***' + charinfo.specialName + '*** \n' + charinfo.special + '\n' + '__Cooldown:__ ' + charcd
         }
       ]
     }})
