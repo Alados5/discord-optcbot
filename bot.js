@@ -291,6 +291,8 @@ client.on('message', msg => {
     //Limit is the limit tree, like: [{"description":"..."}, {"description":"..."}, etc]
     //Potential are the LB Abilities, like: [{"Name":"...", "description":["Level 1: ...", etc]}, etc]
     
+    if (!charinfo.sailor) charinfo.sailor = 'None'
+    
     msg.channel.send({embed: {
       color: 42751,
       title: "OPTC Database - Character Info",
