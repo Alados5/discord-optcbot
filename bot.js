@@ -312,7 +312,7 @@ client.on('message', msg => {
       fields: [
         {
           name: "\n __CHARACTER__",
-          value: msg.content.slice(4) + ':STR:'
+          value: msg.content.slice(4) + ' :STR: ' + '<:STR:414604105898655745>' 
         },
         {
           name: "\n __CAPTAIN ABILITY__",
