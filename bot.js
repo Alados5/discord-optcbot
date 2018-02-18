@@ -296,27 +296,27 @@ client.on('message', msg => {
       title: "OPTC Database - Character Info",
       description: "Info registered at optc-db.github.io \n"+
       "All credit goes to them for their incredible work! \n"+
-      "If you see me offline, ask why!",
+      "If you see me offline, ask why! \n",
       footer: {
         text: "I'm a bot created by Alados5",
         icon_url: client.user.avatarURL
       },
       fields: [
         {
-          name: "CHARACTER",
-          value: chartolook
+          name: "\n **CHARACTER**",
+          value: msg.content.slice(4)
         },
         {
-          name: "CAPTAIN ABILITY",
+          name: "\n **__CAPTAIN ABILITY__**",
           value: "Captain Ability Here"
         },
         {
-          name: "SAILOR ABILITY",
-          value: "Sailor Ability Here"
+          name: "\n __SAILOR ABILITY__",
+          value: charinfo.sailor
         },
         {
-          name: "SPECIAL ABILITY",
-          value: charinfo.special
+          name: "\n **__SPECIAL ABILITY__**",
+          value: charinfo.specialName + '\n' + charinfo.special
         }
       ]
     }})
