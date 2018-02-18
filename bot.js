@@ -304,6 +304,7 @@ client.on('message', msg => {
     //Limit is the limit tree, like: [{"description":"..."}, {"description":"..."}, etc]
     //Potential are the LB Abilities, like: [{"Name":"...", "description":["Level 1: ...", etc]}, etc]
     
+    if (!charinfo) return msg.channel.send("Character not implemented yet")
     if (!charinfo.captain) charinfo.captain = 'None'
     if (!charinfo.special) {
       charinfo.special = ''
