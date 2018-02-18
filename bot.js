@@ -17,6 +17,10 @@ var db1 = require("./details1");
 db1 = db1.db1;
 var db2 = require("./details2");
 db2 = db2.db2;
+var db3 = require("./details3");
+db3 = db3.db3;
+var db4 = require("./details4");
+db4 = db4.db4;
 
 function merge(obj, src) {
     for (var key in src) {
@@ -25,7 +29,9 @@ function merge(obj, src) {
     return obj;
 }
 
-var fulldb = merge(db1, db2);
+var db12 = merge(db1, db2);
+var db34 = merge(db3, db4);
+var fulldb = merge(db12, db34);
 
 var cdlist = require("./cooldowns");
 cdlist = cdlist.cdlist;
