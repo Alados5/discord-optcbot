@@ -314,22 +314,22 @@ client.on('message', msg => {
     
     if (typeof charinfo.captain == "object") {
       var charCA = charinfo.captain;
-      var ctext = "**Limit Breakable Captain Ability** \n";   
+      var ctext = "**Limit Breakable Captain Ability:** \n";   
       for (var CAlevel in charCA) {
         if (charCA.hasOwnProperty(CAlevel)) {
           var desc = charCA[CAlevel];
-          ctext += CAlevel + ": " + desc + '\n';
+          ctext += "__" + CAlevel + ":__ " + desc + '\n';
         }
       }
       charinfo.captain = ctext;
     }
     if (typeof charinfo.sailor == "object") {
       var charSA = charinfo.sailor;
-      var stext = "**Limit Breakable Sailor Ability** \n";   
+      var stext = "**Limit Breakable Sailor Ability:** \n";   
       for (var SAlevel in charSA) {
         if (charSA.hasOwnProperty(SAlevel)) {
           var desc = charSA[SAlevel];
-          stext += SAlevel + ": " + desc + '\n';
+          stext += "__" + SAlevel + ":__ " + desc + '\n';
         }
       }
       charinfo.sailor = stext;
