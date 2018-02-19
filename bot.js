@@ -342,9 +342,10 @@ client.on('message', msg => {
       var charSP = charinfo.special;
       //charSP = [{"description":"...", "cooldown":[M,N]}, {...}]
       var sptext = "Test";
+      var stagei;
       for (stagei = 1; stagei <= charSP.length; stagei++) {
-      //  var SPstage = charSP[stagei-1];
         sptext += 'a ';
+      //  var SPstage = charSP[stagei-1];
         //SPstage = {"description":"...", "cooldown":[M,N]}
       //  var stagedesc = "__Stage " + stagei.toString() + ":__ " + SPstage.description;
       //  var stagecd = SPstage.cooldown[0].toString() + ' -> ' + SPstage.cooldown[1].toString() + ' turns';
