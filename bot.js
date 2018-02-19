@@ -336,19 +336,17 @@ client.on('message', msg => {
       }
       charinfo.captain = ctext;
     }
-    var multistage = False;
     if (typeof charinfo.special == "object") {
-      multistage = True;
       var charSP = charinfo.special;
       //charSP = [{"description":"...", "cooldown":[M,N]}, {...}]
-      var sptext = "";
-      for (stagei = 1; stagei <= charSP.length; stagei++) {
-        var SPstage = charSP[stagei-1];
+      var sptext = "Test";
+      //for (stagei = 1; stagei <= charSP.length; stagei++) {
+      //  var SPstage = charSP[stagei-1];
         //SPstage = {"description":"...", "cooldown":[M,N]}
-        var stagedesc = "__Stage " + stagei.toString() + ":__ " + SPstage.description;
-        var stagecd = SPstage.cooldown[0].toString() + ' -> ' + SPstage.cooldown[1].toString() + ' turns';
-        sptext += stagedesc + '\n' + '__Cooldown (S' + stagei.toString() + '):__ ' + stagecd + '\n';
-      }
+      //  var stagedesc = "__Stage " + stagei.toString() + ":__ " + SPstage.description;
+      //  var stagecd = SPstage.cooldown[0].toString() + ' -> ' + SPstage.cooldown[1].toString() + ' turns';
+      //  sptext += stagedesc + '\n' + '__Cooldown (S' + stagei.toString() + '):__ ' + stagecd + '\n';
+      //}
       charinfo.special = sptext;
     }
     if (typeof charinfo.sailor == "object") {
@@ -366,9 +364,6 @@ client.on('message', msg => {
     var charicon = 'https://onepiece-treasurecruise.com/wp-content/uploads/f' + charid0 + '.png';
     var charcd = cdlist[charid-1];      
     if (charcd == null || !charcd) {
-      charcd = '';
-    }
-    else if (multistage) {
       charcd = '';
     }
     else {
