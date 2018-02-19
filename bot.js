@@ -312,6 +312,7 @@ client.on('message', msg => {
     var charinfo = fulldb[charid];
     //Info Names: captain, captainNotes, specialName, special, specialNotes, sailor, limit, potential
     //Captain can be string or object with {"base":"...", "level1":"...", etc}
+    //Special can be string or list with [{"description":"...", "cooldown":[M,N]}, {...}] 
     //Sailor can also be a string or object like: {"base":"None", "level1":"...", etc} 
     //Limit is the limit tree, like: [{"description":"..."}, {"description":"..."}, etc]
     //Potential are the LB Abilities, like: [{"Name":"...", "description":["Level 1: ...", etc]}, etc]
@@ -335,6 +336,21 @@ client.on('message', msg => {
       }
       charinfo.captain = ctext;
     }
+    var multistage = False;
+    if (typeof charinfo.special == "object") {
+      multistage = True;
+      var charSP = charinfo.special;
+      //charSP = [{"description":"...", "cooldown":[M,N]}, {...}]
+      var sptext = "";
+      var stagei = 1;
+      for (var SPstage in charSP) {
+        var stagedesc = "__Stage " + stagei.toString() + ":__ " + SPstage.description;
+        var stagecd = SPstage.cooldown[0] + ' -> ' + SPstage.cooldown[1] + ' turns';
+        sptext += stagedesc + '\n' + '__Cooldown (S' + stagei + '):__ ' + stagecd + '\n'
+        stagei++
+      }
+      charinfo.special = sptext;
+    }
     if (typeof charinfo.sailor == "object") {
       var charSA = charinfo.sailor;
       var stext = "**Limit Breakable Sailor Ability:** \n";   
@@ -350,10 +366,13 @@ client.on('message', msg => {
     var charicon = 'https://onepiece-treasurecruise.com/wp-content/uploads/f' + charid0 + '.png';
     var charcd = cdlist[charid-1];      
     if (charcd == null || !charcd) {
-      charcd = 'N/A';
+      charcd = '';
+    }
+    else if (multistage) {
+      charcd = '';
     }
     else {
-      charcd = charcd[0].toString() + ' -> ' + charcd[1].toString() + ' turns';
+      charcd = '__Cooldown:__ ' + charcd[0].toString() + ' -> ' + charcd[1].toString() + ' turns';
     }
       
     msg.channel.send({embed: {
@@ -381,7 +400,7 @@ client.on('message', msg => {
         },
         {
           name: "\n __Special Ability__",
-          value: '***' + charinfo.specialName + '*** \n' + charinfo.special + '\n' + '__Cooldown:__ ' + charcd
+          value: '***' + charinfo.specialName + '*** \n' + charinfo.special + '\n' + charcd
         }
       ]
     }})
