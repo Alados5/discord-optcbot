@@ -312,6 +312,7 @@ client.on('message', msg => {
     var charinfo = fulldb[charid];
     //Info Names: captain, captainNotes, specialName, special, specialNotes, sailor, limit, potential
     //Captain can be string or object with {"base":"...", "level1":"...", etc}
+    //Captain Actions are always noted with: ... <br> <b>Action:</b> ...
     //Special can be string or list with [{"description":"...", "cooldown":[M,N]}, {...}] 
     //Sailor can also be a string or object like: {"base":"None", "level1":"...", etc} 
     //Limit is the limit tree, like: [{"description":"..."}, {"description":"..."}, etc]
@@ -324,7 +325,7 @@ client.on('message', msg => {
       charinfo.specialName = 'None'
     }
     if (!charinfo.sailor) charinfo.sailor = 'None'
-    
+
     if (typeof charinfo.captain == "object") {
       var charCA = charinfo.captain;
       var ctext = "**Limit Breakable Captain Ability:** \n";   
@@ -348,7 +349,7 @@ client.on('message', msg => {
         //SPstage = {"description":"...", "cooldown":[M,N]}
         var stagedesc = "__Stage " + stagei.toString() + ":__ " + SPstage.description;
         var stagecd = SPstage.cooldown[0].toString() + ' -> ' + SPstage.cooldown[1].toString() + ' turns';
-        sptext += stagedesc + '\n' + '__Cooldown (S' + stagei.toString() + '):__ ' + stagecd + '\n';
+        sptext += stagedesc + '\n' + '__Cooldown__ (S' + stagei.toString() + '): ' + stagecd + '\n \n';
       }
       charinfo.special = sptext;
     }
@@ -374,6 +375,11 @@ client.on('message', msg => {
     }
     else {
       charcd = '__Cooldown:__ ' + charcd[0].toString() + ' -> ' + charcd[1].toString() + ' turns';
+    }
+      
+    var capaction = charinfo.captain.split("<br> <b>Action:</b>");
+    if (capaction.length > 1) {
+      charinfo.captain = capaction[0] + '\n __Captain Action:__' + capaction[1];
     }
       
     msg.channel.send({embed: {
