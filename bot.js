@@ -341,15 +341,16 @@ client.on('message', msg => {
       multistage = 'True';
       var charSP = charinfo.special;
       //charSP = [{"description":"...", "cooldown":[M,N]}, {...}]
-      var sptext = "Test";
+      var sptext = "";
       var stagei;
-      //for (stagei = 1; stagei <= charSP.length; stagei++) {
-      //  var SPstage = charSP[stagei-1];
+      for (stagei = 1; stagei <= charSP.length; stagei++) {
+        var SPstage = charSP[stagei-1];
         //SPstage = {"description":"...", "cooldown":[M,N]}
-      //  var stagedesc = "__Stage " + stagei.toString() + ":__ " + SPstage.description;
+        var stagedesc = "__Stage " + stagei.toString() + ":__ " + SPstage.description;
       //  var stagecd = SPstage.cooldown[0].toString() + ' -> ' + SPstage.cooldown[1].toString() + ' turns';
       //  sptext += stagedesc + '\n' + '__Cooldown (S' + stagei.toString() + '):__ ' + stagecd + '\n';
-      //}
+        sptext += stagedesc;
+      }
       charinfo.special = sptext;
     }
     if (typeof charinfo.sailor == "object") {
