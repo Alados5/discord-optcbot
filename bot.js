@@ -347,9 +347,8 @@ client.on('message', msg => {
         var SPstage = charSP[stagei-1];
         //SPstage = {"description":"...", "cooldown":[M,N]}
         var stagedesc = "__Stage " + stagei.toString() + ":__ " + SPstage.description;
-      //  var stagecd = SPstage.cooldown[0].toString() + ' -> ' + SPstage.cooldown[1].toString() + ' turns';
-      //  sptext += stagedesc + '\n' + '__Cooldown (S' + stagei.toString() + '):__ ' + stagecd + '\n';
-        sptext += stagedesc;
+        var stagecd = SPstage.cooldown[0].toString() + ' -> ' + SPstage.cooldown[1].toString() + ' turns';
+        sptext += stagedesc + '\n' + '__Cooldown (S' + stagei.toString() + '):__ ' + stagecd + '\n';
       }
       charinfo.special = sptext;
     }
