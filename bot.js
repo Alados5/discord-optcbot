@@ -336,9 +336,9 @@ client.on('message', msg => {
       }
       charinfo.captain = ctext;
     }
-    var multistage = False;
+    var multistage = 'False';
     if (typeof charinfo.special == "object") {
-      multistage = True;
+      multistage = 'True';
       var charSP = charinfo.special;
       //charSP = [{"description":"...", "cooldown":[M,N]}, {...}]
       var sptext = "Test";
@@ -369,7 +369,7 @@ client.on('message', msg => {
     if (charcd == null || !charcd) {
       charcd = '';
     }
-    else if (multistage == True) {
+    else if (multistage == 'True') {
       charcd = '';
     }
     else {
