@@ -379,7 +379,7 @@ client.on('message', msg => {
       
     var capaction = charinfo.captain.split("<br> <b>Action:</b>");
     if (capaction.length > 1) {
-      charinfo.captain = capaction[0] + '\n __Captain Action:__' + capaction[1];
+      charinfo.captain = capaction[0] + '\n' + '__Captain Action:__' + capaction[1];
     }
       
     msg.channel.send({embed: {
