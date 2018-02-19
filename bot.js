@@ -342,12 +342,12 @@ client.on('message', msg => {
       var charSP = charinfo.special;
       //charSP = [{"description":"...", "cooldown":[M,N]}, {...}]
       var sptext = "";
-      var stagei = 1;
-      for (var SPstage in charSP) {
+      for (stagei = 1; stagei <= charSP.length; stagei++) {
+        var SPstage = charSP[stagei-1];
+        //SPstage = {"description":"...", "cooldown":[M,N]}
         var stagedesc = "__Stage " + stagei.toString() + ":__ " + SPstage.description;
-        var stagecd = SPstage.cooldown[0] + ' -> ' + SPstage.cooldown[1] + ' turns';
+        var stagecd = SPstage.cooldown[0].toString() + ' -> ' + SPstage.cooldown[1].toString() + ' turns';
         sptext += stagedesc + '\n' + '__Cooldown (S' + stagei.toString() + '):__ ' + stagecd + '\n';
-        stagei += 1;
       }
       charinfo.special = sptext;
     }
