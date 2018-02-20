@@ -439,13 +439,22 @@
   "1575":["1575", "sicilian", "sicilian rr", "sicilian int", "not shishilian", "full power sicilian"],
   "1577":["1577", "kin'emon rr", "kinemon rr", "kinemon dex", "foxfire kinemon wano country samurai"],
   "1579":["1579", "momonosuke", "momo", "momonosuke rr", "momonosuke psy", "momonosuke child of wano country"],
-  
-  
+  "1581":["1581", "law fn", "trafalgar law second salvation god", "law fighter", "fn law"],
+  "1584":["1584", "coli orlumbus", "orlumbus coliseum", "massacre ruler orlumbus yonta maria grand fleet admiral", "orlumbus psy"],
+  "1586":["1586", "coli helmeppo", "helmeppo coliseum", "brave compannion helmeppo navy hq chief petty officer", "helmeppo qck"],
   "1588":["1588", "sanji legend", "sanji 6*", "vinsmoke sanji", "germa sanji", "sanji germa kingdom prince", "sanji zou", "sanji action"],
-  
+  "1590":["1590", "3rd anni shanks", "shanks 3r ani", "shanks qck", "red hair shanks celebrate the long cruise"],
+  "1592":["1592", "3rd anni hancock", "hancock 3r ani", "3rd anni boa", "empress boa hancock celebrate the long cruise"],
   "1593":["1593", "g4", "gear 4", "gear 4th", "monkey d. luffy gear 4th - boundman", "g4 legend", "tsl 6+", "luffy 6+", "luffy 6*+"],
-  
+  "1595":["1595", "fuji raid", "fujitora raid", "raid fuji", "raid fujitora", "gravity blade fujitora navy hq greatest military power"],
+  "1597":["1597", "shirahoshi fn", "fn shirahoshi", "shira fn", "princess shirahoshi ryugu kingdom"],
+  "1600":["1600", "luffy 3rd anni", "luffy alliance", "monkey d. luffy straw hat - heart pirates alliance"],
+  "1602":["1602", "coli shiliew", "coli shiryu", "shiliew coliseum", "shiryu coliseum", "shiryu of the rain blackbeard pirates"],
+  "1603":["1603", "thunder lord mcguy", "lightning mcguy", "mcguy", "mc guy", "coli mcguy"],
+  "1605":["1605", "ace rookie", "rookie ace", "portgas d. ace whitebeard's son"],
   "1610":["1610", "enel legend", "eneru legend", "kami eneru clash of the great pirate era fairy vearth", "kami enel 6*", "enel 6*"],
+  
+  
   
   "1619":["1619", "ray 6+", "rayleigh 6+", "ray 6*+", "6+ ray", "rayleigh 6*+", "rayleigh legend plus", "dark king silvers rayleigh right hand of the pirate king"],
   
@@ -463,9 +472,11 @@
   
   "1751":["1751", "law legend v2", "law 6* v2", "law qck", "trafalgar law legend v2", "trafalgar law 6* v2", "warlord of the sea trafalgar law aim for joker", "law injection shot", "law striker", "korea law"],
 
+  "1764":["1764", "kuzan former navy hq greatest military power", "kuzan+", "kuzan 6+", "aokiji+", "aokiji 6+", "kuzan 6*+", "kuzan superevo", "aokiji superevo"],
+  
   "1794":["1794", "lucy legend", "sabo legend v2", "lucy 6*"],
   
-  "1816":["1816", "ace 6+", "sw ace 6*+", "ace 6*+", "portgas d. ace the sun that will destroy the darkness", "ace legend plus", "ace superevo", "ace+"],
+  "1816":["1816", "ace 6+", "sw ace 6+", "sw ace 6*+", "ace 6*+", "portgas d. ace the sun that will destroy the darkness", "ace legend plus", "ace superevo", "ace+"],
   
   "1832":["1832", "vinsmoke judge", "vinsmoke jajji", "vinsmoke judge germa 66 science combat force", "judge", "judge legend", "judge 6*", "jajji"],
   
