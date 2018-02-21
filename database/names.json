@@ -453,20 +453,49 @@
   "1603":["1603", "thunder lord mcguy", "lightning mcguy", "mcguy", "mc guy", "coli mcguy"],
   "1605":["1605", "ace rookie", "rookie ace", "portgas d. ace whitebeard's son"],
   "1610":["1610", "enel legend", "eneru legend", "kami eneru clash of the great pirate era fairy vearth", "kami enel 6*", "enel 6*"],
-  
-  
-  
+  "1612":["1612", "bartholomew kuma clash of the great pirate era crew obliterator", "kuma psy", "kuma rr psy", "kuma rr v2", "dream kuma"],
+  "1614":["1614", "rob lucci clash of the great pirate era dark justice", "lucci dex", "lucci rr dex", "dream lucci"],
+  "1616":["1616", "mr. 0 clash of the great pirate era utopia", "crocodile rr", "croco rr", "dream croc", "dream croco", "dream mr. 0", "mr.0 rr", "mr. 0 rr"],
+  "1618":["1618", "gecko moria clash of the great pirate era the strongest crew", "gecko moria str", "moriah str", "moria str", "moria rr str", "moria rr v2", "dream moria"],
   "1619":["1619", "ray 6+", "rayleigh 6+", "ray 6*+", "6+ ray", "rayleigh 6*+", "rayleigh legend plus", "dark king silvers rayleigh right hand of the pirate king"],
-  
+  "1621":["1621", "eustass kid a vow in the great age of pirates - pirate king", "log kidd", "log kid", "log eustass kidd"],
+  "1623":["1623", "donquixote doflamingo neo warlord of the sea", "doffy kai", "doffy raid kai", "doflamingo raid kai", "donquixote doflamingo kai", "doffy raid int"],
+  "1628":["1628", "machvise diamante military leader", "coli machvise", "machvise coliseum", "coli mach vise", "mach vise coliseum"],
+  "1630":["1630", "ikaros much the rebellious fishman pirates", "coli ikaros", "ikaros coliseum", "coli ikaros much", "ikaros much coliseum"],
+  "1632":["1632", "fisher tiger", "fisher tiger captain of the sun pirates"],
+  "1637":["1637", "master caesar clown former government scientist", "story caesar", "story caesar qck", "master caesar qck", "caesar historia"],
+  "1647":["1647", "pica neo donquixote pirates", "pica kai", "pica raid kai", "pica raid str"],
+  "1649":["1649", "giolla trebol army", "giolla fn", "fn giolla", "giolla str"],
+  "1650":["1650", "brook psychedelic arts", "brook giolla", "brook art"],  
   "1652":["1652", "neko", "nekomamushi", "neko legend", "nekomamushi legend", "neko 6*", "nekomamushi 6*", "neko psy", "not cat viper", "cat mink", "lasagna", "lasagna cat", "goronyaro"],
-
-  "1658":["1658", "kanjuro rr", "kanjuro dex"],
-  
-  "1663":["1663", "rob lucci life return cp9's strongest", "rob lucci 6*+", "lucci str 6+", "str lucci 6+", "lucci legend plus", "lucci v1 6+"],
-  
+  "1654":["1654", "pedro", "pedro of the treetops", "pedro rr", "pedro int"],
+  "1656":["1656", "carrot", "ruler's aide carrot", "carrot rr", "carrot qck"],
+  "1658":["1658", "evening shower kanjuro wano country samurai", "kanjuro rr", "kanjuro dex"],
+  "1660":["1660", "raizo", "raizo of the mist", "raizo rr", "raizo str"],
+  "1662":["1662", "corazon silencing the rain", "corazon rayshop", "ray shop corazon", "corazón rayshop"],
+  "1663":["1663", "rob lucci life return cp9's strongest", "rob lucci 6*+", "rob lucci 6+", "lucci str 6+", "str lucci 6+", "lucci legend plus", "lucci v1 6+"],
+  "1665":["1665", "aokiji one-on-one fight winner", "aokiji limited rr", "aokiji rr", "aokiji str", "aokiji lrr"],
+  "1667":["1667", "kyros riku royal army comander", "kyros coliseum", "coli kyros", "kyros qck"],
+  "1669":["1669", "aokiji neo ice human", "aokiji kai", "aokiji raid kai", "aokiji raid dex"],
+  "1674":["1674", "perona audacious swimsuit princess", "perona exp", "perona rr qck", "perona summer ts"],
+  "1676":["1676", "roronoa zoro rain soaked samurai", "zoro psy", "zoro blitz battle"],
+  "1678":["1678", "trafalgar law a vow in the great age of pirates - free spirit", "law limited rr", "law lrr", "law rr int"],
+  "1680":["1680", "hawk eyes mihawk neo", "mihawk kai", "mihawk raid kai", "mihawk raid qck"],
+  "1682":["1682", "monkey d. luffy 20th anniversary memorial treasure", "20th luffy", "luffy 20th"],
+  "1684":["1684", "nico robin 20th anniversary memorial treasure", "20th robin", "robin 20th"],
+  "1686":["1686", "usopp 20th anniversary memorial treasure", "20th usopp", "usopp 20th"],
+  "1688":["1688", "franky 20th anniversary memorial treasure", "20th franky", "franky 20th"],
+  "1690":["1690", "captain kid supernova born from the south blue", "kidd fn", "kid fn", "kidd int"],
+  "1694":["1694", "ruler of day inuarashi mokomo dukedom", "coli inuarashi", "inuarashi coliseum", "coli inu", "inuarashi psy"],  
+  "1696":["1696", "demon bamboo vergo donquixote family senior executive", "raid vergo", "vergo raid", "vergo dex"],
   "1698":["1698", "magellan legend", "magellan dex", "magellan 6*", "magellan hell's ruler"],
-  
+  "1700":["1700", "jinbe hell's warlord of the sea", "id jinbe", "jinbe id", "jinbe impel down", "jinbe psy", "jinbe rr psy"],
+  "1702":["1702", "emporio ivankov hell's revolutionary army officer", "id ivankov", "ivankov id", "ivankov impel down", "ivankov rr qck"],
+  "1704":["1704", "hannyabal now the ruler's trusted retainer", "id hannyabal", "hannyabal id", "hannyabal impel down", "hannyabal rr", "hannyabal int"],  
+  "1706":["1706", "mr. 2 bon clay a friend in hell", "id mr. 2", "id bon kure", "mr. 2 id", "bon kure id", "mr. 2 impel down", "bon kure impel down", "bentham impel down", "mr. 2 rr str", "mr. 2 str", "bon kure str"],
   "1707":["1707", "shanks 6+", "shanks 6*+", "red hair shanks four emperors", "shanks legend plus", "still not a good shanks"],
+
+  
   
   "1747":["1747", "boa hancock strawhat luffy's accomplice", "boa hancock 6* v2", "boa legend v2", "boa legend psy", "korea boa"],
   
