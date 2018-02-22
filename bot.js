@@ -298,6 +298,19 @@ client.on('message', msg => {
   }  
   
 //------------------------------------------------------------------------- END GETLINK
+    
+
+//------------------------------------------------------------------------- START NAMES  
+
+  if (command == 'names') {
+    var chartolook = msg.content.slice(7).toLowerCase();
+    var charid = findnum(chartolook, dpj);
+    if (charid == 'X') return msg.channel.send('Character Name Error')
+    var lnames = dpj[charid];
+    msg.channel.send(lnames)
+  }  
+  
+//------------------------------------------------------------------------- END NAMES
   
 //------------------------------------------------------------------------- START DATABASE  
   
