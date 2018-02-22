@@ -175,6 +175,7 @@ client.on('message', msg => {
                    "\n   **!icon** - Muestra el icono de un personaje (Ej.: !icon Croco Legend)"+
                    "\n   **!art** o **!pic** - Muestra el artwork de un personaje (Ej.: !art Croco Legend)"+
                    "\n   **!getlink** - Crea un equipo en la calculadora de la database (link)"+
+                   "\n   **!names** - Responde con todos los nombres aceptados para un personaje"+        
                    "\n   **!eventoactivo** - Muestra una ayuda para diferenciar Skillup de Supersuccess en JP"+
                    "\n   **!ambush** - Responde qué Ambush hay activo (Raids) en la Japo"+        
                    "\n   **!guiasn** - Envía un enlace a la Guía del Supernova (by Alados5 & DaniHolgado)"+
