@@ -7104,11 +7104,11 @@ var db4 = {
         special: [
             {
                 "description": "Reduces Bind and Chain Coefficient Reduction and ATK DOWN duration by 3 turns, reduces damage received by 50% for 1 turn. If your crew has 3 or more [STR] characters, adds .5x to Chain multiplier for 1 turn",
-                "cooldown": [ null, null ],
+                "cooldown": [ 0, 0 ],
             },
             {
                 "description": "Reduces Bind and Chain Coefficient Reduction and ATK DOWN duration by 5 turns, reduces damage received by 90% for 1 turn. If your crew has 3 or more [STR] characters, adds .75x to Chain multiplier for 1 turn",
-                "cooldown": [ null, null ],
+                "cooldown": [ 0, 0 ],
             },
         ],
         specialName: "Establishing an Oath of Immortality",
@@ -7119,11 +7119,11 @@ var db4 = {
         special: [
             {
                 "description": "Reduces Bind and Chain Coefficient Reduction and ATK DOWN duration by 3 turns, reduces damage received by 50% for 1 turn. If your crew has 3 or more [STR] characters, adds .5x to Chain multiplier for 1 turn",
-                "cooldown": [ null, null ],
+                "cooldown": [ 0, 0 ],
             },
             {
                 "description": "Reduces Bind and Chain Coefficient Reduction and ATK DOWN duration by 5 turns, reduces damage received by 90% for 1 turn. If your crew has 3 or more [STR] characters, adds .75x to Chain multiplier for 1 turn",
-                "cooldown": [ null, null ],
+                "cooldown": [ 0, 0 ],
             },
         ],
         specialName: "Establishing an Oath of Immortality",
@@ -7161,11 +7161,11 @@ var db4 = {
         special: [
             {
                 "description": "Deals 30x character's ATK in QCK damage to one enemy and randomly changes all orbs, including [BLOCK] orbs, into either [STR], [DEX], [QCK], [PSY] or [INT] orbs. If your crew has 3 or more QCK characters, boosts ATK of Free Spirit characters by 1.75x for 1 turn",
-                "cooldown": [ null, null ],
+                "cooldown": [ 0, 0 ],
             },
             {
                 "description": "Deals 50x character's ATK in QCK damage to one enemy and randomly changes all orbs, including [BLOCK] orbs, into either [STR], [DEX], [QCK], [PSY] or [INT] orbs. If your crew has 3 or more QCK characters, boosts ATK of Free Spirit characters by 2x for 1 turn",
-                "cooldown": [ null, null ],
+                "cooldown": [ 0, 0 ],
             },
         ],
         specialName: "Determined Counterattack",
@@ -7176,11 +7176,11 @@ var db4 = {
         special: [
             {
                 "description": "Deals 30x character's ATK in QCK damage to one enemy and randomly changes all orbs, including [BLOCK] orbs, into either [STR], [DEX], [QCK], [PSY] or [INT] orbs. If your crew has 3 or more QCK characters, boosts ATK of Free Spirit characters by 1.75x for 1 turn",
-                "cooldown": [ null, null ],
+                "cooldown": [ 0, 0 ],
             },
             {
                 "description": "Deals 50x character's ATK in QCK damage to one enemy and randomly changes all orbs, including [BLOCK] orbs, into either [STR], [DEX], [QCK], [PSY] or [INT] orbs. If your crew has 3 or more QCK characters, boosts ATK of Free Spirit characters by 2x for 1 turn",
-                "cooldown": [ null, null ],
+                "cooldown": [ 0, 0 ],
             },
         ],
         specialName: "Determined Counterattack",
