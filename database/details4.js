@@ -6854,8 +6854,8 @@ var db4 = {
         specialName: "10,000 Kilo Guillotine - Cake Slice",
     },
     1971: {//Sabo
-        captain: "Boosts ATK of Cerebral characters by 1.5x and their HP and RCV by 1.05x and boosts chain by 1.2x if HP is above 70% or below 30% at the start of the turn",
-        special: "If your Captain is a Cerebral character, changes [STR], [DEX], [QCK], [INT], and [PSY] orbs on Cerebral characters into Matching orbs, reduces the defense of all enemies by 100% and boosts ATK against enemies with reduced defense by 1.75x for 1 turn",
+        captain: "Boosts ATK of Cerebral characters by 1.3x and their HP and RCV by 1.05x and boosts chain by 1x if HP is above 70% or below 30% at the start of the turn",
+        special: "If your Captain is a Cerebral character, changes [STR], [DEX], [QCK], [INT] and [PSY] orbs on Cerebral characters into Matching orbs, reduces the defense of all enemies by 100% and boosts ATK against enemies with reduced defense by 1.75x for 1 turn",
         specialName: "Blissful Selection",
     },
     1972: {//Sabo
@@ -6868,8 +6868,14 @@ var db4 = {
             "level5": "Not Translated",
             "level6": "Boosts ATK of Cerebral characters by 2.25x and their HP and RCV by 1.2x and boosts chain by 1.5x if HP is above 70% or below 30% at the start of the turn",
         },
-        special: "If your Captain is a Cerebral character, changes [STR], [DEX], [QCK], [INT], and [PSY] orbs on Cerebral characters into Matching orbs, reduces the defense of all enemies by 100% and boosts ATK against enemies with reduced defense by 1.75x for 1 turn",
+        special: "If your Captain is a Cerebral character, changes [STR], [DEX], [QCK], [INT] and [PSY] orbs on Cerebral characters into Matching orbs, reduces the defense of all enemies by 100% and boosts ATK against enemies with reduced defense by 1.75x for 1 turn",
         specialName: "Blissful Selection",
+        sailor: {
+            "base": "None",
+            "level1": "Boosts base ATK, HP and RCV of Cerebral characters by 30",
+            "level2": "Makes [DEX] orbs \"beneficial\" for Cerebral characters unit",
+        },
+        sailorNotes: "#{beneficial}",
         limit: [
             { "description": "Aquire 1 additional Socket slot" },
             { "description": "Boosts base ATK by 10" },
@@ -6916,7 +6922,76 @@ var db4 = {
             {
                 "Name": "Reduce No Healing duration",
                 "description": [ 
-                    "Level 1: Reduces No Healing duration by ? turn",
+                    "Level 1: Reduces No Healing duration by 1 turn",
+                    "Level 2: Reduces No Healing duration by 2 turn",
+                    "Level 3: Reduces No Healing duration by 3 turns",
+                    "Level 4: Reduces No Healing duration by 4 turns",
+                    "Level 5: Reduces No Healing duration by 5 turns"
+                ]
+            },
+            {
+                "Name": "Enrage",
+                "description": [ 
+                    "Level 1: Boosts base ATK by 100",
+                    "Level 2: Boosts base ATK by 150",
+                    "Level 3: Boosts base ATK by 200",
+                    "Level 4: Boosts base ATK by 250",
+                    "Level 5: Boosts base ATK by 300"
+                ]
+            },
+        ],
+        potentialNotes: "#{enrage}"
+    },
+    1973: {//Hawkins
+        captain: "Boosts ATK of Cerebral characters by 2.5x and makes [STR] orbs \"beneficial\" to Cerebral characters",
+        captainNotes: "#{beneficial}",
+        special: [
+            {
+                "description": "Cuts the current HP of one enemy by 10% and changes [TND], [EMPTY] and Badly Matching orbs into Matching orbs and if your Captain is a Cerebral character, reduces Paralysis duration by 2 turns",
+                "cooldown": [ 14, 9 ],
+            },
+            {
+                "description": "Cuts the current HP of one enemy by 15% and changes [TND], [EMPTY] and Badly Matching orbs into Matching orbs and if your Captain is a Cerebral character, reduces Paralysis duration by 5 turns",
+                "cooldown": [ 17, 12 ],
+            },
+            {
+                "description": "Cuts the current HP of one enemy by 20% and changes [TND], [EMPTY] and Badly Matching orbs into Matching orbs and if your Captain is a Cerebral character, reduces Paralysis duration completely",
+                "cooldown": [ 20, 15 ],
+            },
+        ],
+        specialName: "Raging Strike",
+        specialNotes: "#{stages}",
+        sailor: "Boosts base ATK of Cerebral characters by 75",
+    },
+    1974: {//Hawkins
+        captain: "Boosts ATK of Cerebral characters by 3.25x if they have a matching orb, by 2.5x otherwise and makes [STR] orbs \"beneficial\" to Cerebral characters",
+        captainNotes: "#{beneficial}",
+        special: [
+            {
+                "description": "Cuts the current HP of one enemy by 10% and changes [TND], [EMPTY] and Badly Matching orbs into Matching orbs and if your Captain is a Cerebral character, reduces Paralysis duration by 2 turns",
+                "cooldown": [ 14, 9 ],
+            },
+            {
+                "description": "Cuts the current HP of one enemy by 15% and changes [TND], [EMPTY] and Badly Matching orbs into Matching orbs and if your Captain is a Cerebral character, reduces Paralysis duration by 5 turns",
+                "cooldown": [ 17, 12 ],
+            },
+            {
+                "description": "Cuts the current HP of one enemy by 20% and changes [TND], [EMPTY] and Badly Matching orbs into Matching orbs and if your Captain is a Cerebral character, reduces Paralysis duration completely",
+                "cooldown": [ 20, 15 ],
+            },
+        ],
+        specialName: "Raging Strike",
+        specialNotes: "#{stages}",
+        sailor: {
+            "base": "Boosts base ATK of Cerebral characters by 75",
+            "level1": "Adds 2x character's ATK as Additional Typeless Damage",
+        },
+        limit: "This character has a Limit Break Tree",
+        potential: [
+            {
+                "Name": "Reduce No Healing duration",
+                "description": [ 
+                    "Level 1: Reduces No Healing duration by 1 turn",
                     "Level 2: Reduces No Healing duration by ? turn",
                     "Level 3: Reduces No Healing duration by ? turns",
                     "Level 4: Reduces No Healing duration by ? turns",
@@ -6926,68 +7001,191 @@ var db4 = {
             {
                 "Name": "Enrage",
                 "description": [ 
-                    "Level 1: Boosts base ATK by ?",
-                    "Level 2: Boosts base ATK by ?",
-                    "Level 3: Boosts base ATK by ?",
-                    "Level 4: Boosts base ATK by ?",
-                    "Level 5: Boosts base ATK by ?"
+                    "Level 1: Boosts base ATK by 20",
+                    "Level 2: Boosts base ATK by ??",
+                    "Level 3: Boosts base ATK by ??",
+                    "Level 4: Boosts base ATK by ??",
+                    "Level 5: Boosts base ATK by ??"
                 ]
             },
         ],
         potentialNotes: "#{enrage}"
     },
-    1973: {//Hawkins
-        captain: "Not Translated",
-        special: [
-            {
-                "description": "Cuts the current HP of one enemy by 10% and changes [TND], [EMPTY] and Badly Matching orbs into Matching orbs and if your Captain is a Cerebral character, reduces Paralysis duration by 2 turns",
-                "cooldown": [ 14, 9 ],
-            },
-            {
-                "description": "Cuts the current HP of one enemy by 50% and changes [TND], [EMPTY] and Badly Matching orbs into Matching orbs and if your Captain is a Cerebral character, reduces Paralysis duration by 5 turns",
-                "cooldown": [ 17, 12 ],
-            },
-            {
-                "description": "Cuts the current HP of one enemy by 20% and changes [TND], [EMPTY] and Badly Matching orbs into Matching orbs and if your Captain is a Cerebral character, reduces Paralysis duration completely",
-                "cooldown": [ 15, 20 ],
-            },
-        ],
-        specialName: "Raging Strike",
-        specialNotes: "#{stages}",
-        sailor: "Boosts base ATK of Cerebral characters by 75",
-    },
-    1974: {//Hawkins
-        captain: "Boosts ATK of Cerebral Characters by 3.25x if they have a matching orb, by 2.5x otherwise and makes [STR] orbs \"beneficial\" to Cerebral characters",
-        special: [
-            {
-                "description": "Cuts the current HP of one enemy by 10% and changes [TND], [EMPTY] and Badly Matching orbs into Matching orbs and if your Captain is a Cerebral character, reduces Paralysis duration by 2 turns",
-                "cooldown": [ 14, 9 ],
-            },
-            {
-                "description": "Cuts the current HP of one enemy by 50% and changes [TND], [EMPTY] and Badly Matching orbs into Matching orbs and if your Captain is a Cerebral character, reduces Paralysis duration by 5 turns",
-                "cooldown": [ 17, 12 ],
-            },
-            {
-                "description": "Cuts the current HP of one enemy by 20% and changes [TND], [EMPTY] and Badly Matching orbs into Matching orbs and if your Captain is a Cerebral character, reduces Paralysis duration completely",
-                "cooldown": [ 15, 20 ],
-            },
-        ],
-        specialName: "Raging Strike",
-        specialNotes: "#{stages}",
-        sailor: "Boosts base ATK of Cerebral characters by 75",
-        limit: "This character has a Limit Break Tree"
-    },
     1975: {//X Drake
         captain: "Boosts ATK of all characters by 2x if HP is below 30% at the start of the turn",
         special: "Deals 25x? ATK in [QCK] damage to one enemy. If HP above ??% then changes [RCV], [TND], [EMPTY], [BOMB] and [BLOCK] orbs into matching orbs and if HP below ?% then changes adjacent orbs into matching orbs",
         specialName: "Double Edge of Revolt [Neo]",
-        sailor: "When HP is below ??% at the start of the turn, boosts base ATK of all characters by 40",
+        sailor: "When HP is below 30% at the start of the turn, boosts base ATK of all characters by 40",
     },
     1976: {//X Drake
         captain: "Boosts ATK of all characters by 2.5x if HP is below 30% at the start of the turn",
         special: "Deals 25x? ATK in [QCK] damage to one enemy. If HP above ??% then changes [RCV], [TND], [EMPTY], [BOMB] and [BLOCK] orbs into matching orbs and if HP below ?% then changes adjacent orbs into matching orbs",
         specialName: "Double Edge of Revolt [Neo]",
-        sailor: "When HP is below ??% at the start of the turn, boosts base ATK of all characters by 40",
+        sailor: "When HP is below 30% at the start of the turn, boosts base ATK of all characters by 40",
+    },
+    1977: {//Rayleigh
+        captain: "Not Translated",
+        special: "Cuts the current HP of one enemy by 20%, reduces Bind and Silence duration by 3 turns, boosts chances of getting [DEX], [PSY] and [INT] orbs for 3 turns and makes [DEX], [PSY] and [INT] orbs \"beneficial\" to Free Spirit characters for 3 turns",
+        specialName: "Unabated Surge",
+    },
+    1978: {//Rayleigh
+        captain: "Boosts chances of getting Matching orbs, boosts ATK of Free Spirit and Slasher characters by 2.5x",
+        special: "Cuts the current HP of one enemy by 20%, reduces Bind and Silence duration by 3 turns, boosts chances of getting [DEX], [PSY] and [INT] orbs for 3 turns and makes [DEX], [PSY] and [INT] orbs \"beneficial\" to Free Spirit characters for 3 turns",
+        specialName: "Unabated Surge",
+    },
+    1979: {//Capone
+        captain: "Not Translated",
+        special: "Reduces Special Cooldown of Shooter specials by 1 turn and changes orbs in the top row into Matching orbs",
+        specialName: "Angry Threatening Command",
+    },
+    1980: {//Capone
+        captain: "Boosts HP of Shooter characters by 1.2x and boosts ATK by 2.5x if they have a matching orb, by 2x otherwise",
+        special: "Reduces Special Cooldown of Shooter specials by 1 turn and changes orbs in the top row into Matching orbs",
+        specialName: "Angry Threatening Command",
+    },
+    1981: {//Bonney
+        captain: "Not Translated",
+        special: "Changes [RCV] orbs into matching orbs and recovers ??? HP at the end of the turn for 2 turns",
+        specialName: "Glutonous Meal",
+    },
+    1982: {//Bonney
+        captain: "Boosts RCV of Fighter characters by 1.2x and boosts ATK of Fighter characters by 2.25x if HP is above ??% at the start of the turn, by 2x otherwise",
+        special: "Changes [RCV] orbs into matching orbs and recovers ??? HP at the end of the turn for 2 turns",
+        specialName: "Glutonous Meal",
+    },
+    1983: {//Smoker&Tashigi
+        captain: {
+            "character1": "Boosts ATK of [INT] and [PSY] characters by 2.5x, reduce damage received by 7% and makes [INT] and [PSY] orbs \"beneficial\" to [INT] and [PSY] characters",
+            "character2": "Boosts ATK of [INT] and [PSY] characters by 2.5x and recovers 300 HP at end of each turn",
+            "combined": "Boosts ATK of [INT] and [PSY] characters by 2.75x, reduce damage received by 7%, recovers 1,000 HP at end of each turn and makes [TND], [INT] and [PSY] orbs \"beneficial\" to [INT] and [PSY] characters"
+        },
+        special: "Deals 5,000 fixed damage to one enemy, changes own orb into a Matching orb, reduces damage received by 50% for 1 turn, boosts ATK of [PSY] and [INT] characters by 1.5x for 1 turn and becomes Smoker & Tashigi for 2 turns",
+        specialNotes: "Change Action: When Change is activated, Recovers 2x character's RCV",
+        specialName: "White Slash",
+        sailor: {
+            "character1": "Boosts base ATK of [INT] and [PSY] characters by 50",
+            "character2": "Boosts base RCV of [INT] and [PSY] characters by 30",
+            "combined": "Boosts base ATK, HP and RCV of [INT] and [PSY] characters by 75"
+        },
+    },
+    1984: {//Luffy&Ace
+        captain: {
+            "character1": "Boosts ATK of Free Spirit characters by 3x and their HP by 1.2x and reduce damage received by 15%",
+            "character2": "Boosts HP of Free Spirit characters by 1.2x and boosts ATK by 3.5x if they have a matching orb, by 2.25x otherwise",
+            "combined": "Boosts HP of Free Spirit characters by 1.2x and boosts ATK by 4.25x if they have a matching orb, by 3x otherwise and reduce damage received by 20%"
+        },
+        special: "Deals 75x character's ATK in typeless damage to all enemies, changes [STR], [DEX], [QCK], [INT], and [PSY] orbs on Free Spirit characters into Matching orbs, amplifies the effect of orbs by 2x for 1 turn and becomes Luffy & Ace for 3 turns",
+        specialNotes: "Change Action: When Change is activated, this character removes all Despair, Paralysis, and Slot Bind on themselves and changes their own orb, including [BLOCK] orbs, into a Matching orb",
+        specialName: "Brotherly Bond",
+        sailor: {
+            "character1": "Makes [QCK] orbs \"beneficial\" for Free Spirit characters",
+            "character2": "Makes [STR] orbs \"beneficial\" for Free Spirit characters",
+            "combined": "None"
+        },
+    },
+    1985: {//Luffy&Ace
+        captain: {
+            "character1": "Boosts ATK of Free Spirit characters by 3x and their HP by 1.2x and reduce damage received by 15%",
+            "character2": "Boosts HP of Free Spirit characters by 1.2x and boosts ATK by 3.5x if they have a matching orb, by 2.25x otherwise",
+            "combined": "Boosts HP of Free Spirit characters by 1.2x and boosts ATK by 4.25x if they have a matching orb, by 3x otherwise and reduce damage received by 20%"
+        },
+        special: "Deals 75x character's ATK in typeless damage to all enemies, changes [STR], [DEX], [QCK], [INT], and [PSY] orbs on Free Spirit characters into Matching orbs, amplifies the effect of orbs by 2x for 1 turn and becomes Luffy & Ace for 3 turns",
+        specialNotes: "Change Action: When Change is activated, this character removes all Despair, Paralysis, and Slot Bind on themselves and changes their own orb, including [BLOCK] orbs, into a Matching orb",
+        specialName: "Brotherly Bond",
+        sailor: {
+            "character1": "Makes [QCK] orbs \"beneficial\" for Free Spirit characters",
+            "character2": "Makes [STR] orbs \"beneficial\" for Free Spirit characters",
+            "combined": "None"
+        },
+        limit: "This character has a Limit Break Tree"
+    },
+    1986: {//Marco
+        captain: "Not Translated",
+        special: [
+            {
+                "description": "Reduces Bind and Chain Coefficient Reduction and ATK DOWN duration by 3 turns, reduces damage received by 50% for 1 turn. If your crew has 3 or more [STR] characters, adds .5x to Chain multiplier for 1 turn",
+                "cooldown": [ null, null ],
+            },
+            {
+                "description": "Reduces Bind and Chain Coefficient Reduction and ATK DOWN duration by 5 turns, reduces damage received by 90% for 1 turn. If your crew has 3 or more [STR] characters, adds .75x to Chain multiplier for 1 turn",
+                "cooldown": [ null, null ],
+            },
+        ],
+        specialName: "Establishing an Oath of Immortality",
+        sailor: "Makes [TND] and [RCV] orbs \"beneficial\" for Free Spirit characters",
+    },
+    1987: {//Marco
+        captain: "Boosts ATK of Fighter characters by 2.5x and their RCV by 1.3x. Recovers 3x character's RCV in HP at the end of each turn.",
+        special: [
+            {
+                "description": "Reduces Bind and Chain Coefficient Reduction and ATK DOWN duration by 3 turns, reduces damage received by 50% for 1 turn. If your crew has 3 or more [STR] characters, adds .5x to Chain multiplier for 1 turn",
+                "cooldown": [ null, null ],
+            },
+            {
+                "description": "Reduces Bind and Chain Coefficient Reduction and ATK DOWN duration by 5 turns, reduces damage received by 90% for 1 turn. If your crew has 3 or more [STR] characters, adds .75x to Chain multiplier for 1 turn",
+                "cooldown": [ null, null ],
+            },
+        ],
+        specialName: "Establishing an Oath of Immortality",
+        sailor: "Makes [TND] and [RCV] orbs \"beneficial\" for Free Spirit characters",
+        limit: "This character has a Limit Break Tree"
+    },
+    1988: {//Oars
+        captain: "Not Translated",
+        special: "Cuts the current HP of one enemy by 10% and reduces Paralysis and Silence duration by 3 turns. If your captain is a Slasher Character, boosts ATK against delayed enemies by 1.75x for 2 turns",
+        specialName: "Unfaltering Trump Card",
+        sailor: "Reduces Paralysis duration by 1 turn",
+    },
+    1989: {//Oars
+        captain: "Boosts ATK of Slasher characters by 2.5x and their RCV by 1.5x",
+        special: "Cuts the current HP of one enemy by 10% and reduces Paralysis and Silence duration by 3 turns. If your captain is a Slasher Character, boosts ATK against delayed enemies by 1.75x for 2 turns",
+        specialName: "Unfaltering Trump Card",
+        sailor: "Reduces Paralysis duration by 1 turn",
+        limit: "This character has a Limit Break Tree"
+    },
+    1990: {//Garp
+        captain: "Not Translated",
+        special: "Delays all enemies for 2 turns. If your Captain is a [STR] or [QCK] character, adds 55x character's ATK as Additional Typeless Damage for 1 turn",
+        specialName: "An Outcry of Bitterness",
+        sailor: "Makes [STR] orbs \"beneficial\" for Free Spirit characters",
+    },
+    1991: {//Garp
+        captain: "Boosts ATK of Free Spirit characters by 2.75x until the first hit other than Perfect",
+        special: "Delays all enemies for 2 turns. If your Captain is a [STR] or [QCK] character, adds 55x character's ATK as Additional Typeless Damage for 1 turn",
+        specialName: "An Outcry of Bitterness",
+        sailor: "Makes [STR] orbs \"beneficial\" for Free Spirit characters",
+        limit: "This character has a Limit Break Tree"
+    },
+    1992: {//Coby
+        captain: "Not Translated",
+        special: [
+            {
+                "description": "Deals 30x character's ATK in QCK damage to one enemy and randomly changes all orbs, including [BLOCK] orbs, into either [STR], [DEX], [QCK], [PSY] or [INT] orbs. If your crew has 3 or more QCK characters, boosts ATK of Free Spirit characters by 1.75x for 1 turn",
+                "cooldown": [ null, null ],
+            },
+            {
+                "description": "Deals 50x character's ATK in QCK damage to one enemy and randomly changes all orbs, including [BLOCK] orbs, into either [STR], [DEX], [QCK], [PSY] or [INT] orbs. If your crew has 3 or more QCK characters, boosts ATK of Free Spirit characters by 2x for 1 turn",
+                "cooldown": [ null, null ],
+            },
+        ],
+        specialName: "Determined Counterattack",
+        sailor: "Boosts base ATK of Free Spirit characters by 50",
+    },
+    1993: {//Coby
+        captain: "Boosts ATK of Free Spirit and Fighter characters by 2.5x and reduce damage received by 15%",
+        special: [
+            {
+                "description": "Deals 30x character's ATK in QCK damage to one enemy and randomly changes all orbs, including [BLOCK] orbs, into either [STR], [DEX], [QCK], [PSY] or [INT] orbs. If your crew has 3 or more QCK characters, boosts ATK of Free Spirit characters by 1.75x for 1 turn",
+                "cooldown": [ null, null ],
+            },
+            {
+                "description": "Deals 50x character's ATK in QCK damage to one enemy and randomly changes all orbs, including [BLOCK] orbs, into either [STR], [DEX], [QCK], [PSY] or [INT] orbs. If your crew has 3 or more QCK characters, boosts ATK of Free Spirit characters by 2x for 1 turn",
+                "cooldown": [ null, null ],
+            },
+        ],
+        specialName: "Determined Counterattack",
+        sailor: "Boosts base ATK of Free Spirit characters by 50",
+        limit: "This character has a Limit Break Tree"
     },
 
 };
