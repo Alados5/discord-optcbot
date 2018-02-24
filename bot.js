@@ -346,7 +346,7 @@ client.on('message', msg => {
 
     if (typeof charinfo.captain == "object") {
       var charCA = charinfo.captain;
-      var ctext = "**Limit Breakable Captain Ability:** \n";   
+      var ctext = "**Variable Captain Ability:** \n";   
       for (var CAlevel in charCA) {
         if (charCA.hasOwnProperty(CAlevel)) {
           var desc = charCA[CAlevel];
@@ -373,7 +373,7 @@ client.on('message', msg => {
     }
     if (typeof charinfo.sailor == "object") {
       var charSA = charinfo.sailor;
-      var stext = "**Limit Breakable Sailor Ability:** \n";   
+      var stext = "**Variable Sailor Ability:** \n";   
       for (var SAlevel in charSA) {
         if (charSA.hasOwnProperty(SAlevel)) {
           var desc = charSA[SAlevel];
