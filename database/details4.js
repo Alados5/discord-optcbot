@@ -7143,12 +7143,33 @@ var db4 = {
         sailor: "Reduces Paralysis duration by 1 turn",
         limit: "This character has a Limit Break Tree"
     },
+    1990: {//Garp
+        captain: "Not Translated",
+        special: "Delays all enemies for 2 turns. If your Captain is a [STR] or [QCK] character, adds 55x character's ATK as Additional Typeless Damage for 1 turn",
+        specialName: "An Outcry of Bitterness",
+        sailor: "Makes [STR] orbs \"beneficial\" for Free Spirit characters",
+    },
     1991: {//Garp
         captain: "Boosts ATK of Free Spirit characters by 2.75x until the first hit other than Perfect",
         special: "Delays all enemies for 2 turns. If your Captain is a [STR] or [QCK] character, adds 55x character's ATK as Additional Typeless Damage for 1 turn",
         specialName: "An Outcry of Bitterness",
         sailor: "Makes [STR] orbs \"beneficial\" for Free Spirit characters",
         limit: "This character has a Limit Break Tree"
+    },
+1992: {//Coby
+        captain: "Not Translated",
+        special: [
+            {
+                "description": "Deals 30x character's ATK in QCK damage to one enemy and randomly changes all orbs, including [BLOCK] orbs, into either [STR], [DEX], [QCK], [PSY] or [INT] orbs. If your crew has 3 or more QCK characters, boosts ATK of Free Spirit characters by 1.75x for 1 turn",
+                "cooldown": [ null, null ],
+            },
+            {
+                "description": "Deals 50x character's ATK in QCK damage to one enemy and randomly changes all orbs, including [BLOCK] orbs, into either [STR], [DEX], [QCK], [PSY] or [INT] orbs. If your crew has 3 or more QCK characters, boosts ATK of Free Spirit characters by 2x for 1 turn",
+                "cooldown": [ null, null ],
+            },
+        ],
+        specialName: "Determined Counterattack",
+        sailor: "Boosts base ATK of Free Spirit characters by 50",
     },
     1993: {//Coby
         captain: "Boosts ATK of Free Spirit and Fighter characters by 2.5x and reduce damage received by 15%",
