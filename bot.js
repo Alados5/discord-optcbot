@@ -86,7 +86,7 @@ function getdblink(content) {
   
   if (contlist.length == 0) return "You didn't put a ship!"
   
-  var shipid = findnum(contlist[0], dship);
+  var shipid = findnum(contlist[0].toLowerCase(), dship);
   if (shipid == 'X') return 'Invalid Ship Name!'
   link += shipid;
   link += ',10B0D0E1365Q0L0G0R63S100H'
