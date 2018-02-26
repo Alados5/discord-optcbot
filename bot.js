@@ -107,6 +107,22 @@ function ProbSkill(k, n, event, OC) {
 
 //------------------------------------------------------------------------- END SKILLUP FS
 
+//------------------------------------------------------------------------- START MKTEAM FS
+
+function MkUnits(units) {
+  units = units.split(', ');
+  if (units.length != 6) return -1
+  teams[useri]['Units'] = [];
+  for(u=0; u<units.length; u++) {
+    var charid = findnum(units[u], dpj);
+    if (charid == 'X') return 0
+    teams[useri]['Units'].push(charid);
+  }
+  return 1
+}
+
+//------------------------------------------------------------------------- END MKTEAM FS
+
 
 
 //-------------------------------------------------------------------------------------------
@@ -261,7 +277,8 @@ client.on('message', msg => {
     
   if (command == 'mkteam') {
     var action = args[0];
-    if (!action) return msg.reply("If you want to know how to use this, type !mkteam help")
+    var useri = msg.author.username;
+    if (!action) return msg.reply("If you want to know how to use this, type `!mkteam help`")
     if (action == 'help') {
       msg.reply("This command is quite complex. You have different actions:" +
                 "\n `!mkteam begin` - Starts a new team. You **__MUST__** start with this" +
@@ -272,29 +289,33 @@ client.on('message', msg => {
                 "\n `!mkteam orbs` - [Optional] Specify the orbs of your units (Matching, Bad, ...)" + 
                 "\n `!mkteam specials` - [Optional] Specify the active specials (Active, 1, No, 0, ...)" + 
                 "\n `!mkteam ship` - [Optional] Specify the ship of your team (Default: Merry Go)" +
-                "\n `!mkteam done` - Finish your editing and make the link!")
+                "\n `!mkteam done` - Finish your editing and make the link!" +
+                "\n `!mkteam all` - [NOT IMPLEMENTED] Do all steps at once")
     }
     else if (action == 'begin') {
       msg.reply("You have begun creating a team!")
-      var useri = msg.author.username; 
       teams[useri] = {};
     }
     else if (action == 'units') {
-      var useri = msg.author.username;
       if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
       var units = msg.content.slice(14).toLowerCase();
-      units = units.split(', ');
-      if (units.length != 6) return msg.reply("You didn't put a complete team!")
-      teams[useri]['Units'] = [];
-      for(u=0; u<units.length; u++) {
-        var charid = findnum(units[u], dpj);
-        if (charid == 'X') return msg.reply("Invalid character name!")
-        teams[useri]['Units'].push(charid);
-      }
-      msg.reply("Units Stored Correctly!")
+      var stUnits = MkUnits(units);
+      if (stUnits == -1) msg.reply("You didn't put a complete team!")
+      else if (stUnits == 0) msg.reply("Invalid character name!")
+      else if (stUnits == 1) msg.reply("Units Stored Correctly!")
+      else return msg.reply("Unknown Error")
+        
+      //units = units.split(', ');
+      //if (units.length != 6) return msg.reply("You didn't put a complete team!")
+      //teams[useri]['Units'] = [];
+      //for(u=0; u<units.length; u++) {
+      //  var charid = findnum(units[u], dpj);
+      //  if (charid == 'X') return msg.reply("Invalid character name!")
+      //  teams[useri]['Units'].push(charid);
+      //}
+      //msg.reply("Units Stored Correctly!")
     }
     else if (action == 'levels') {
-      var useri = msg.author.username; 
       if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
       var unitlvs = args.slice(1);
       if (unitlvs.length != 6) return msg.reply("You didn't specify all units' levels!")
@@ -302,7 +323,6 @@ client.on('message', msg => {
       msg.reply("Levels Stored Correctly!")
     }
     else if (action == 'cottons') {
-      var useri = msg.author.username;
       if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
       var unitccs = args.slice(1);
       if (unitccs.length != 6) return msg.reply("You didn't specify all units' CCs!")
@@ -320,7 +340,6 @@ client.on('message', msg => {
       msg.reply("Cottons Stored Correctly!")
     }
     else if (action == 'orbs') {
-      var useri = msg.author.username; 
       if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
       var unitorbs = args.slice(1);
       if (unitorbs.length != 6) return msg.reply("You didn't specify all units' orbs!")
@@ -338,7 +357,6 @@ client.on('message', msg => {
       msg.reply("Orbs Stored Correctly!")
     }
     else if (action == 'ship') {
-      var useri = msg.author.username; 
       if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
       var shipname = msg.content.slice(13).toLowerCase();
       var shipid = findnum(shipname, dship);
@@ -347,7 +365,6 @@ client.on('message', msg => {
       msg.reply("Ship Stored Correctly!")
     }
     else if (action == 'specials') {
-      var useri = msg.author.username; 
       if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
       var unitsp = args.slice(1);
       if (unitsp.length != 6) return msg.reply("You didn't specify all units' specials!")
@@ -363,7 +380,6 @@ client.on('message', msg => {
       msg.reply("Specials Stored Correctly!")
     }
     else if (action == 'done') {
-      var useri = msg.author.username; 
       if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
       var teamlink = basetrans;
       if(!teams[useri]['Units']) return msg.reply("You don't have any units on your team!")
