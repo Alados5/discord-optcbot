@@ -109,7 +109,7 @@ function ProbSkill(k, n, event, OC) {
 
 //------------------------------------------------------------------------- START MKTEAM FS
 
-function MkUnits(units) {
+function MkUnits(units, useri) {
   units = units.split(', ');
   if (units.length != 6) return -1
   teams[useri]['Units'] = [];
@@ -299,7 +299,7 @@ client.on('message', msg => {
     else if (action == 'units') {
       if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
       var units = msg.content.slice(14).toLowerCase();
-      var stUnits = MkUnits(units);
+      var stUnits = MkUnits(units, useri);
       if (stUnits == -1) msg.reply("You didn't put a complete team!")
       else if (stUnits == 0) msg.reply("Invalid character name!")
       else if (stUnits == 1) msg.reply("Units Stored Correctly!")
