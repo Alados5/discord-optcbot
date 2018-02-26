@@ -52,6 +52,7 @@ function findnum(name, dic) {
   return 'X'
 }  
 
+var teams = {};
 function getdblink(content) {
   var link = basetrans;
   var contlist = content.split(';;');
@@ -157,7 +158,7 @@ client.on('message', msg => {
   if(msg.author.bot || !msg.content.startsWith(prefix)) return;
     
   //Handles arguments to just take the first word
-  const args = msg.content.slice('!'.length).split(/ +/);
+  const args = msg.content.slice(prefix.length).split(/ +/);
   const command = args.shift().toLowerCase(); 
 
 
@@ -297,6 +298,120 @@ client.on('message', msg => {
     var glink = getdblink(msg.content.slice(9));
     msg.channel.send(glink)
   }  
+    
+  if (command == 'mkteam') {
+    var action = args[0];
+    if (!action) return msg.reply("If you want to know how to use this, type !mkteam help")
+    if (action == 'help') {
+      msg.reply("Actions: begin, units, levels, cottons, orbs, ship, done \n Help message under construction. Sorry :/")
+    }
+    else if (action == 'begin') {
+      msg.reply("has begun creating a team!")
+      var useri = msg.author.username; 
+      teams[useri] = {};
+    }
+    else if (action == 'units') {
+      var useri = msg.author.username;
+      if (!teams.useri) return msg.reply("You have to begin creating your team first!")
+      var units = msg.content.slice(14).toLowerCase();
+      units = units.split(', ');
+      if (units.length != 6) return msg.reply("You didn't put a complete team!")
+      teams[useri]['Units'] = [];
+      for(u=0; u<units.length; u++) {
+        var charid = findnum(units[u], dpj);
+        if (charid == 'X') return msg.reply("Invalid character name!")
+        teams[useri]['Units'].push(charid);
+      }
+      msg.reply("Units Stored Correctly!")
+    }
+    else if (action == 'levels') {
+      var useri = msg.author.username; 
+      if (!teams.useri) return msg.reply("You have to begin creating your team first!")
+      var unitlvs = args.slice(1);
+      if (unitlvs.length != 6) return msg.reply("You didn't specify all units' levels!")
+      teams[useri]['Levels'] = unitlvs;
+      msg.reply("Levels Stored Correctly!")
+    }
+    else if (action == 'cottons') {
+      var useri = msg.author.username;
+      if (!teams.useri) return msg.reply("You have to begin creating your team first!")
+      var unitccs = args.slice(1);
+      if (unitccs.length != 6) return msg.reply("You didn't specify all units' CCs!")
+      teams[useri]['Cottons'] = [];
+      for(u=0; u<unitccs.length; u++) {
+        var cc = unitccs[u];
+        if(cc == 'A' || cc == 'ATK' || cc == '100:0:0') teams[useri]['Cottons'].push(':100:0:0')
+        else if(cc == 'H' || cc == 'HP' || cc == '0:100:0') teams[useri]['Cottons'].push(':0:100:0')
+        else if(cc == 'R' || cc == 'RCV' || cc == '0:0:100') teams[useri]['Cottons'].push(':0:0:100')
+        else if (cc == '2' || cc == 'ATK&HP' || cc == '100:100:0') teams[useri]['Cottons'].push(':100:100:0')
+        else if (cc == '3' || cc == 'ATK&5050' || cc == '100:50:50') teams[useri]['Cottons'].push(':100:50:50')
+        else if (cc == 'X' || cc == 'MAX' || cc == '500:500:500') teams[useri]['Cottons'].push(':500:500:500')
+        else teams[useri]['Cottons'].push('0:0:0')
+      }
+      msg.reply("Cottons Stored Correctly!")
+    }
+    else if (action == 'orbs') {
+      var useri = msg.author.username; 
+      if (!teams.useri) return msg.reply("You have to begin creating your team first!")
+      var unitorbs = args.slice(1);
+      if (unitorbs.length != 6) return msg.reply("You didn't specify all units' orbs!")
+      teams[useri]['Orbs'] = [];
+      var weightsP = [1024, 256, 64, 16, 4, 1];
+      var weightsN = [2048, 512, 128, 32, 8, 2];
+      var orbnum = 0;
+      for(u=0; u<unitorbs.length; u++) {
+        var orb = unitorbs[u];
+        if(orb == 'Matching' || orb == 'M' || orb == 'Good' || orb == '1') orbnum += weightsP[u];
+        else if(orb == 'Negative' || orb == 'B' || orb == 'Bad' || orb == '-1') orbnum += weightsN[u];
+        else orbnum += 0;
+      }
+      teams[useri]['Orbs'] = orbnum.toString();
+      msg.reply("Orbs Stored Correctly!")
+    }
+    else if (action == 'ship') {
+      var useri = msg.author.username; 
+      if (!teams.useri) return msg.reply("You have to begin creating your team first!")
+      var shipname = args.slice(1).toString().toLowerCase();
+      var shipid = findnum(shipname, dship);
+      if (shipid == 'X') return msg.reply("Invalid Ship Name!")
+      teams[useri]['Ship'] = shipid;
+    }
+    else if (action == 'done') {
+      var useri = msg.author.username; 
+      if (!teams.useri) return msg.reply("You have to begin creating your team first!")
+      var teamlink = basetrans;
+      if(!teams[useri]['Units']) return msg.reply("You don't have any units on your team!")
+      if(!teams[useri]['Levels']) {
+        teams[useri]['Levels'] = ['99','99','99','99','99','99'];
+        msg.reply("All Levels set to 99. Please note this might produce errors.")
+      }
+      if(!teams[useri]['Cottons']) {
+        teams[useri]['Cottons'] = ['','','','','',''];
+        msg.reply("All CC set to 0")
+      }
+      if(!teams[useri]['Orbs']) {
+        teams[useri]['Orbs'] = '0';
+        msg.reply("All orbs set to neutral")
+      }
+      if(!teams[useri]['Ship']) {
+        teams[useri]['Ship'] = "1";
+        msg.reply("No ship specified. The Default is the Merry Go")
+      }
+      
+      for(u=0; u<6; u++) {
+        var unitid = teams[useri]['Units'][u];
+        var unitlv = teams[useri]['Levels'][u];
+        var unitcc = teams[useri]['Cottons'][u];
+        teamlink += unitid + ':' + unitlv + unitcc + ',';
+      }
+      teamlink = teamlink.slice(0,-1);
+      teamlink += 'C' + teams[useri]['Ship'] + ',10';
+      teamlink += 'B0D0E' + teams[useri]['Orbs'] + 'Q0L0G0R0S100H';
+      msg.channel.send(teamlink)
+    }
+    else return msg.reply("Invalid Action!")
+      
+  }
   
 //------------------------------------------------------------------------- END GETLINK
     
