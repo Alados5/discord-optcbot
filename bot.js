@@ -315,7 +315,7 @@ client.on('message', msg => {
       if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
       var unitorbs = args.slice(1);
       if (unitorbs.length != 6) return msg.reply("You didn't specify all units' orbs!")
-      teams[useri]['Orbs'] = [];
+      teams[useri]['Orbs'] = 0;
       var weightsP = [1024, 256, 64, 16, 4, 1];
       var weightsN = [2048, 512, 128, 32, 8, 2];
       var orbnum = 0;
@@ -336,6 +336,22 @@ client.on('message', msg => {
       if (shipid == 'X') return msg.reply("Invalid Ship Name!")
       teams[useri]['Ship'] = shipid;
       msg.reply("Ship Stored Correctly!")
+    }
+    else if (action == 'specials') {
+      var useri = msg.author.username; 
+      if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
+      var unitsp = args.slice(1);
+      if (unitsp.length != 6) return msg.reply("You didn't specify all units' specials!")
+      teams[useri]['Specials'] = 0;
+      var weightsS = [32, 16, 8, 4, 2, 1];
+      var spnum = 0;
+      for(u=0; u<unitsp.length; u++) {
+        var sp = unitsp[u];
+        if(sp == 'Activated' || sp == 'Y' || sp == 'On' || sp == '1') spnum += weightsS[u];
+        else spnum += 0;
+      }
+      teams[useri]['Specials'] = spnum.toString();
+      msg.reply("Specials Stored Correctly!")
     }
     else if (action == 'done') {
       var useri = msg.author.username; 
@@ -358,6 +374,10 @@ client.on('message', msg => {
         teams[useri]['Ship'] = "1";
         msg.reply("No ship specified. The Default is the Merry Go")
       }
+      if(!teams[useri]['Specials']) {
+        teams[useri]['Specials'] = "0";
+        msg.reply("No specials activated")
+      }
       
       for(u=0; u<6; u++) {
         var unitid = teams[useri]['Units'][u];
@@ -367,7 +387,7 @@ client.on('message', msg => {
       }
       teamlink = teamlink.slice(0,-1);
       teamlink += 'C' + teams[useri]['Ship'] + ',10';
-      teamlink += 'B0D0E' + teams[useri]['Orbs'] + 'Q0L0G0R0S100H';
+      teamlink += 'B0D0E' + teams[useri]['Orbs'] + 'Q0L0G0R' + teams[useri]['Specials'] + 'S100H';
       msg.channel.send(teamlink)
       teams[useri] = {};
     }
