@@ -312,7 +312,7 @@ client.on('message', msg => {
     }
     else if (action == 'units') {
       var useri = msg.author.username;
-      if (!teams.useri) return msg.reply("You have to begin creating your team first!")
+      if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
       var units = msg.content.slice(14).toLowerCase();
       units = units.split(', ');
       if (units.length != 6) return msg.reply("You didn't put a complete team!")
@@ -326,7 +326,7 @@ client.on('message', msg => {
     }
     else if (action == 'levels') {
       var useri = msg.author.username; 
-      if (!teams.useri) return msg.reply("You have to begin creating your team first!")
+      if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
       var unitlvs = args.slice(1);
       if (unitlvs.length != 6) return msg.reply("You didn't specify all units' levels!")
       teams[useri]['Levels'] = unitlvs;
@@ -334,7 +334,7 @@ client.on('message', msg => {
     }
     else if (action == 'cottons') {
       var useri = msg.author.username;
-      if (!teams.useri) return msg.reply("You have to begin creating your team first!")
+      if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
       var unitccs = args.slice(1);
       if (unitccs.length != 6) return msg.reply("You didn't specify all units' CCs!")
       teams[useri]['Cottons'] = [];
@@ -352,7 +352,7 @@ client.on('message', msg => {
     }
     else if (action == 'orbs') {
       var useri = msg.author.username; 
-      if (!teams.useri) return msg.reply("You have to begin creating your team first!")
+      if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
       var unitorbs = args.slice(1);
       if (unitorbs.length != 6) return msg.reply("You didn't specify all units' orbs!")
       teams[useri]['Orbs'] = [];
@@ -370,7 +370,7 @@ client.on('message', msg => {
     }
     else if (action == 'ship') {
       var useri = msg.author.username; 
-      if (!teams.useri) return msg.reply("You have to begin creating your team first!")
+      if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
       var shipname = args.slice(1).toString().toLowerCase();
       var shipid = findnum(shipname, dship);
       if (shipid == 'X') return msg.reply("Invalid Ship Name!")
@@ -378,7 +378,7 @@ client.on('message', msg => {
     }
     else if (action == 'done') {
       var useri = msg.author.username; 
-      if (!teams.useri) return msg.reply("You have to begin creating your team first!")
+      if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
       var teamlink = basetrans;
       if(!teams[useri]['Units']) return msg.reply("You don't have any units on your team!")
       if(!teams[useri]['Levels']) {
