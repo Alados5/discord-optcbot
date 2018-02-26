@@ -167,14 +167,40 @@ function MkOrbs(args, useri) {
   return "Orbs Stored Correctly!"
 }
 
+function MkShip(content, useri) {
+  if (!teams[useri]) return "You have to begin creating your team first!"
+  var shipname = content.slice(13).toLowerCase();
+  var shipid = findnum(shipname, dship);
+  if (shipid == 'X') return "Invalid Ship Name!"
+  teams[useri]['Ship'] = shipid;
+  return "Ship Stored Correctly!"
+}
+
+function MkSpecials(args, useri) {
+  if (!teams[useri]) return "You have to begin creating your team first!"
+  var unitsp = args.slice(1);
+  if (unitsp.length != 6) return "You didn't specify all units' specials!"
+  teams[useri]['Specials'] = 0;
+  var weightsS = [32, 16, 8, 4, 2, 1];
+  var spnum = 0;
+  for(u=0; u<unitsp.length; u++) {
+    var sp = unitsp[u];
+    if(sp == 'Activated' || sp == 'Y' || sp == 'On' || sp == '1') spnum += weightsS[u];
+    else spnum += 0;
+  }
+  teams[useri]['Specials'] = spnum.toString();
+  return "Specials Stored Correctly!"  
+}
+
+
 //------------------------------------------------------------------------- END MKTEAM FS
+
 
 
 
 //-------------------------------------------------------------------------------------------
 //--------------------------------- BEGIN BOT ACTION ----------------------------------------
 //-------------------------------------------------------------------------------------------
-
 
 client.on('ready', () => {
   client.user.setGame("!ayuda")
@@ -359,27 +385,12 @@ client.on('message', msg => {
       msg.reply(stOrbs)
     }
     else if (action == 'ship') {
-      if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
-      var shipname = msg.content.slice(13).toLowerCase();
-      var shipid = findnum(shipname, dship);
-      if (shipid == 'X') return msg.reply("Invalid Ship Name!")
-      teams[useri]['Ship'] = shipid;
-      msg.reply("Ship Stored Correctly!")
+      var stShip = MkShip(msg.content, useri);
+      msg.reply(stShip)
     }
     else if (action == 'specials') {
-      if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
-      var unitsp = args.slice(1);
-      if (unitsp.length != 6) return msg.reply("You didn't specify all units' specials!")
-      teams[useri]['Specials'] = 0;
-      var weightsS = [32, 16, 8, 4, 2, 1];
-      var spnum = 0;
-      for(u=0; u<unitsp.length; u++) {
-        var sp = unitsp[u];
-        if(sp == 'Activated' || sp == 'Y' || sp == 'On' || sp == '1') spnum += weightsS[u];
-        else spnum += 0;
-      }
-      teams[useri]['Specials'] = spnum.toString();
-      msg.reply("Specials Stored Correctly!")
+      var stSpecials = MkSpecials(args, useri);
+      msg.reply(stSpecials)
     }
     else if (action == 'done') {
       if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
@@ -417,6 +428,9 @@ client.on('message', msg => {
       teamlink += 'B0D0E' + teams[useri]['Orbs'] + 'Q0L0G0R' + teams[useri]['Specials'] + 'S100H';
       msg.channel.send(teamlink)
       teams[useri] = {};
+    }
+    else if (action == 'all') {
+      msg.reply("Action not implemented yet...")
     }
     else return msg.reply("Invalid Action! Try `!mkteam help` to know how to use this command")
       
