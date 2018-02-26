@@ -36,7 +36,9 @@ var fulldb = merge(db12, db34);
 var cdlist = require("./database/cooldowns");
 cdlist = cdlist.cdlist;
 
-//------------------------------------------------------------------------- START GETLINK FS
+var teams = {};
+
+//------------------------------------------------------------------------- START FINDNUM FS
 
 function findnum(name, dic) {
   for (var num in dic) {
@@ -52,51 +54,7 @@ function findnum(name, dic) {
   return 'X'
 }  
 
-var teams = {};
-function getdblink(content) {
-  var link = basetrans;
-  var contlist = content.split(';;');
-  var chars = contlist.shift().split(';');
-  if (chars.length != 6) return "You didn't put a complete team!"
-  
-  var cottons = contlist.shift();
-  var cci = [];
-  for(l=0; l<cottons.length; l++) {
-    var li = cottons.charAt(l);
-    if (li == 'A') cci.push('100:0:0')
-    else if (li == 'H') cci.push('0:100:0')
-    else if (li == 'R') cci.push('0:0:100')
-    else if (li == '2') cci.push('100:100:0')
-    else if (li == '3') cci.push('100:50:50')
-    else if (li == 'X') cci.push('500:500:500')
-    else cci.push('0:0:0')
-  }
-  cottons = cci;
-  
-  for(var char=0; char<chars.length; char++) {
-    var charid = findnum(chars[char].toLowerCase(), dpj);
-    if (charid == 'X') return 'Invalid Character Name!'
-    var charcc = cottons[char];
-    link += charid;
-    link += ':99:';
-    link += charcc;
-    link += ',';
-  }
-  link = link.slice(0,-1);
-  link += 'C';
-  
-  if (contlist.length == 0) return "You didn't put a ship!"
-  
-  var shipid = findnum(contlist[0].toLowerCase(), dship);
-  if (shipid == 'X') return 'Invalid Ship Name!'
-  link += shipid;
-  link += ',10B0D0E1365Q0L0G0R63S100H'
-  
-  return link
-  
-}  
-
-//------------------------------------------------------------------------- END GETLINK FS
+//------------------------------------------------------------------------- END FINDNUM FS
 
 //------------------------------------------------------------------------- START SKILLUP FS  
 
@@ -148,6 +106,13 @@ function ProbSkill(k, n, event, OC) {
 }
 
 //------------------------------------------------------------------------- END SKILLUP FS
+
+
+
+//-------------------------------------------------------------------------------------------
+//--------------------------------- BEGIN BOT ACTION ----------------------------------------
+//-------------------------------------------------------------------------------------------
+
 
 client.on('ready', () => {
   client.user.setGame("!ayuda")
@@ -292,12 +257,7 @@ client.on('message', msg => {
   
 //------------------------------------------------------------------------- END ART
 
-//------------------------------------------------------------------------- START GETLINK  
-
-  if (command == 'getlink') {
-    var glink = getdblink(msg.content.slice(9));
-    msg.channel.send(glink)
-  }  
+//------------------------------------------------------------------------- START MKTEAM   
     
   if (command == 'mkteam') {
     var action = args[0];
@@ -306,7 +266,7 @@ client.on('message', msg => {
       msg.reply("Actions: begin, units, levels, cottons, orbs, ship, done \n Help message under construction. Sorry :/")
     }
     else if (action == 'begin') {
-      msg.reply("has begun creating a team!")
+      msg.reply("You have begun creating a team!")
       var useri = msg.author.username; 
       teams[useri] = {};
     }
@@ -408,12 +368,13 @@ client.on('message', msg => {
       teamlink += 'C' + teams[useri]['Ship'] + ',10';
       teamlink += 'B0D0E' + teams[useri]['Orbs'] + 'Q0L0G0R0S100H';
       msg.channel.send(teamlink)
+      teams[useri] = {};
     }
     else return msg.reply("Invalid Action!")
       
   }
   
-//------------------------------------------------------------------------- END GETLINK
+//------------------------------------------------------------------------- END MKTEAM
     
 
 //------------------------------------------------------------------------- START NAMES  
