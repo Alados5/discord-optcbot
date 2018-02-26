@@ -306,7 +306,7 @@ client.on('message', msg => {
         else if (cc == '2' || cc == 'ATK&HP' || cc == '100:100:0') teams[useri]['Cottons'].push(':100:100:0')
         else if (cc == '3' || cc == 'ATK&5050' || cc == '100:50:50') teams[useri]['Cottons'].push(':100:50:50')
         else if (cc == 'X' || cc == 'MAX' || cc == '500:500:500') teams[useri]['Cottons'].push(':500:500:500')
-        else teams[useri]['Cottons'].push('0:0:0')
+        else teams[useri]['Cottons'].push(':0:0:0')
       }
       msg.reply("Cottons Stored Correctly!")
     }
@@ -331,7 +331,7 @@ client.on('message', msg => {
     else if (action == 'ship') {
       var useri = msg.author.username; 
       if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
-      var shipname = args.slice(1).toString().toLowerCase();
+      var shipname = msg.content.slice(13).toLowerCase();
       var shipid = findnum(shipname, dship);
       if (shipid == 'X') return msg.reply("Invalid Ship Name!")
       teams[useri]['Ship'] = shipid;
