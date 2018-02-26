@@ -335,6 +335,7 @@ client.on('message', msg => {
       var shipid = findnum(shipname, dship);
       if (shipid == 'X') return msg.reply("Invalid Ship Name!")
       teams[useri]['Ship'] = shipid;
+      msg.reply("Ship Stored Correctly!")
     }
     else if (action == 'done') {
       var useri = msg.author.username; 
