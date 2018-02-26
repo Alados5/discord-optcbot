@@ -140,7 +140,7 @@ client.on('message', msg => {
                    "\n   **!db** - Responde con la info de un personaje en la database (mensaje)"+        
                    "\n   **!icon** - Muestra el icono de un personaje (Ej.: !icon Croco Legend)"+
                    "\n   **!art** o **!pic** - Muestra el artwork de un personaje (Ej.: !art Croco Legend)"+
-                   "\n   **!getlink** - Crea un equipo en la calculadora de la database (link)"+
+                   "\n   **!mkteam** - Crea un equipo en la calculadora de la database (link)"+
                    "\n   **!names** - Responde con todos los nombres aceptados para un personaje"+        
                    "\n   **!eventoactivo** - Muestra una ayuda para diferenciar Skillup de Supersuccess en JP"+
                    "\n   **!ambush** - Responde qué Ambush hay activo (Raids) en la Japo"+        
@@ -263,7 +263,16 @@ client.on('message', msg => {
     var action = args[0];
     if (!action) return msg.reply("If you want to know how to use this, type !mkteam help")
     if (action == 'help') {
-      msg.reply("Actions: begin, units, levels, cottons, orbs, ship, done \n Help message under construction. Sorry :/")
+      msg.reply("This command is quite complex. You have different actions:" +
+                "\n `!mkteam begin` - Starts a new team. You **__MUST__** start with this" +
+                "\n `!mkteam units` - Specify the units of your team, separated by commas and single spaces" +
+                "\n        The order always goes left to right and top to bottom (1, 2; 3, 4; 5, 6)" +
+                "\n `!mkteam levels` - [Optional, Recommended] Specify the levels of your units" +
+                "\n `!mkteam cottons` - [Optional] Specify the CC of your units (ATK, HP, ATK&HP, ...)" +
+                "\n `!mkteam orbs` - [Optional] Specify the orbs of your units (Matching, Bad, ...)" + 
+                "\n `!mkteam specials` - [Optional] Specify the active specials (Active, 1, No, 0, ...)" + 
+                "\n `!mkteam ship` - [Optional] Specify the ship of your team (Default: Merry Go)" +
+                "\n `!mkteam done` - Finish your editing and make the link!")
     }
     else if (action == 'begin') {
       msg.reply("You have begun creating a team!")
@@ -391,7 +400,7 @@ client.on('message', msg => {
       msg.channel.send(teamlink)
       teams[useri] = {};
     }
-    else return msg.reply("Invalid Action!")
+    else return msg.reply("Invalid Action! Try `!mkteam help` to know how to use this command")
       
   }
   
