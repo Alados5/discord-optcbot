@@ -109,16 +109,62 @@ function ProbSkill(k, n, event, OC) {
 
 //------------------------------------------------------------------------- START MKTEAM FS
 
-function MkUnits(units, useri) {
+function MkUnits(content, useri) {
+  if (!teams[useri]) return "You have to begin creating your team first!"
+  var units = content.slice(14).toLowerCase();
   units = units.split(', ');
-  if (units.length != 6) return -1
+  if (units.length != 6) return "You didn't put a complete team!"
   teams[useri]['Units'] = [];
   for(u=0; u<units.length; u++) {
     var charid = findnum(units[u], dpj);
-    if (charid == 'X') return 0
+    if (charid == 'X') return "Invalid character name!"
     teams[useri]['Units'].push(charid);
   }
-  return 1
+  return "Units Stored Correctly!"
+}
+
+function MkLevels(args, useri) {
+  if (!teams[useri]) return "You have to begin creating your team first!"
+  var unitlvs = args.slice(1);
+  if (unitlvs.length != 6) return "You didn't specify all units' levels!"
+  teams[useri]['Levels'] = unitlvs;
+  return "Levels Stored Correctly!"
+}
+
+function MkCottons(args, useri) {
+  if (!teams[useri]) return "You have to begin creating your team first!"
+  var unitccs = args.slice(1);
+  if (unitccs.length != 6) return "You didn't specify all units' CCs!"
+  teams[useri]['Cottons'] = [];
+  for(u=0; u<unitccs.length; u++) {
+    var cc = unitccs[u];
+    if(cc == 'A' || cc == 'ATK' || cc == '100:0:0') teams[useri]['Cottons'].push(':100:0:0')
+    else if(cc == 'H' || cc == 'HP' || cc == '0:100:0') teams[useri]['Cottons'].push(':0:100:0')
+    else if(cc == 'R' || cc == 'RCV' || cc == '0:0:100') teams[useri]['Cottons'].push(':0:0:100')
+    else if (cc == '2' || cc == 'ATK&HP' || cc == '100:100:0') teams[useri]['Cottons'].push(':100:100:0')
+    else if (cc == '3' || cc == 'ATK&5050' || cc == '100:50:50') teams[useri]['Cottons'].push(':100:50:50')
+    else if (cc == 'X' || cc == 'MAX' || cc == '500:500:500') teams[useri]['Cottons'].push(':500:500:500')
+    else teams[useri]['Cottons'].push(':0:0:0')
+  }
+  return "Cottons Stored Correctly!"
+}
+
+function MkOrbs(args, useri) {
+  if (!teams[useri]) return "You have to begin creating your team first!"
+  var unitorbs = args.slice(1);
+  if (unitorbs.length != 6) return "You didn't specify all units' orbs!"
+  teams[useri]['Orbs'] = 0;
+  var weightsP = [1024, 256, 64, 16, 4, 1];
+  var weightsN = [2048, 512, 128, 32, 8, 2];
+  var orbnum = 0;
+  for(u=0; u<unitorbs.length; u++) {
+    var orb = unitorbs[u];
+    if(orb == 'Matching' || orb == 'M' || orb == 'Good' || orb == '1') orbnum += weightsP[u];
+    else if(orb == 'Negative' || orb == 'B' || orb == 'Bad' || orb == '-1') orbnum += weightsN[u];
+    else orbnum += 0;
+  }
+  teams[useri]['Orbs'] = orbnum.toString();
+  return "Orbs Stored Correctly!"
 }
 
 //------------------------------------------------------------------------- END MKTEAM FS
@@ -297,64 +343,20 @@ client.on('message', msg => {
       teams[useri] = {};
     }
     else if (action == 'units') {
-      if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
-      var units = msg.content.slice(14).toLowerCase();
-      var stUnits = MkUnits(units, useri);
-      if (stUnits == -1) msg.reply("You didn't put a complete team!")
-      else if (stUnits == 0) msg.reply("Invalid character name!")
-      else if (stUnits == 1) msg.reply("Units Stored Correctly!")
-      else return msg.reply("Unknown Error")
-        
-      //units = units.split(', ');
-      //if (units.length != 6) return msg.reply("You didn't put a complete team!")
-      //teams[useri]['Units'] = [];
-      //for(u=0; u<units.length; u++) {
-      //  var charid = findnum(units[u], dpj);
-      //  if (charid == 'X') return msg.reply("Invalid character name!")
-      //  teams[useri]['Units'].push(charid);
-      //}
-      //msg.reply("Units Stored Correctly!")
+      var stUnits = MkUnits(msg.content, useri);
+      msg.reply(stUnits)
     }
     else if (action == 'levels') {
-      if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
-      var unitlvs = args.slice(1);
-      if (unitlvs.length != 6) return msg.reply("You didn't specify all units' levels!")
-      teams[useri]['Levels'] = unitlvs;
-      msg.reply("Levels Stored Correctly!")
+      var stLevels = MkLevels(args, useri);
+      msg.reply(stLevels)
     }
     else if (action == 'cottons') {
-      if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
-      var unitccs = args.slice(1);
-      if (unitccs.length != 6) return msg.reply("You didn't specify all units' CCs!")
-      teams[useri]['Cottons'] = [];
-      for(u=0; u<unitccs.length; u++) {
-        var cc = unitccs[u];
-        if(cc == 'A' || cc == 'ATK' || cc == '100:0:0') teams[useri]['Cottons'].push(':100:0:0')
-        else if(cc == 'H' || cc == 'HP' || cc == '0:100:0') teams[useri]['Cottons'].push(':0:100:0')
-        else if(cc == 'R' || cc == 'RCV' || cc == '0:0:100') teams[useri]['Cottons'].push(':0:0:100')
-        else if (cc == '2' || cc == 'ATK&HP' || cc == '100:100:0') teams[useri]['Cottons'].push(':100:100:0')
-        else if (cc == '3' || cc == 'ATK&5050' || cc == '100:50:50') teams[useri]['Cottons'].push(':100:50:50')
-        else if (cc == 'X' || cc == 'MAX' || cc == '500:500:500') teams[useri]['Cottons'].push(':500:500:500')
-        else teams[useri]['Cottons'].push(':0:0:0')
-      }
-      msg.reply("Cottons Stored Correctly!")
+      var stCottons = MkCottons(args, useri);
+      msg.reply(stCottons)
     }
     else if (action == 'orbs') {
-      if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
-      var unitorbs = args.slice(1);
-      if (unitorbs.length != 6) return msg.reply("You didn't specify all units' orbs!")
-      teams[useri]['Orbs'] = 0;
-      var weightsP = [1024, 256, 64, 16, 4, 1];
-      var weightsN = [2048, 512, 128, 32, 8, 2];
-      var orbnum = 0;
-      for(u=0; u<unitorbs.length; u++) {
-        var orb = unitorbs[u];
-        if(orb == 'Matching' || orb == 'M' || orb == 'Good' || orb == '1') orbnum += weightsP[u];
-        else if(orb == 'Negative' || orb == 'B' || orb == 'Bad' || orb == '-1') orbnum += weightsN[u];
-        else orbnum += 0;
-      }
-      teams[useri]['Orbs'] = orbnum.toString();
-      msg.reply("Orbs Stored Correctly!")
+      var stOrbs = MkOrbs(args, useri);
+      msg.reply(stOrbs)
     }
     else if (action == 'ship') {
       if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
