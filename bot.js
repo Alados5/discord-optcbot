@@ -395,26 +395,27 @@ client.on('message', msg => {
     else if (action == 'done') {
       if (!teams[useri]) return msg.reply("You have to begin creating your team first!")
       var teamlink = basetrans;
+      var warning = '';
       if(!teams[useri]['Units']) return msg.reply("You don't have any units on your team!")
       if(!teams[useri]['Levels']) {
         teams[useri]['Levels'] = ['99','99','99','99','99','99'];
-        msg.reply("All Levels set to 99. Please note this might produce errors.")
+        warning += "All Levels set to 99. Please note this might produce errors."
       }
       if(!teams[useri]['Cottons']) {
         teams[useri]['Cottons'] = ['','','','','',''];
-        msg.reply("All CC set to 0")
+        warning += "\n All CC set to 0"
       }
       if(!teams[useri]['Orbs']) {
         teams[useri]['Orbs'] = '0';
-        msg.reply("All orbs set to neutral")
+        warning += "\n All orbs set to neutral"
       }
       if(!teams[useri]['Ship']) {
         teams[useri]['Ship'] = "1";
-        msg.reply("No ship specified. The Default is the Merry Go")
+        warning += "\n No ship specified. The Default is the Merry Go"
       }
       if(!teams[useri]['Specials']) {
         teams[useri]['Specials'] = "0";
-        msg.reply("No specials activated")
+        warning += "\n No specials activated"
       }
       
       for(u=0; u<6; u++) {
@@ -426,6 +427,7 @@ client.on('message', msg => {
       teamlink = teamlink.slice(0,-1);
       teamlink += 'C' + teams[useri]['Ship'] + ',10';
       teamlink += 'B0D0E' + teams[useri]['Orbs'] + 'Q0L0G0R' + teams[useri]['Specials'] + 'S100H';
+      msg.reply(warning)
       msg.channel.send(teamlink)
       teams[useri] = {};
     }
