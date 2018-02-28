@@ -450,6 +450,7 @@ client.on('message', msg => {
     var lnames = dpj[charid];
     lnames = lnames.toString();
     lnames = lnames.replace(/,/g, ', ');
+    lnames = '```' + lnames + '```';
     msg.channel.send(lnames)
   }  
   
