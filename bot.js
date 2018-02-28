@@ -448,6 +448,8 @@ client.on('message', msg => {
     var charid = findnum(chartolook, dpj);
     if (charid == 'X') return msg.channel.send('Character Name Error')
     var lnames = dpj[charid];
+    lnames = lnames.toString();
+    lnames = lnames.replace(/,/g, ', ');
     msg.channel.send(lnames)
   }  
   
