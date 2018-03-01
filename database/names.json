@@ -467,7 +467,7 @@
   "1647":["1647", "pica neo donquixote pirates", "pica kai", "pica raid kai", "pica raid str"],
   "1649":["1649", "giolla trebol army", "giolla fn", "fn giolla", "giolla str"],
   "1650":["1650", "brook psychedelic arts", "brook giolla", "brook art"],  
-  "1652":["1652", "neko", "nekomamushi", "neko legend", "nekomamushi legend", "neko 6*", "nekomamushi 6*", "neko psy", "not cat viper", "cat mink", "lasagna", "lasagna cat", "goronyaro"],
+  "1652":["1652", "neko", "nekomamushi", "neko legend", "nekomamushi legend", "neko 6*", "nekomamushi 6*", "neko psy", "not cat viper", "cat mink", "lasagna cat", "garfield", "goronyaro"],
   "1654":["1654", "pedro", "pedro of the treetops", "pedro rr", "pedro int"],
   "1656":["1656", "carrot", "ruler's aide carrot", "carrot rr", "carrot qck"],
   "1658":["1658", "evening shower kanjuro wano country samurai", "kanjuro rr", "kanjuro dex"],
@@ -542,5 +542,7 @@
   "1961":["1961", "sanji groom", "wedding sanji", "sanji cake"],
   "1963":["1963", "pudding", "pudding bride"],
   
-  "1972":["1972", "sabo tm", "tm sabo", "sabo sweet dignity"]
+  "1972":["1972", "sabo tm", "tm sabo", "sabo sweet dignity"],
+  
+  "1985":["1985", "luffy & ace", "lufface", "luffy & ace legend", "lufface legend"]
 }
