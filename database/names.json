@@ -129,7 +129,7 @@
   "0578":["578", "log luffy", "old log luffy", "luffy log", "monkey d. luffy voyage dream pirate king", "ll", "log luffy 6*", "log luffy legend"],
   "0584":["584", "aisa"],
   "0590":["590", "koza", "kohza", "koza rebel leader", "kohza rebel leader"],
-  "0603":["603", "eneru raid", "enel raid", "eneru lightning incarnate 200000000 volt amaru"],
+  "0603":["603", "eneru raid", "enel raid", "eneru lightning incarnate 200,000,000 volt amaru"],
   "0639":["639", "doma", "doma v1", "doma rr", "doma qck", "bohemian knight doma"],
   "0641":["641", "decalvan brothers", "decalvan bros", "decalvan brothers brothers bond"],
   "0643":["643", "squard", "squardo", "squard v1", "squard rr", "squard psy", "maelstrom spider squard"],
@@ -550,39 +550,78 @@
   "1842":["1842", "caribou fn", "caribou dex", "wet haired caribou next generation supernova"],
   "1846":["1846", "garp the fist hero of the marines", "garp ambush", "invasion garp", "young garp"],  
   "1847":["1847", "sengoku+", "sengoku 6*+", "sengoku 6+", "sengoku the buddha marine fleet admiral", "worst superevo", "goku+"],
-  
-  
-  
-  
-  "1869":["1869", "issho next generation navy hq greatest military power", "fujitora v2", "fuji legend v2", "fuji 6* v2"],
-  
-  "1880":["1880", "hody jones false crusader rampaging recklessly", "hody+", "hody jones 6*+", "hody 6+", "hody 6*+", "hody legend plus"],
-  "1881":["1881", "hawk eyes mihawk the black blade yoru", "inthawk+", "inthawk 6*+", "inthawk 6+", "mihawk legend plus"],
-  "1883":["1883", "dark king rayleigh an old soldier watching over an era", "ray v2", "ray 6* v2", "rayleigh legend v2", "ray legend v2"],
-  
+  "1849":["1849", "sakazuki trembling calamity", "akainu tm rr", "sakazuki tm rr"],
+  "1851":["1851", "maelstrom spider squard treacherous son", "squard tm rr"],
+  "1853":["1853", "whitebeard whitebeard pirates captain", "whitebeard tm", "whitebeard int"],
+  "1859":["1859", "warrior leo courageous dwarf", "leo lrr", "leo limited rr", "leo int"],
+  "1861":["1861", "raizo of the mist wano country ninja", "raizo coliseum", "coli raizo"],
+  "1863":["1863", "foxfire kinemon neo", "kinemon kai", "kinemon coli kai", "kinemon coli psy"],
+  "1869":["1869", "issho next generation navy hq greatest military power", "fujitora v2", "fuji legend v2", "fuji 6* v2", "fuji v2"],
+  "1871":["1871", "bellamy the hyena dressrosa current king's assassin", "bellamy rr", "bellamy psy"],
+  "1873":["1873", "kyros dressrosa former royal family's hero", "kyros rr v2", "kyros str"],
+  "1875":["1875", "violet dressrosa former royal family's princess", "violet rr v2", "violet qck"],
+  "1877":["1877", "rebecca dressrosa former royal family's future", "rebecca rr", "rebecca dex"],
+  "1879":["1879", "bartolomeo the cannibal barto club pirates captain", "bartolomeo raid", "barto raid", "barto psy"],  
+  "1880":["1880", "hody jones false crusader rampaging recklessly", "hody+", "hody jones 6+", "hody jones 6*+", "hody 6+", "hody 6*+", "hody legend plus"],
+  "1881":["1881", "hawk eyes mihawk the black blade yoru", "inthawk+", "inthawk 6*+", "inthawk 6+", "mihawk legend plus", "mihawk legend 6+"],
+  "1883":["1883", "dark king rayleigh an old soldier watching over an era", "ray v2", "rayleigh v2", "ray 6* v2", "rayleigh legend v2", "ray legend v2"],
+  "1885":["1885", "nico robin capturing the sickle weasel", "robin tm rr", "nico robin tm rr"],
+  "1887":["1887", "gladius the shockwave capturing the sickle weasel", "gladius tm rr"],
+  "1889":["1889", "cavendish white christmas knight", "cavendish tm"],
+  "1895":["1895", "mad monk urouge the supernova from the sky", "urouge lrr", "urouge limited rr", "urouge rr qck"],
   "1897":["1897", "enel coliseum", "coli enel", "eneru coliseum", "coli eneru", "enel str"],
-
-  "1910":["1910", "heavenly demon doflamingo ruler of the bird cage", "doffy legend v2", "doflamingo legend v2", "doffy 6* v2"],
-
-  "1916":["1916", "luffy tm", "luffy tm g4", "tm g4", "g4 tm"],
-  
+  "1899":["1899", "massacre soldier killer neo kid pirates", "killer kai", "killer coli kai", "killer coli qck"],
+  "1900":["1900", "roronoa zoro dressrosa's breath of liberation", "zoro dressrosa", "zoro exp"],
+  "1902":["1902", "pica donquixote family elite executive", "pica rr", "pica int"],
+  "1904":["1904", "señor pink dressrosa's current king family", "señor pink rr v2", "señor pink rr qck", "sr. pink rr v2", "señor thicc", "senor pink rr v2", "senor thicc"],
+  "1906":["1906", "sugar donquixote family the most important person", "sugar rr v2", "sugar rr psy"],
+  "1908":["1908", "trebol donquixote family guardian of the special executive", "trebol rr v2", "trebol rr str"],
+  "1910":["1910", "heavenly demon doflamingo ruler of the bird cage", "doffy legend v2", "doflamingo legend v2", "doffy 6* v2", "doffy v2", "doflamingo v2"],
+  "1912":["1912", "urouge 108 devotions", "urouge new year", "kimono urouge", "urouge 2018"],
+  "1914":["1914", "nefertari vivi an elegant appearance", "vivi new year", "kimono vivi", "vivi 2018"],
+  "1916":["1916", "monkey d. luffy gear 4 the natural enemy of god", "luffy tm", "luffy tm g4", "tm g4", "g4 tm"],
   "1921":["1921", "pirate hunter zoro the strawhat pirates reborn", "zoro 6*+", "zoro 6+", "zoro legend plus", "zoro+", "ichidai sanzen daisen sekai"],
   "1922":["1922", "law qck 6*+", "law qck 6+", "law v2 6+", "law v2 6*+", "trafalgar law the clan of d", "korea law 6*+"],
-  
-  "1927":["1927", "sir crocodile remains of an utopian dream", "croco 6*+", "crocodile 6*+", "thejoselu8 6*+", "6+ croc"],
-  "1928":["1928", "bartolomeo the cannibal straw hat grand fleet - son's cup", "barto 6*+", "bartolomeo 6*+", "6+ barto"],
-  
+  "1924":["1924", "dark king rayleigh first mate of the roger pirates", "rayleigh raid", "rayleigh str", "raidleigh"],
+  "1926":["1926", "coby marine hq captain", "coby lrr", "coby limited rr", "timeskip coby", "captain coby"],
+  "1927":["1927", "sir crocodile remains of an utopian dream", "croco 6*+", "crocodile 6*+", "thejoselu8 6*+", "6+ croc", "croco 6+"],
+  "1928":["1928", "bartolomeo the cannibal straw hat grand fleet - son's cup", "barto 6*+", "bartolomeo 6*+", "6+ barto", "barto 6+"],
+  "1930":["1930", "eneru lightning incarnate neo 200,000,000 volt amaru", "eneru kai", "enel kai", "eneru raid kai", "enel raid kai", "eneru raid dex", "enel raid dex"],
+  "1931":["1931", "boa sandersonia fugitive slave", "young sandersonia", "sandersonia fn"],
+  "1932":["1932", "boa marigold fugitive slave", "young marigold", "marigold fn"],
+  "1933":["1933", "boa hancock fugitive slave", "young hancock", "hancock fn"],
   "1935":["1935", "franky future country's super weapon", "franky legend", "franky 6*", "franky megazord"],
-  
-  "1941":["1941", "ace tm", "ace treasure map", "ace aventura"],
-  
+  "1937":["1937", "blackbeard the darkness that challenges the sun", "blackbeard tm rr"],
+  "1939":["1939", "twin-blade thatch the soul mourned by the flames", "thatch tm rr"],
+  "1941":["1941", "fire fist ace spiritual flames", "ace tm"],
+  "1943":["1943", "señor pink a man's battle", "señor pink raid", "senor pink raid", "hardboiled raid"],
+  "1945":["1945", "pedro of the treetops mokomo dukedom", "pedro coliseum", "coli pedro", "pedro bomb", "pedro psy"],
   "1951":["1951", "nico robin archaeologist revealing the void century", "robin legend", "nico robin 6*", "6* robin", "robin 6*"],
+  "1953":["1953", "koala you're my valentine", "valentine koala", "koala valentine"],
+  "1955":["1955", "nami you're my valentine", "valentine nami", "nami valentine"],
+  "1957":["1957", "carrot you're my valentine", "valentine carrot", "carrot valentine"],
+  "1959":["1959", "shirahoshi you're my valentine", "valentine shirahoshi", "shirahoshi valentine"],
+  "1961":["1961", "sanji a deadly plan to separate the couple", "sanji groom", "wedding sanji", "sanji cake", "groom sanji"],
+  "1963":["1963", "pudding a deadly plan to separate the couple", "pudding", "pudding bride", "bride pudding"],
+  "1968":["1968", "boa hancock you're my valentine", "valentine hancock", "hancock tm rr"],
+  "1970":["1970", "miss valentine you're my valentine", "valentine ms. valentine", "ms. valentine tm rr"],
+  "1972":["1972", "sabo sweet dignity", "sabo tm", "tm sabo"],
+  "1974":["1974", "the magician basil hawkins cursed executioner", "hawkins lrr", "hawkins limited rr", "hawkins str"],
+  "1976":["1976", "red flag x drake neo captain of the drake pirates", "x drake kai", "x drake coli kai", "x drake coli qck"],
+  "1978":["1978", "dark king rayleigh master of haki", "rayleigh coliseum", "coli rayleigh", "coli ray", "ray coliseum"],
+  "1983":["1983", "smoker & tashigi the marines chasing the strawhats", "smoker & tashigi", "smoshigi", "tashigi & smoker", "smoshigi dual"],
+  "1985":["1985", "luffy & ace pirates rising", "luffy & ace", "lufface", "luffyace", "ace & luffy", "luffy & ace legend", "lufface legend"],
+  "1987":["1987", "marco the phoenix guardian of the will", "marco rr v2", "marco str"],
+  "1989":["1989", "fierce little oars jr the pathfinder breakthrough", "little oars jr rr v2", "oars jr psy", "oars jr rr psy"],
+  "1991":["1991", "garp the fist a hero in distress", "garp qck", "garp rr v2", "garp rr qck"],
+  "1993":["1993", "coby high-strung vigilance", "coby qck", "coby rr v2", "coby rr qck"],
   
-  "1961":["1961", "sanji groom", "wedding sanji", "sanji cake"],
-  "1963":["1963", "pudding", "pudding bride"],
+  "2001":["2001", "trafalgar law ex-warlord of the sea", "law psy 6+", "law v1 6+", "law legend psy 6*+", "law legend v1 6*+"],
   
-  "1972":["1972", "sabo tm", "tm sabo", "sabo sweet dignity"],
+  "2004":["2004", "heavenly demon doflamingo doflamingo family boss", "doflamingo story", "story doffy"],
+  "2005":["2005", "sugar donquixote family special ability team", "sugar story", "story sugar"],
   
-  "1983":["1983", "smoker & tashigi", "smoshigi", "tashigi & smoker"],
-  "1985":["1985", "luffy & ace", "lufface", "ace & luffy", "luffy & ace legend", "lufface legend"]
+  
+  
+  "2025":["2025", "donquixote doflamingo plot to destroy the world", "doffy raid v2", "doffy raid 2", "doflamingo raid 2", "3rd anni doffy", "global doffy"]
 }
