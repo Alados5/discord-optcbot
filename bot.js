@@ -329,7 +329,16 @@ client.on('message', msg => {
   if (command == 'icon') {
     var chartolook = msg.content.slice(6).toLowerCase();
     var charid = findnum(chartolook, dpj);
-    if (charid == 'X') return msg.channel.send('Character Name Error')
+    if (charid == 'X') {
+      var charnum = parseInt(charname);
+      if (!fulldb[charnum]) return msg.channel.send('Character Name Error')
+      else {
+        charid = charnum.toString();
+        if (charid.length == 1) charid = '000' + charid;
+        else if (charid.length == 2) charid = '00' + charid;
+        else if (charid.length == 3) charid = '0' + charid;
+      }
+    }
     var iconlink = dbcharicon + charid + '.png';
     msg.channel.send(iconlink)
   }  
@@ -341,7 +350,16 @@ client.on('message', msg => {
   if (command == 'art' || command == 'pic') {
     var chartolook = msg.content.slice(5).toLowerCase();
     var charid = findnum(chartolook, dpj);
-    if (charid == 'X') return msg.channel.send('Character Name Error')
+    if (charid == 'X') {
+      var charnum = parseInt(charname);
+      if (!fulldb[charnum]) return msg.channel.send('Character Name Error')
+      else {
+        charid = charnum.toString();
+        if (charid.length == 1) charid = '000' + charid;
+        else if (charid.length == 2) charid = '00' + charid;
+        else if (charid.length == 3) charid = '0' + charid;
+      }
+    } 
     var artlink = dbcharpic + charid + '.png';
     msg.channel.send(artlink)
   }  
@@ -468,7 +486,12 @@ client.on('message', msg => {
     if (charid == 'X') {
       var charnum = parseInt(charname);
       if (!fulldb[charnum]) return msg.channel.send('Character Name Error')
-      else charid = charnum;
+      else {
+        charid = charnum.toString();
+        if (charid.length == 1) charid = '000' + charid;
+        else if (charid.length == 2) charid = '00' + charid;
+        else if (charid.length == 3) charid = '0' + charid;
+      }
     }
     var charid0 = charid;
     charid = parseInt(charid);
