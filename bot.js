@@ -330,7 +330,7 @@ client.on('message', msg => {
     var chartolook = msg.content.slice(6).toLowerCase();
     var charid = findnum(chartolook, dpj);
     if (charid == 'X') {
-      var charnum = parseInt(charname);
+      var charnum = parseInt(chartolook);
       if (!fulldb[charnum]) return msg.channel.send('Character Name Error')
       else {
         charid = charnum.toString();
@@ -351,7 +351,7 @@ client.on('message', msg => {
     var chartolook = msg.content.slice(5).toLowerCase();
     var charid = findnum(chartolook, dpj);
     if (charid == 'X') {
-      var charnum = parseInt(charname);
+      var charnum = parseInt(chartolook);
       if (!fulldb[charnum]) return msg.channel.send('Character Name Error')
       else {
         charid = charnum.toString();
