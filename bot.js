@@ -21,6 +21,8 @@ var db3 = require("./database/details3");
 db3 = db3.db3;
 var db4 = require("./database/details4");
 db4 = db4.db4;
+var db5 = require("./database/details5");
+db5 = db5.db5;
 
 function merge(obj, src) {
     for (var key in src) {
@@ -31,7 +33,8 @@ function merge(obj, src) {
 
 var db12 = merge(db1, db2);
 var db34 = merge(db3, db4);
-var fulldb = merge(db12, db34);
+var db14 = merge(db12, db34);
+var fulldb = merge(db14, db5);
 
 var cdlist = require("./database/cooldowns");
 cdlist = cdlist.cdlist;
