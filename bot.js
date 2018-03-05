@@ -725,13 +725,29 @@ client.on('message', msg => {
     
   if (command == 'embed') {
     msg.channel.send({embed: {
-      color: 1942016,
-      title: "BIENVENIDA",
+      color: 6811648,
       author: {
         name: msg.author.username,
-        url: msg.author.avatarURL,
-        icon_url: msg.author.avatar
-      }
+        icon_url: msg.author.avatarURL
+      },
+      title: "BIENVENIDA",
+      fields: [
+        {
+          name: "!show",
+          value: "Show the ID of a user in the chat if he/she has saved it. "+
+          "Call it with: ```\n !show @USER \n``` "+
+          "You have to MENTION/TAG someone (it can be yourself!)"+
+          "\n If the user hasn't registered any info, it will also say so. \n \n -"
+        },
+        {
+          name: "!ihave",
+          value: "Save a list of your important captains. "+
+          "Call it with: ```\n !ihave [Cap. 1], [Cap. 2], [...] \n``` "+
+          "You have to separate each captain with commas and simple spaces."+
+          "\n This command is completely independent from !save"+
+          "\n Example: *!ihave Sabo Legend, Lucy Legend, Neko* \n \n -"
+        }
+      ]
     }})
   }
   
