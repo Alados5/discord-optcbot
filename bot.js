@@ -724,28 +724,23 @@ client.on('message', msg => {
 //------------------------------------------------------------------------- END SKILLUP
     
   if (command == 'embed') {
+    var desctext = msg.content.slice(7);
     msg.channel.send({embed: {
       color: 6811648,
       author: {
         name: msg.author.username,
         icon_url: msg.author.avatarURL
       },
+      description:desctext,
       title: "BIENVENIDA",
       fields: [
         {
-          name: "!show",
-          value: "Show the ID of a user in the chat if he/she has saved it. "+
-          "Call it with: ```\n !show @USER \n``` "+
-          "You have to MENTION/TAG someone (it can be yourself!)"+
-          "\n If the user hasn't registered any info, it will also say so. \n \n -"
+          name: "CAMPO 1",
+          value: "Texto 1"
         },
         {
-          name: "!ihave",
-          value: "Save a list of your important captains. "+
-          "Call it with: ```\n !ihave [Cap. 1], [Cap. 2], [...] \n``` "+
-          "You have to separate each captain with commas and simple spaces."+
-          "\n This command is completely independent from !save"+
-          "\n Example: *!ihave Sabo Legend, Lucy Legend, Neko* \n \n -"
+          name: "CAMPO 2",
+          value: "Texto 2"
         }
       ]
     }})
