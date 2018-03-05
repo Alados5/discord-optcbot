@@ -731,7 +731,8 @@ client.on('message', msg => {
     var msgtitle = alltext[1];
     var desctext = alltext[2];
     var msgcolor = parseInt(alltext[3]);
-    msg.channel.send({content:notembed, embed: {
+    msg.channel.send(notembed)
+    msg.channel.send({embed: {
       color: msgcolor,
       author: {
         name: msg.author.username,
