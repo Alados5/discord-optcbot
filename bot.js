@@ -723,8 +723,16 @@ client.on('message', msg => {
   
 //------------------------------------------------------------------------- END SKILLUP
     
-  if (command == 'random') {
-    msg.edit("Hi!")
+  if (command == 'embed') {
+    msg.channel.send({embed: {
+      color: 1942016,
+      title: "BIENVENIDA",
+      author: {
+        name: msg.author.username,
+        url: msg.author.avatarURL,
+        icon_url: msg.author.avatar
+      }
+    }})
   }
   
 });
