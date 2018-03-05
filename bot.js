@@ -761,6 +761,10 @@ client.on('message', msg => {
     msg.channel.send(msg.content.slice(7))
   }
     
+  if (command == 'file') {
+    msg.channel.send({files:[msg.content.slice(7)]})
+  }
+    
 //------------------------------------------------------------------------- END WELCOME    
   
 });
