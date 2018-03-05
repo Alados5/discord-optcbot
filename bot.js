@@ -723,12 +723,15 @@ client.on('message', msg => {
   
 //------------------------------------------------------------------------- END SKILLUP
     
+//------------------------------------------------------------------------- START EMBED
+    
   if (command == 'embed') {
     var alltext = msg.content.slice(7).split('|');
-    var msgtitle = alltext[0];
-    var desctext = alltext[1];
-    var msgcolor = parseInt(alltext[2]);
-    msg.channel.send({embed: {
+    var notembed = alltext[0];
+    var msgtitle = alltext[1];
+    var desctext = alltext[2];
+    var msgcolor = parseInt(alltext[3]);
+    msg.channel.send({content:notembed, embed: {
       color: msgcolor,
       author: {
         name: msg.author.username,
@@ -748,6 +751,16 @@ client.on('message', msg => {
       //]
     }})
   }
+    
+//------------------------------------------------------------------------- END EMBED
+    
+//------------------------------------------------------------------------- START WELCOME
+    
+  if (command == 'reply') {
+    msg.channel.send(msg.content.slice(7))
+  }
+    
+//------------------------------------------------------------------------- END WELCOME    
   
 });
 
