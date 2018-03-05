@@ -579,7 +579,8 @@ client.on('message', msg => {
     var charname = msg.content.slice(4);
     var allcharinfo = dbinfo(charname);
       //return [charid, charinfo, charcd, charicon]
-    
+    if (typeof allcharinfo == "string") return msg.reply(allcharinfo)
+      //return "..." (Errors)
     
     //CHARINFO:
       //Info Names: captain, captainNotes, specialName, special, specialNotes, sailor, limit, potential
@@ -587,8 +588,6 @@ client.on('message', msg => {
       //Captain Actions are always noted with: ... <br> <b>Action:</b> ...
       //Special can be string or list with [{"description":"...", "cooldown":[M,N]}, {...}] 
       //Sailor can also be a string or object like: {"base":"None", "level1":"...", etc} 
-      //Limit is the limit tree, like: [{"description":"..."}, {"description":"..."}, etc]
-      //Potential are the LB Abilities, like: [{"Name":"...", "description":["Level 1: ...", etc]}, etc]
     
     var charid = allcharinfo[0];
     var charinfo = allcharinfo[1];
@@ -632,7 +631,27 @@ client.on('message', msg => {
 //------------------------------------------------------------------------- START LIMITBREAK
     
   if (command == 'lb') {
-    msg.reply("Soon!")
+    var charname = msg.content.slice(4);
+    var allcharinfo = dbinfo(charname);
+      //return [charid, charinfo, charcd, charicon]
+    if (typeof allcharinfo == "string") return msg.reply(allcharinfo)
+      //return "..." (Errors)
+    
+    //CHARINFO:
+      //Info Names: captain, captainNotes, specialName, special, specialNotes, sailor, limit, potential
+      //Captain can be string or object with {"base":"...", "level1":"...", etc}
+      //Captain Actions are always noted with: ... <br> <b>Action:</b> ...
+      //Special can be string or list with [{"description":"...", "cooldown":[M,N]}, {...}] 
+      //Sailor can also be a string or object like: {"base":"None", "level1":"...", etc} 
+      //Limit is the limit tree, like: [{"description":"..."}, {"description":"..."}, etc]
+      //Potential are the LB Abilities, like: [{"Name":"...", "description":["Level 1: ...", etc]}, etc]
+    
+    var charid = allcharinfo[0];
+    var charinfo = allcharinfo[1];
+    var charcd = allcharinfo[2];
+    var charicon = allcharinfo[3];
+      
+    msg.reply("Command not implemented yet. But here's your character's icon: " + charicon)
     
   }
     
