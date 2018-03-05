@@ -222,15 +222,13 @@ client.on('message', msg => {
   
   if (command == 'ayuda') {
     var helptext = "Soy un bot para animar y ayudar en este chat."+
-                   "\n Debería estar siempre activo, si no respondo puede que haya algún problema."+
                    "\n \n Me puedes llamar con estos comandos:"+      
                    "\n   **!ayuda** - Muestra este mensaje"+
                    "\n \n **__COMANDOS DE OPTC__**"+
-                   "\n   __NOTA:__ Muchos dependen de una lista de IDs que aún no está completa!"+     
                    "\n   **!char** o **!pj** - Busca un personaje o ID en la database (link)"+
                    "\n   **!db** - Responde con la info de un personaje en la database (mensaje)"+        
-                   "\n   **!icon** - Muestra el icono de un personaje (Ej.: !icon Croco Legend)"+
-                   "\n   **!art** o **!pic** - Muestra el artwork de un personaje (Ej.: !art Croco Legend)"+
+                   "\n   **!icon** - Muestra el icono de un personaje"+
+                   "\n   **!art** o **!pic** - Muestra el artwork de un personaje"+
                    "\n   **!mkteam** - Crea un equipo en la calculadora de la database (link)"+
                    "\n   **!names** - Responde con todos los nombres aceptados para un personaje"+        
                    "\n   **!eventoactivo** - Muestra una ayuda para diferenciar Skillup de Supersuccess en JP"+
@@ -239,7 +237,7 @@ client.on('message', msg => {
                    "\n   **!skillup K N E D** - Calcula la probabilidad de obtener K niveles con N copias"+
                    "\n       E y D son parámetros opcionales:"+
                    "\n         E indica si hay evento de skillup, '2' si es x2 y '3' si es x3."+
-                   "\n           -> Por defecto está activado en x2, cualquier otro texto será x1."+
+                   "\n           -> Por defecto está activado en x2, y cualquier otro texto será x1."+
                    "\n         D indica el chance base de skillup, 'S' para 1/5 (optc-db), 'N' para 1/6"+
                    "\n \n **__COMANDOS DE THEJOSELU8__**"+
                    "\n   **!thejoselu8** - Cabrea a joselu ¡Gratis!"+
