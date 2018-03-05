@@ -59,6 +59,104 @@ function findnum(name, dic) {
 
 //------------------------------------------------------------------------- END FINDNUM FS
 
+//------------------------------------------------------------------------- START DBINFO FS
+
+function dbinfo(charname) {
+  var chartolook = charname.toLowerCase();
+  var charid = findnum(chartolook, dpj);
+  if (charid == 'X') {
+    var charnum = parseInt(charname);
+    if (!fulldb[charnum]) return "Character Name Error"
+    else {
+      charid = charnum.toString();
+      if (charid.length == 1) charid = '000' + charid;
+      else if (charid.length == 2) charid = '00' + charid;
+      else if (charid.length == 3) charid = '0' + charid;
+    }
+  }
+  var charid0 = charid;
+  charid = parseInt(charid);
+  
+  var charinfo = fulldb[charid];
+    //Info Names: captain, captainNotes, specialName, special, specialNotes, sailor, limit, potential
+    //Captain can be string or object with {"base":"...", "level1":"...", etc}
+    //Captain Actions are always noted with: ... <br> <b>Action:</b> ...
+    //Special can be string or list with [{"description":"...", "cooldown":[M,N]}, {...}] 
+    //Sailor can also be a string or object like: {"base":"None", "level1":"...", etc} 
+    //Limit is the limit tree, like: [{"description":"..."}, {"description":"..."}, etc]
+    //Potential are the LB Abilities, like: [{"Name":"...", "description":["Level 1: ...", etc]}, etc]
+    
+  if (!charinfo) return "Character not implemented yet"
+  if (!charinfo.captain) charinfo.captain = 'None'
+  if (!charinfo.special) {
+    charinfo.special = ''
+    charinfo.specialName = 'None'
+  }
+  if (!charinfo.sailor) charinfo.sailor = 'None'
+  if (typeof charinfo.captain == "object") {
+    var charCA = charinfo.captain;
+    var ctext = "**Variable Captain Ability:** \n";   
+    for (var CAlevel in charCA) {
+      if (charCA.hasOwnProperty(CAlevel)) {
+        var desc = charCA[CAlevel];
+        ctext += "__" + CAlevel + ":__ " + desc + '\n';
+      }
+    }
+    charinfo.captain = ctext;
+  }
+    
+  var multistage = 'False';
+  if (typeof charinfo.special == "object") {
+    multistage = 'True';
+    var charSP = charinfo.special;
+    //charSP = [{"description":"...", "cooldown":[M,N]}, {...}]
+    var sptext = "";
+    var stagei;
+    for (stagei = 1; stagei <= charSP.length; stagei++) {
+      var SPstage = charSP[stagei-1];
+      //SPstage = {"description":"...", "cooldown":[M,N]}
+      var stagedesc = "__Stage " + stagei.toString() + ":__ " + SPstage.description;
+      var stagecd = SPstage.cooldown[0].toString() + ' -> ' + SPstage.cooldown[1].toString() + ' turns';
+      sptext += stagedesc + '\n' + '__Cooldown__ (S' + stagei.toString() + '): ' + stagecd + '\n \n';
+    }
+    charinfo.special = sptext;
+  }
+  if (typeof charinfo.sailor == "object") {
+    var charSA = charinfo.sailor;
+    var stext = "**Variable Sailor Ability:** \n";   
+    for (var SAlevel in charSA) {
+      if (charSA.hasOwnProperty(SAlevel)) {
+        var desc = charSA[SAlevel];
+        stext += "__" + SAlevel + ":__ " + desc + '\n';
+      }
+    }
+    charinfo.sailor = stext;
+  }
+    
+  var charicon = 'https://onepiece-treasurecruise.com/wp-content/uploads/f' + charid0 + '.png';
+    
+  var charcd = cdlist[charid-1];      
+  if (charcd == null || !charcd) {
+    charcd = '';
+  }
+  else if (multistage == 'True') {
+    charcd = '';
+  }
+  else {
+    charcd = '__Cooldown:__ ' + charcd[0].toString() + ' -> ' + charcd[1].toString() + ' turns';
+  }
+  
+  var capaction = charinfo.captain.split("<br> <b>Action:</b>");
+  if (capaction.length > 1) {
+    charinfo.captain = capaction[0] + '\n' + '__Captain Action:__' + capaction[1];
+  }
+    
+  return [charid, charinfo, charcd, charicon] 
+  
+}
+
+//------------------------------------------------------------------------- END DBINFO FS
+
 //------------------------------------------------------------------------- START SKILLUP FS  
 
 function fact(i) {
@@ -479,93 +577,23 @@ client.on('message', msg => {
   
   if (command == 'db') {
     var charname = msg.content.slice(4);
-    var chartolook = charname.toLowerCase();
-    var charid = findnum(chartolook, dpj);
-    if (charid == 'X') {
-      var charnum = parseInt(charname);
-      if (!fulldb[charnum]) return msg.channel.send('Character Name Error')
-      else {
-        charid = charnum.toString();
-        if (charid.length == 1) charid = '000' + charid;
-        else if (charid.length == 2) charid = '00' + charid;
-        else if (charid.length == 3) charid = '0' + charid;
-      }
-    }
-    var charid0 = charid;
-    charid = parseInt(charid);
+    var allcharinfo = dbinfo(charname);
+      //return [charid, charinfo, charcd, charicon]
     
-    var charinfo = fulldb[charid];
-    //Info Names: captain, captainNotes, specialName, special, specialNotes, sailor, limit, potential
-    //Captain can be string or object with {"base":"...", "level1":"...", etc}
-    //Captain Actions are always noted with: ... <br> <b>Action:</b> ...
-    //Special can be string or list with [{"description":"...", "cooldown":[M,N]}, {...}] 
-    //Sailor can also be a string or object like: {"base":"None", "level1":"...", etc} 
-    //Limit is the limit tree, like: [{"description":"..."}, {"description":"..."}, etc]
-    //Potential are the LB Abilities, like: [{"Name":"...", "description":["Level 1: ...", etc]}, etc]
     
-    if (!charinfo) return msg.channel.send("Character not implemented yet")
-    if (!charinfo.captain) charinfo.captain = 'None'
-    if (!charinfo.special) {
-      charinfo.special = ''
-      charinfo.specialName = 'None'
-    }
-    if (!charinfo.sailor) charinfo.sailor = 'None'
-
-    if (typeof charinfo.captain == "object") {
-      var charCA = charinfo.captain;
-      var ctext = "**Variable Captain Ability:** \n";   
-      for (var CAlevel in charCA) {
-        if (charCA.hasOwnProperty(CAlevel)) {
-          var desc = charCA[CAlevel];
-          ctext += "__" + CAlevel + ":__ " + desc + '\n';
-        }
-      }
-      charinfo.captain = ctext;
-    }
-    var multistage = 'False';
-    if (typeof charinfo.special == "object") {
-      multistage = 'True';
-      var charSP = charinfo.special;
-      //charSP = [{"description":"...", "cooldown":[M,N]}, {...}]
-      var sptext = "";
-      var stagei;
-      for (stagei = 1; stagei <= charSP.length; stagei++) {
-        var SPstage = charSP[stagei-1];
-        //SPstage = {"description":"...", "cooldown":[M,N]}
-        var stagedesc = "__Stage " + stagei.toString() + ":__ " + SPstage.description;
-        var stagecd = SPstage.cooldown[0].toString() + ' -> ' + SPstage.cooldown[1].toString() + ' turns';
-        sptext += stagedesc + '\n' + '__Cooldown__ (S' + stagei.toString() + '): ' + stagecd + '\n \n';
-      }
-      charinfo.special = sptext;
-    }
-    if (typeof charinfo.sailor == "object") {
-      var charSA = charinfo.sailor;
-      var stext = "**Variable Sailor Ability:** \n";   
-      for (var SAlevel in charSA) {
-        if (charSA.hasOwnProperty(SAlevel)) {
-          var desc = charSA[SAlevel];
-          stext += "__" + SAlevel + ":__ " + desc + '\n';
-        }
-      }
-      charinfo.sailor = stext;
-    }
+    //CHARINFO:
+      //Info Names: captain, captainNotes, specialName, special, specialNotes, sailor, limit, potential
+      //Captain can be string or object with {"base":"...", "level1":"...", etc}
+      //Captain Actions are always noted with: ... <br> <b>Action:</b> ...
+      //Special can be string or list with [{"description":"...", "cooldown":[M,N]}, {...}] 
+      //Sailor can also be a string or object like: {"base":"None", "level1":"...", etc} 
+      //Limit is the limit tree, like: [{"description":"..."}, {"description":"..."}, etc]
+      //Potential are the LB Abilities, like: [{"Name":"...", "description":["Level 1: ...", etc]}, etc]
     
-    var charicon = 'https://onepiece-treasurecruise.com/wp-content/uploads/f' + charid0 + '.png';
-    var charcd = cdlist[charid-1];      
-    if (charcd == null || !charcd) {
-      charcd = '';
-    }
-    else if (multistage == 'True') {
-      charcd = '';
-    }
-    else {
-      charcd = '__Cooldown:__ ' + charcd[0].toString() + ' -> ' + charcd[1].toString() + ' turns';
-    }
-      
-    var capaction = charinfo.captain.split("<br> <b>Action:</b>");
-    if (capaction.length > 1) {
-      charinfo.captain = capaction[0] + '\n' + '__Captain Action:__' + capaction[1];
-    }
+    var charid = allcharinfo[0];
+    var charinfo = allcharinfo[1];
+    var charcd = allcharinfo[2];
+    var charicon = allcharinfo[3];
       
     msg.channel.send({embed: {
       color: 42751,
@@ -599,8 +627,17 @@ client.on('message', msg => {
     
   }
   
-//------------------------------------------------------------------------- END DATABASE    
-  
+//------------------------------------------------------------------------- END DATABASE   
+    
+//------------------------------------------------------------------------- START LIMITBREAK
+    
+  if (command == 'lb') {
+    msg.reply("Soon!")
+    
+  }
+    
+//------------------------------------------------------------------------- START LIMITBREAK
+    
 //------------------------------------------------------------------------- START SKILLUP
   
   if (command == 'skillup') {
