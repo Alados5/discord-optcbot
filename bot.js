@@ -724,25 +724,28 @@ client.on('message', msg => {
 //------------------------------------------------------------------------- END SKILLUP
     
   if (command == 'embed') {
-    var desctext = msg.content.slice(7);
+    var alltext = msg.content.slice(7).split('|');
+    var msgtitle = alltext[0];
+    var desctext = alltext[1];
+    var msgcolor = parseInt(alltext[2]);
     msg.channel.send({embed: {
-      color: 6811648,
+      color: msgcolor,
       author: {
         name: msg.author.username,
         icon_url: msg.author.avatarURL
       },
       description:desctext,
-      title: "BIENVENIDA",
-      fields: [
-        {
-          name: "CAMPO 1",
-          value: "Texto 1"
-        },
-        {
-          name: "CAMPO 2",
-          value: "Texto 2"
-        }
-      ]
+      title: msgtitle,
+      //fields: [
+      //  {
+      //    name: "CAMPO 1",
+      //    value: "Texto 1"
+      //  },
+      //  {
+      //    name: "CAMPO 2",
+      //    value: "Texto 2"
+      //  }
+      //]
     }})
   }
   
