@@ -650,8 +650,18 @@ client.on('message', msg => {
     var charinfo = allcharinfo[1];
     var charcd = allcharinfo[2];
     var charicon = allcharinfo[3];
+    if (!charinfo.limit) return msg.reply("This character has no Limit Break")
       
-    msg.reply("Command not implemented yet. But here's your character's icon: " + charicon)
+    var lbtree = charinfo.limit;
+    var potab = charinfo.potential;
+      
+    var ltext = "";   
+    for (lbi=0; lbi<lbtree.length; lbi++) {
+      var lblevel = lbtree[lbi].description;
+      ltext += "__Node " + lbi + ":__ " + lblevel + "\n";
+    }
+      
+    msg.channel.send(ltext)
     
   }
     
