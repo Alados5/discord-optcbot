@@ -661,18 +661,17 @@ client.on('message', msg => {
       var lbnode = lbi + 1;
       ltext += "__Node " + lbnode + ":__ " + lblevel + "\n";
     }
-    msg.channel.send(ltext)
       
     msg.channel.send({embed: {
       color: 42751,
-      title: "OPTC DATABASE - LIMIT BREAK",
-      footer: {
-        text: "Bot by Alados5 | Info by optc-db.github.io",
-        icon_url: client.user.avatarURL
-      },
-      thumbnail: {
-        "url":charicon
-      },
+      //title: "OPTC DATABASE - LIMIT BREAK",
+      //footer: {
+      //  text: "Bot by Alados5 | Info by optc-db.github.io",
+      //  icon_url: client.user.avatarURL
+      //},
+      //thumbnail: {
+      //  "url":charicon
+      //},
       fields: [
         {
           name: "\n __Character__",
@@ -681,10 +680,10 @@ client.on('message', msg => {
         {
           name: "\n __Limit Break Tree__",
           value: ltext + "\n ~"
-        },
-        {
-          name: "\n __Potential Abilities__",
-          value: "Soon!"
+        //},
+        //{
+        //  name: "\n __Potential Abilities__",
+        //  value: "Soon!"
         }
       ]
     }})
