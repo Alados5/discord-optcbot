@@ -683,7 +683,7 @@ client.on('message', msg => {
         },
         {
           name: "\n __Potential Abilities__",
-          value: "Soon!" + "\n ~"
+          value: "Soon!"
         }
       ]
     }})
