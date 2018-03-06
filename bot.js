@@ -673,13 +673,13 @@ client.on('message', msg => {
       //  "url":charicon
       //},
       fields: [
-        {
-          name: "\n __Character__",
-          value: "ID: " + charid + ' - **' + charname + "** \n ~"
-        },
+        //{
+        //  name: "\n __Character__",
+        //  value: "ID: " + charid + ' - **' + charname + "** \n ~"
+        //},
         {
           name: "\n __Limit Break Tree__",
-          value: ltext + "\n ~"
+          value: ltext //+ "\n ~"
         //},
         //{
         //  name: "\n __Potential Abilities__",
