@@ -655,10 +655,11 @@ client.on('message', msg => {
     var lbtree = charinfo.limit;
     var potab = charinfo.potential;
       
-    var ltext = "";   
+    var ltext = "**__LIMIT BREAK TREE__** \n";   
     for (lbi=0; lbi<lbtree.length; lbi++) {
       var lblevel = lbtree[lbi].description;
-      ltext += "__Node " + lbi + ":__ " + lblevel + "\n";
+      var lbnode = lbi + 1;
+      ltext += "__Node " + lbnode + ":__ " + lblevel + "\n";
     }
       
     msg.channel.send(ltext)
