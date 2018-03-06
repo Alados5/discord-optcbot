@@ -655,7 +655,7 @@ client.on('message', msg => {
     var lbtree = charinfo.limit;
     var potab = charinfo.potential;
       
-    var ltext = "**__LIMIT BREAK TREE__** \n";   
+    var ltext = "";   
     for (lbi=0; lbi<lbtree.length; lbi++) {
       var lblevel = lbtree[lbi].description;
       var lbnode = lbi + 1;
