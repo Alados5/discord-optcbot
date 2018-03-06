@@ -658,6 +658,7 @@ client.on('message', msg => {
     var ltext = "";   
     for (lbi=0; lbi<lbtree.length; lbi++) {
       var lblevel = lbtree[lbi].description;
+      msg.channel.send(lblevel)
       var lbnode = lbi + 1;
       ltext += "__Node " + lbnode + ":__ " + lblevel + "\n";
     }
