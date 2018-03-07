@@ -593,6 +593,7 @@ client.on('message', msg => {
     var charinfo = allcharinfo[1];
     var charcd = allcharinfo[2];
     var charicon = allcharinfo[3];
+    var viewindblink = dbcharid + charid; //dbcharid = 'http://optc-db.github.io/characters/#/view/';
       
     msg.channel.send({embed: {
       color: 42751,
@@ -604,6 +605,7 @@ client.on('message', msg => {
       thumbnail: {
         "url":charicon
       },
+      url: viewindblink,     
       fields: [
         {
           name: "\n __Character__",
@@ -645,11 +647,13 @@ client.on('message', msg => {
       //Sailor can also be a string or object like: {"base":"None", "level1":"...", etc} 
       //Limit is the limit tree, like: [{"description":"..."}, {"description":"..."}, etc]
       //Potential are the LB Abilities, like: [{"Name":"...", "description":["Level 1: ...", etc]}, etc]
-    
+
     var charid = allcharinfo[0];
     var charinfo = allcharinfo[1];
     var charcd = allcharinfo[2];
     var charicon = allcharinfo[3];
+    var viewindblink = dbcharid + charid; //dbcharid = 'http://optc-db.github.io/characters/#/view/';
+      
     if (!charinfo.limit) return msg.reply("This character has no Limit Break")
       
     var lbtree = charinfo.limit;
@@ -690,12 +694,13 @@ client.on('message', msg => {
     }
       
     msg.channel.send({embed: {
-      color: 42751,
+      color: 12059383,
       title: "OPTC DATABASE - LIMIT BREAK",
       footer: {
         text: "Bot by Alados5 | Info by optc-db.github.io",
         icon_url: client.user.avatarURL
       },
+      url: viewindblink,
       thumbnail: {
         "url":charicon
       },
