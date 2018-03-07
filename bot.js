@@ -654,7 +654,6 @@ client.on('message', msg => {
       
     var lbtree = charinfo.limit;
     var lbfields = [{name: "__Character__", value: "ID: " + charid + ' - **' + charname + "** \n ~"}];
-    lbfields.push({name: "__Limit Break Tree__", value: "."});
     var ltext = "";   
     for (lbi=0; lbi<lbtree.length; lbi++) {
       var lblevel = lbtree[lbi].description;
@@ -662,15 +661,15 @@ client.on('message', msg => {
       ltext += "__Node " + lbnode + ":__ " + lblevel + "\n";
         
       if (lbnode == 15) {
-        lbfields.push({name:"__Limit Break Tree__", value:ltext});
+        lbfields.push({name:"__Limit Break Tree (1~15)__", value:ltext});
         ltext = "";
       }
       if (lbnode == 30) {
-        lbfields.push({name:"__Limit Break Tree (2)__", value:ltext});
+        lbfields.push({name:"__Limit Break Tree (16~30)__", value:ltext});
         ltext = "";
       }
       if (lbnode == 40) {
-        lbfields.push({name:"__Limit Break Tree (3)__", value:ltext});
+        lbfields.push({name:"__Limit Break Tree (31~40)__", value:ltext});
       }
     }
     
@@ -683,7 +682,7 @@ client.on('message', msg => {
       var potvalue = "";
       for (palvi=0; palvi<potdesc.length; palvi++) {
         var paleveldesc = potdesc[palvi].split(': ');
-        potvalue += "__" + paleveldesc[0] + ":__ " + paleveldesc[1];
+        potvalue += "__" + paleveldesc[0] + ":__  " + paleveldesc[1] + "\n";
       }
       lbfields.push({name: pottitle, value: potvalue});
     }
