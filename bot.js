@@ -661,28 +661,30 @@ client.on('message', msg => {
       ltext += "__Node " + lbnode + ":__ " + lblevel + "\n";
         
       if (lbnode == 15) {
-        lbfields.push({name:"__Limit Break Tree (1~15)__", value:ltext});
+        lbfields.push({name:"__Limit Break Nodes (1~15)__", value:ltext});
         ltext = "";
       }
       if (lbnode == 30) {
-        lbfields.push({name:"__Limit Break Tree (16~30)__", value:ltext});
+        lbfields.push({name:"__Limit Break Nodes (16~30)__", value:ltext});
         ltext = "";
       }
       if (lbnode == 40) {
-        lbfields.push({name:"__Limit Break Tree (31~40)__", value:ltext});
+        lbfields.push({name:"__Limit Break Nodes (31~40)__", value:ltext});
       }
     }
+      
+    lbfields.push({name:"__Limit Break Totals__", value:"Soon! \n ~"});
     
     var potab = charinfo.potential;
       //[{"Name":"...", "description":["Level 1: ...", etc]}, etc]
     for (pai=0; pai<potab.length; pai++) {
       var panum = pai+1;
-      var pottitle = "__Potential Ability " + panum + ":__" + potab[pai].Name;
+      var pottitle = "__Potential Ability " + panum + ":__ *" + potab[pai].Name + "*";
       var potdesc = potab[pai].description;
       var potvalue = "";
       for (palvi=0; palvi<potdesc.length; palvi++) {
         var paleveldesc = potdesc[palvi].split(': ');
-        potvalue += "__" + paleveldesc[0] + ":__  " + paleveldesc[1] + "\n";
+        potvalue += "__" + paleveldesc[0] + ":__ " + paleveldesc[1] + "\n";
       }
       lbfields.push({name: pottitle, value: potvalue});
     }
