@@ -185,7 +185,7 @@ function SummaryLB(lbtree) {
     }
   }
   var lbtext = "__Stat increase:__ " + statsup[0] + " ATK / " + statsup[1] + " HP / " + statsup[2] + " RCV" +
-               "\n __Extra Sockets:__ " + statsup[3] + "\n __CD Reduction:__ " + statsup[4] + " turns.";
+               "\n" + "__Extra Sockets:__ " + statsup[3] + "\n" + "__CD Reduction:__ " + statsup[4] + " turns.";
   
   var pottext = "__Potential Ability 1:__ " + potnames[0] +"\n" + "__Potential Ability 2:__ " + potnames[1];
   if (potnames.length == 3) pottext += "\n" + "__Potential Ability 3:__ " + potnames[2];
@@ -362,7 +362,8 @@ client.on('message', msg => {
                    "\n   **!ayuda** - Muestra este mensaje"+
                    "\n \n **__COMANDOS DE OPTC__**"+
                    "\n   **!char** o **!pj** - Busca un personaje o ID en la database (link)"+
-                   "\n   **!db** - Responde con la info de un personaje en la database (mensaje)"+        
+                   "\n   **!db** - Responde con la info de un personaje en la database (mensaje)"+ 
+                   "\n   **!lb** - Responde con info detallada sobre el Limit Break de un pj"+
                    "\n   **!icon** - Muestra el icono de un personaje"+
                    "\n   **!art** o **!pic** - Muestra el artwork de un personaje"+
                    "\n   **!mkteam** - Crea un equipo en la calculadora de la database (link)"+
@@ -391,6 +392,10 @@ client.on('message', msg => {
     }})
   }
   
+//------------------------------------------------------------------------- END HELP  
+    
+//------------------------------------------------------------------------- START RANDOMHELP  
+    
   if (command == 'directos') {
     msg.channel.send("**__HORARIO DIRECTOS THEJOSELU8 EN TWITCH__**"+
                      "\n \n MARTES y JUEVES de 20:30h a 22:30h \n SÁBADOS y DOMINGOS de 15:00h a 18:00h")
@@ -429,7 +434,7 @@ client.on('message', msg => {
     }
   }
   
-//------------------------------------------------------------------------- END HELP    
+//------------------------------------------------------------------------- END RANDOMHELP    
   
 //------------------------------------------------------------------------- START MEMES
 
@@ -649,20 +654,24 @@ client.on('message', msg => {
       url: viewindblink,     
       fields: [
         {
-          name: "\n __Character__",
+          name: "__Character__",
           value: "ID: " + charid + ' - **' + charname + "** \n ~"
         },
         {
-          name: "\n __Captain Ability__",
+          name: "__Captain Ability__",
           value: charinfo.captain + "\n ~"
         },
         {
-          name: "\n __Sailor Ability__",
+          name: "__Sailor Ability__",
           value: charinfo.sailor + "\n ~"
         },
         {
-          name: "\n __Special Ability__",
+          name: "__Special Ability__",
           value: '***' + charinfo.specialName + '*** \n' + charinfo.special + '\n' + charcd
+        },
+        {
+          name: "__Limit Break__",
+          value: lbsummary[0] + "\n" + lbsummary[1]
         }
       ]
     }})
@@ -720,7 +729,7 @@ client.on('message', msg => {
     }
     
     lbsummary += "\n ~";
-    lbfields.push({name:"__Limit Break Summary", value:lbsummary});
+    lbfields.push({name:"__Limit Break Summary__", value:lbsummary});
     
     var potab = charinfo.potential;
       //[{"Name":"...", "description":["Level 1: ...", etc]}, etc]
