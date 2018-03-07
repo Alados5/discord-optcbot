@@ -661,7 +661,7 @@ client.on('message', msg => {
     for (lbi=0; lbi<lbtree.length; lbi++) {
       var lblevel = lbtree[lbi].description;
       var lbnode = lbi + 1;
-      if (lbnode == 16) {
+      if (lbnode == 16 || lbnode == 31) {
         lbfields.push({name:".", value:ltext});
         ltext = "";
       }
