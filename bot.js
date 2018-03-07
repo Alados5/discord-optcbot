@@ -656,9 +656,8 @@ client.on('message', msg => {
     var potab = charinfo.potential;
     
     var lbfields = [{name: "__Character__", value: "ID: " + charid + ' - **' + charname + "** \n ~"}];
-    lbfields.push({name: "__Limit Break Tree__", value: "Test"});
-    //lbfields.push({name:"__Limit Break Tree__", value:" "});
-    //var ltext = "";   
+    lbfields.push({name: "__Limit Break Tree__", value: " "});
+    var ltext = "";   
     //for (lbi=0; lbi<lbtree.length; lbi++) {
       //var lblevel = lbtree[lbi].description;
       //var lbnode = lbi + 1;
