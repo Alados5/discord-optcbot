@@ -655,7 +655,7 @@ client.on('message', msg => {
     var lbtree = charinfo.limit;
     var potab = charinfo.potential;
       
-    var ltext = "";   
+    var ltext = "__**LIMIT BREAK TREE**__";   
     for (lbi=0; lbi<lbtree.length; lbi++) {
       var lblevel = lbtree[lbi].description;
       var lbnode = lbi + 1;
@@ -672,15 +672,16 @@ client.on('message', msg => {
       thumbnail: {
         "url":charicon
       },
+      description: ltext,
       fields: [
         {
           name: "\n __Character__",
           value: "ID: " + charid + ' - **' + charname + "** \n ~"
         },
-        {
-          name: "\n __Limit Break Tree__",
-          value: ltext.slice(0,1000) + "\n ~"
-        },
+        //{
+        //  name: "\n __Limit Break Tree__",
+        //  value: ltext.slice(0,1000) + "\n ~"
+        //},
         {
           name: "\n __Potential Abilities__",
           value: "Soon!"
