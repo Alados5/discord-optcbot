@@ -185,7 +185,7 @@ function SummaryLB(lbtree) {
     }
   }
   var lbtext = "__Stat increase:__ " + statsup[0] + " ATK / " + statsup[1] + " HP / " + statsup[2] + " RCV" +
-               "\n" + "__Extra Sockets:__ " + statsup[3] + "\n" + "__CD Reduction:__ " + statsup[4] + " turns.";
+               "\n" + "__Extra Sockets:__ " + statsup[3] + "\n" + "__CD Reduction:__ " + statsup[4] + " turns";
   
   var pottext = "__Potential Ability 1:__ " + potnames[0] +"\n" + "__Potential Ability 2:__ " + potnames[1];
   if (potnames.length == 3) pottext += "\n" + "__Potential Ability 3:__ " + potnames[2];
