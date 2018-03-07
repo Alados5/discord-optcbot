@@ -662,13 +662,13 @@ client.on('message', msg => {
       var lblevel = lbtree[lbi].description;
       var lbnode = lbi + 1;
       ltext += "__Node " + lbnode + ":__ " + lblevel + "\n";
-      if (lbnode > 15) {
-        lbfields.push({name:" ", value:ltext});
-        ltext = "";
-      }
+      //if (lbnode == 16) {
+      //  lbfields.push({name:" ", value:ltext});
+      //  ltext = "";
+      //}
     }
-    lbfields.push({name:" ", value:ltext});
-    lbfields.push({name: "__Potential Abilities__", value: "Soon!"});
+    //lbfields.push({name:" ", value:ltext});
+    //lbfields.push({name: "__Potential Abilities__", value: "Soon!"});
       
     msg.channel.send({embed: {
       color: 42751,
