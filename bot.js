@@ -653,22 +653,40 @@ client.on('message', msg => {
     if (!charinfo.limit) return msg.reply("This character has no Limit Break")
       
     var lbtree = charinfo.limit;
-    var potab = charinfo.potential;
-    
     var lbfields = [{name: "__Character__", value: "ID: " + charid + ' - **' + charname + "** \n ~"}];
     lbfields.push({name: "__Limit Break Tree__", value: "."});
     var ltext = "";   
     for (lbi=0; lbi<lbtree.length; lbi++) {
       var lblevel = lbtree[lbi].description;
       var lbnode = lbi + 1;
-      if (lbnode == 16 || lbnode == 31) {
-        lbfields.push({name:".", value:ltext});
+      ltext += "__Node " + lbnode + ":__ " + lblevel + "\n";
+        
+      if (lbnode == 15) {
+        lbfields.push({name:"__Limit Break Tree__", value:ltext});
         ltext = "";
       }
-      ltext += "__Node " + lbnode + ":__ " + lblevel + "\n";
+      if (lbnode == 30) {
+        lbfields.push({name:"__Limit Break Tree (2)__", value:ltext});
+        ltext = "";
+      }
+      if (lbnode == 40) {
+        lbfields.push({name:"__Limit Break Tree (3)__", value:ltext});
+      }
     }
-    lbfields.push({name: ".", value: ltext});
-    lbfields.push({name: "__Potential Abilities__", value: "Soon!"});
+    
+    var potab = charinfo.potential;
+      //[{"Name":"...", "description":["Level 1: ...", etc]}, etc]
+    for (pai=0; pai<potab.length; pai++) {
+      var panum = pai+1;
+      var pottitle = "__Potential Ability " + panum + ":__" + potab[pai].Name;
+      var potdesc = potab[pai].description;
+      var potvalue = "";
+      for (palvi=0; palvi<potdesc.length; palvi++) {
+        var paleveldesc = potdesc[palvi].split(': ');
+        potvalue += "__" + paleveldesc[0] + ":__ " + paleveldesc[1];
+      }
+      lbfields.push({name: pottitle, value: potvalue});
+    }
       
     msg.channel.send({embed: {
       color: 42751,
