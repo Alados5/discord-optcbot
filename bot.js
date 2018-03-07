@@ -667,11 +667,11 @@ client.on('message', msg => {
         },
         {
           name: "__Special Ability__",
-          value: '***' + charinfo.specialName + '*** \n' + charinfo.special + '\n' + charcd
+          value: '***' + charinfo.specialName + '*** \n' + charinfo.special + '\n' + charcd + "\n ~"
         },
         {
           name: "__Limit Break__",
-          value: lbsummary[0] + "\n" + lbsummary[1]
+          value: lbsummary[0] + "\n \n" + lbsummary[1]
         }
       ]
     }})
