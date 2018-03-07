@@ -654,13 +654,21 @@ client.on('message', msg => {
       
     var lbtree = charinfo.limit;
     var potab = charinfo.potential;
-      
-    var ltext = "__**LIMIT BREAK TREE**__";   
+    
+    var lbfields = [{name: "\n __Character__", value: "ID: " + charid + ' - **' + charname + "** \n ~"}];
+    lbfields.push({name:"__Limit Break Tree__", value:""});
+    var ltext = "";   
     for (lbi=0; lbi<lbtree.length; lbi++) {
       var lblevel = lbtree[lbi].description;
       var lbnode = lbi + 1;
       ltext += "__Node " + lbnode + ":__ " + lblevel + "\n";
+      if (lbnode > 15) {
+        lbfields.push({name:"", value:ltext});
+        ltext = "";
+      }
     }
+    lbfields.push({name:"", value:ltext});
+    lbfields.push({name: "\n __Potential Abilities__",value: "Soon!"});
       
     msg.channel.send({embed: {
       color: 42751,
@@ -672,21 +680,7 @@ client.on('message', msg => {
       thumbnail: {
         "url":charicon
       },
-      description: ltext,
-      fields: [
-        {
-          name: "\n __Character__",
-          value: "ID: " + charid + ' - **' + charname + "** \n ~"
-        },
-        //{
-        //  name: "\n __Limit Break Tree__",
-        //  value: ltext.slice(0,1000) + "\n ~"
-        //},
-        {
-          name: "\n __Potential Abilities__",
-          value: "Soon!"
-        }
-      ]
+      fields: lbfields
     }})
  
   }
