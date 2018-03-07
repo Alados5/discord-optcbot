@@ -119,7 +119,7 @@ function dbinfo(charname) {
       var stagecd = SPstage.cooldown[0].toString() + ' -> ' + SPstage.cooldown[1].toString() + ' turns';
       sptext += stagedesc + '\n' + '__Cooldown__ (S' + stagei.toString() + '): ' + stagecd + '\n \n';
     }
-    charinfo.special = sptext;
+    charinfo.special = sptext.slice(0,-3);
   }
   if (typeof charinfo.sailor == "object") {
     var charSA = charinfo.sailor;
