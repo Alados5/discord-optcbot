@@ -661,10 +661,10 @@ client.on('message', msg => {
     for (lbi=0; lbi<lbtree.length; lbi++) {
       var lblevel = lbtree[lbi].description;
       var lbnode = lbi + 1;
-      ltext += "__Node " + lbnode + ":__ " + lblevel + "\n";
-      if (lbnode == 15) {
+      if (lbnode == 16) {
         lbfields.push({name:".", value:ltext});
         ltext = "";
+      ltext += "__Node " + lbnode + ":__ " + lblevel + "\n";
       }
     }
     lbfields.push({name: ".", value: ltext});
