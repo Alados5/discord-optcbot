@@ -155,6 +155,44 @@ function dbinfo(charname) {
   
 }
 
+function SummaryLB(lbtree) {
+  //Limit is the limit tree, like: [{"description":"..."}, {"description":"..."}, etc]
+  var statsup = [0, 0, 0, 0, 0]; //ATK, HP, RCV, Sockets, -CD
+  var potnames = [];
+  for(lbi=0;lbi<lbtree.length;lbi++) {
+    var lblevel = lbtree[lbi].description;
+    if (lblevel.indexOf("Boosts base ATK") >= 0) {
+      var statincrease = lblevel.slice(lblevel.indexOf("by")+3, lblevel.indexOf("by")+6);
+      statsup[0] += parseInt(statincrease);
+    }
+    else if (lblevel.indexOf("Boosts base HP") >= 0) {
+      var statincrease = lblevel.slice(lblevel.indexOf("by")+3, lblevel.indexOf("by")+6);
+      statsup[1] += parseInt(statincrease);
+    }
+    else if (lblevel.indexOf("Boosts base RCV") >= 0) {
+      var statincrease = lblevel.slice(lblevel.indexOf("by")+3, lblevel.indexOf("by")+6);
+      statsup[2] += parseInt(statincrease);
+    }
+    else if (lblevel.indexOf("Socket slot") >= 0) {
+      statsup[3] += 1;
+    }
+    else if (lblevel.indexOf("Reduce base Special Cooldown") >= 0) {
+      var cddecrease = lblevel.slice(lblevel.indexOf("by")+3, lblevel.indexOf("by")+6);
+      statsup[4] += parseInt(cddecrease);
+    }
+    else if (lblevel.indexOf("Potential") >= 0) {
+      potnames.push(lblevel.slice(lblevel.indexOf("Potential")+13));
+    }
+  }
+  var lbtext = "__Stat increase:__ " + statsup[0] + " ATK / " + statsup[1] + " HP / " + statsup[2] + " RCV" +
+               "\n __Extra Sockets:__ " + statsup[3] + "\n __CD Reduction:__ " + statsup[4] + " turns.";
+  
+  var pottext = "__Potential Ability 1:__ " + potnames[0] +"\n" + "__Potential Ability 2:__ " + potnames[1];
+  if (potnames.length == 3) pottext += "\n" + "__Potential Ability 3:__ " + potnames[2];
+ 
+  return [lbtext, pottext]
+}
+
 //------------------------------------------------------------------------- END DBINFO FS
 
 //------------------------------------------------------------------------- START SKILLUP FS  
@@ -593,7 +631,10 @@ client.on('message', msg => {
     var charinfo = allcharinfo[1];
     var charcd = allcharinfo[2];
     var charicon = allcharinfo[3];
-    var viewindblink = dbcharid + charid; //dbcharid = 'http://optc-db.github.io/characters/#/view/';
+    var viewindblink = dbcharid + charid;
+    
+    if (!charinfo.limit) var lbsummary = ["This character has no Limit Break", ""];
+    else var lbsummary = SummaryLB(charinfo.limit);    //SummaryLB(lbtree) - return [lbtext, pottext]
       
     msg.channel.send({embed: {
       color: 42751,
@@ -642,7 +683,6 @@ client.on('message', msg => {
     //CHARINFO:
       //Info Names: captain, captainNotes, specialName, special, specialNotes, sailor, limit, potential
       //Captain can be string or object with {"base":"...", "level1":"...", etc}
-      //Captain Actions are always noted with: ... <br> <b>Action:</b> ...
       //Special can be string or list with [{"description":"...", "cooldown":[M,N]}, {...}] 
       //Sailor can also be a string or object like: {"base":"None", "level1":"...", etc} 
       //Limit is the limit tree, like: [{"description":"..."}, {"description":"..."}, etc]
@@ -652,11 +692,13 @@ client.on('message', msg => {
     var charinfo = allcharinfo[1];
     var charcd = allcharinfo[2];
     var charicon = allcharinfo[3];
-    var viewindblink = dbcharid + charid; //dbcharid = 'http://optc-db.github.io/characters/#/view/';
+    var viewindblink = dbcharid + charid;
       
     if (!charinfo.limit) return msg.reply("This character has no Limit Break")
       
     var lbtree = charinfo.limit;
+    var lbsummary = SummaryLB(lbtree)[0];    //SummaryLB return [lbtext, pottext]
+      
     var lbfields = [{name: "__Character__", value: "ID: " + charid + ' - **' + charname + "** \n ~"}];
     var ltext = "";   
     for (lbi=0; lbi<lbtree.length; lbi++) {
@@ -676,8 +718,9 @@ client.on('message', msg => {
         lbfields.push({name:"__Limit Break Nodes (31~40)__", value:ltext});
       }
     }
-      
-    lbfields.push({name:"__Limit Break Totals__", value:"Soon! \n ~"});
+    
+    lbsummary += "\n ~";
+    lbfields.push({name:"__Limit Break Summary", value:lbsummary});
     
     var potab = charinfo.potential;
       //[{"Name":"...", "description":["Level 1: ...", etc]}, etc]
