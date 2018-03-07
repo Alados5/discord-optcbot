@@ -664,8 +664,8 @@ client.on('message', msg => {
       if (lbnode == 16) {
         lbfields.push({name:".", value:ltext});
         ltext = "";
-      ltext += "__Node " + lbnode + ":__ " + lblevel + "\n";
       }
+      ltext += "__Node " + lbnode + ":__ " + lblevel + "\n";
     }
     lbfields.push({name: ".", value: ltext});
     lbfields.push({name: "__Potential Abilities__", value: "Soon!"});
