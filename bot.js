@@ -95,13 +95,15 @@ function dbinfo(charname) {
   if (!charinfo.sailor) charinfo.sailor = 'None'
   if (typeof charinfo.captain == "object") {
     var charCA = charinfo.captain;
-    var ctext = "**Variable Captain Ability:** \n";   
+    var ctext = "**Variable Captain Ability:** \n";
+    var carray = [];
     for (var CAlevel in charCA) {
       if (charCA.hasOwnProperty(CAlevel)) {
         var desc = charCA[CAlevel];
-        ctext += "__" + CAlevel + ":__ " + desc + '\n';
+        carray.push(desc + '\n');
       }
     }
+    ctext += "__No LB:__ " + carray[0] + "__Full LB:__ " + carray[carray.length-1];
     charinfo.captain = ctext;
   }
     
