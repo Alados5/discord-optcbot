@@ -145,7 +145,7 @@ function dbinfo(charname) {
     charcd = '';
   }
   else {
-    charcd = '__Cooldown:__ ' + charcd[0].toString() + ' -> ' + charcd[1].toString() + ' turns';
+    charcd = '__Cooldown:__ ' + charcd[0].toString() + ' -> ' + charcd[1].toString() + ' turns \n';
   }
   
   var capaction = charinfo.captain.split("<br> <b>Action:</b>");
