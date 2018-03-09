@@ -471,8 +471,20 @@ client.on('message', msg => {
     
   if (command == 'kappa') {
     msg.delete()
-    var kappalink = "http://i3.kym-cdn.com/photos/images/newsfeed/000/925/494/218.png_large";
+    var kappalink = "https://i.imgur.com/cpzYXCI.png";
     msg.channel.send(msg.author.username + ":", {files: [kappalink]})
+  }
+    
+  if (command == 'chopper') {
+    msg.delete()
+    var chopperlink = "https://i.imgur.com/9pmsjef.gif";
+    msg.channel.send(msg.author.username + ":", {files: [chopperlink]})
+  }
+    
+  if (command == 'mchopper') {
+    msg.delete()
+    var mchopperlink = "https://media.giphy.com/media/Gj8zvOYXL7rtS/source.gif";
+    msg.channel.send(msg.author.username + ":", {files: [mchopperlink]})
   }
 
 //------------------------------------------------------------------------- END MEMES  
