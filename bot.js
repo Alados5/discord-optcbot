@@ -447,6 +447,11 @@ client.on('message', msg => {
   if (command == 'gettingoverit') {
     msg.reply('Consejo: coge la serpiente')
   }
+    
+  if (command == 'xdoubt') {
+    msg.delete()
+    msg.channel.send("http://i0.kym-cdn.com/entries/icons/mobile/000/023/021/e02e5ffb5f980cd8262cf7f0ae00a4a9_press-x-to-doubt-memes-memesuper-la-noire-doubt-meme_419-238.jpg")
+  }
 
 //------------------------------------------------------------------------- END MEMES  
   
