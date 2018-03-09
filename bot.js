@@ -451,7 +451,28 @@ client.on('message', msg => {
   if (command == 'xdoubt') {
     msg.delete()
     var xdoubtlink = "http://i0.kym-cdn.com/entries/icons/mobile/000/023/021/e02e5ffb5f980cd8262cf7f0ae00a4a9_press-x-to-doubt-memes-memesuper-la-noire-doubt-meme_419-238.jpg"
-    msg.channel.send(" ", {files: [xdoubtlink]})
+    msg.channel.send(msg.author.username + ":", {files: [xdoubtlink]})
+  }
+    
+  if (command == 'shrug') {
+    msg.delete()
+    msg.channel.send(msg.author.username + ": \n ¯\_(ツ)_/¯")
+  }
+    
+  if (command == 'lenny') {
+    msg.delete()
+    msg.channel.send(msg.author.username + ": \n ( ͡° ͜ʖ ͡°)")
+  }
+    
+  if (command == 'tableflip') {
+    msg.delete()
+    msg.channel.send(msg.author.username + ": \n (╯°□°）╯︵ ┻━┻")
+  }
+    
+  if (command == 'kappa') {
+    msg.delete()
+    var kappalink = "https://qph.fs.quoracdn.net/main-qimg-43d06fcb11f9fd575278ec8270e20f58";
+    msg.channel.send(msg.author.username + ":", {files: [kappalink]})
   }
 
 //------------------------------------------------------------------------- END MEMES  
