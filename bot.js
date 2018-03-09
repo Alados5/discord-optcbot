@@ -456,7 +456,7 @@ client.on('message', msg => {
     
   if (command == 'shrug') {
     msg.delete()
-    msg.channel.send(msg.author.username + ": \n ¯\_(ツ)_/¯")
+    msg.channel.send(msg.author.username + ": \n ¯\\\_(ツ)_/¯")
   }
     
   if (command == 'lenny') {
@@ -471,7 +471,7 @@ client.on('message', msg => {
     
   if (command == 'kappa') {
     msg.delete()
-    var kappalink = "https://qph.fs.quoracdn.net/main-qimg-43d06fcb11f9fd575278ec8270e20f58";
+    var kappalink = "http://i3.kym-cdn.com/photos/images/newsfeed/000/925/494/218.png_large";
     msg.channel.send(msg.author.username + ":", {files: [kappalink]})
   }
 
