@@ -450,7 +450,8 @@ client.on('message', msg => {
     
   if (command == 'xdoubt') {
     msg.delete()
-    msg.channel.send("http://i0.kym-cdn.com/entries/icons/mobile/000/023/021/e02e5ffb5f980cd8262cf7f0ae00a4a9_press-x-to-doubt-memes-memesuper-la-noire-doubt-meme_419-238.jpg")
+    var xdoubtlink = "http://i0.kym-cdn.com/entries/icons/mobile/000/023/021/e02e5ffb5f980cd8262cf7f0ae00a4a9_press-x-to-doubt-memes-memesuper-la-noire-doubt-meme_419-238.jpg"
+    msg.channel.send(" ", {files: [xdoubtlink]})
   }
 
 //------------------------------------------------------------------------- END MEMES  
@@ -871,6 +872,7 @@ client.on('message', msg => {
 //------------------------------------------------------------------------- START WELCOME
     
   if (command == 'reply') {
+    msg.delete()
     msg.channel.send(msg.content.slice(7))
   }
     
