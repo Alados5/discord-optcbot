@@ -412,6 +412,18 @@ client.on('message', msg => {
     var enlace = "https://docs.google.com/document/d/1pIUvQwcItefsjQkPgDdwg7BsYvc_M5kUY_8mFy-1eqM/edit?usp=sharing";
     msg.channel.send(enlace)
   }
+    
+  if (command == 'database') {
+    msg.channel.send("http://optc-db.github.io")
+  }
+    
+  if (command == 'nakamanetwork') {
+    msg.channel.send("http://www.nakama.network")  
+  }
+    
+  if (command == 'calendar') {
+    msg.channel.send("https://optc-agenda.github.io/jap.html")
+  }
   
   if (command == 'ambush') {
     var fecha = new Date();
