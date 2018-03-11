@@ -692,6 +692,7 @@ client.on('message', msg => {
     var viewindblink = dbcharid + charid;
     
     if (!charinfo.limit) var lbsummary = ["This character has no Limit Break", ""];
+    else if (typeof charinfo.limit == "string") var lbsummary = ["This character has a Limit Break Tree", "Not Implemented Yet"];
     else var lbsummary = SummaryLB(charinfo.limit);    //SummaryLB(lbtree) - return [lbtext, pottext]
       
     msg.channel.send({embed: {
@@ -757,6 +758,7 @@ client.on('message', msg => {
     var viewindblink = dbcharid + charid;
       
     if (!charinfo.limit) return msg.reply("This character has no Limit Break")
+    if (typeof charinfo.limit == "string") return msg.reply("This character's Limit Break is not implemented yet")
       
     var lbtree = charinfo.limit;
     var lbsummary = SummaryLB(lbtree)[0];    //SummaryLB return [lbtext, pottext]
