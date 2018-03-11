@@ -498,6 +498,12 @@ client.on('message', msg => {
     var mchopperlink = "https://media.giphy.com/media/Gj8zvOYXL7rtS/source.gif";
     msg.channel.send(msg.author.username + ":", {files: [mchopperlink]})
   }
+    
+  if (command == 'moderdonia') {
+    msg.delete()
+    var moderdonialink = "https://www.eldiario.es/fotos/bandera_EDIIMA20171109_0409_19.jpg";
+    msg.channel.send("**__Gora Moderdonia Askatuta!__**", {files: [moderdonialink]})
+  }
 
 //------------------------------------------------------------------------- END MEMES  
   
