@@ -97,16 +97,20 @@ function dbinfo(charname) {
     var charCA = charinfo.captain;
     var ctext = "**Variable Captain Ability:** \n";
     var carray = [];
+    var dualunit = False;
     for (var CAlevel in charCA) {
       if (charCA.hasOwnProperty(CAlevel)) {
         var desc = charCA[CAlevel];
-        ctext += "__" + CAlevel + ":__ " + desc + '\n';
+        if (CAlevel == 'combined') dualunit = True;
         carray.push(desc + '\n');
       }
     }
     
-    if (carray.length > 4) {
-      ctext = "**Variable Captain Ability:** \n" + "__No LB:__ " + carray[0] + "__Full LB:__ " + carray[carray.length-1];
+    if (!dualunit) {
+      ctext += "__No LB:__ " + carray[0] + "__Full LB:__ " + carray[carray.length-1];
+    }
+    else {
+      ctext += "__Character 1:__ " + carray[0] + "__Character 2:__ " + carray[1] + "__Dual Characters:__ " + carray[2];   
     }
       
     charinfo.captain = ctext;
