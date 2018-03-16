@@ -349,6 +349,15 @@ client.on('ready', () => {
 
 
 client.on('message', msg => {
+  
+  var lowtext = msg.content.toLowerCase();
+  if(lowtext.indexOf("globest") >= 0) {
+    var xdoubtlink = "http://i0.kym-cdn.com/entries/icons/mobile/000/023/021/e02e5ffb5f980cd8262cf7f0ae00a4a9_press-x-to-doubt-memes-memesuper-la-noire-doubt-meme_419-238.jpg";
+    msg.reply("Did you say Globest? \n ..." + xdoubtlink)
+  }
+    
+    
+  //Returns if author is a bot or message doesn't start with the prefix
   if(msg.author.bot || !msg.content.startsWith(prefix)) return;
     
   //Handles arguments to just take the first word
