@@ -100,11 +100,15 @@ function dbinfo(charname) {
     for (var CAlevel in charCA) {
       if (charCA.hasOwnProperty(CAlevel)) {
         var desc = charCA[CAlevel];
+        ctext += "__" + CAlevel + ":__ " + desc + '\n';
         carray.push(desc + '\n');
       }
     }
-    ctext += "__No LB:__ " + carray[0] + "__Full LB:__ " + carray[carray.length-1];
-    charinfo.captain = ctext;
+    
+    if (carray.length > 4) {
+      ctext = "**Variable Captain Ability:** \n" + "__No LB:__ " + carray[0] + "__Full LB:__ " + carray[carray.length-1];
+      charinfo.captain = ctext;
+    }
   }
     
   var multistage = 'False';
@@ -356,7 +360,7 @@ client.on('message', msg => {
   var lowtext = msg.content.toLowerCase();
   if(lowtext.indexOf("globest") >= 0) {
     var xdoubtlink = "http://i0.kym-cdn.com/entries/icons/mobile/000/023/021/e02e5ffb5f980cd8262cf7f0ae00a4a9_press-x-to-doubt-memes-memesuper-la-noire-doubt-meme_419-238.jpg";
-    msg.reply("Did you say Globest? \n ..." + xdoubtlink)
+    msg.reply("Did you say Globest? \n ... \n" + xdoubtlink)
   }
     
   //Returns if message doesn't start with prefix
