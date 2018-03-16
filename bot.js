@@ -107,8 +107,9 @@ function dbinfo(charname) {
     
     if (carray.length > 4) {
       ctext = "**Variable Captain Ability:** \n" + "__No LB:__ " + carray[0] + "__Full LB:__ " + carray[carray.length-1];
-      charinfo.captain = ctext;
     }
+      
+    charinfo.captain = ctext;
   }
     
   var multistage = 'False';
