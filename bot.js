@@ -349,6 +349,9 @@ client.on('ready', () => {
 
 
 client.on('message', msg => {
+    
+  //Returns if author is a bot
+  if(msg.author.bot) return;
   
   var lowtext = msg.content.toLowerCase();
   if(lowtext.indexOf("globest") >= 0) {
@@ -356,9 +359,8 @@ client.on('message', msg => {
     msg.reply("Did you say Globest? \n ..." + xdoubtlink)
   }
     
-    
-  //Returns if author is a bot or message doesn't start with the prefix
-  if(msg.author.bot || !msg.content.startsWith(prefix)) return;
+  //Returns if message doesn't start with prefix
+  if(!msg.content.startsWith(prefix)) return;
     
   //Handles arguments to just take the first word
   const args = msg.content.slice(prefix.length).split(/ +/);
