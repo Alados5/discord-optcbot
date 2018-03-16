@@ -97,11 +97,13 @@ function dbinfo(charname) {
     var charCA = charinfo.captain;
     var ctext = "**Variable Captain Ability:** \n";
     var carray = [];
-    var dualunit = False;
+    var dualunit = false;
     for (var CAlevel in charCA) {
       if (charCA.hasOwnProperty(CAlevel)) {
         var desc = charCA[CAlevel];
-        if (CAlevel == 'combined') dualunit = True;
+        if (CAlevel == "combined") {
+          dualunit = true;
+        }
         carray.push(desc + '\n');
       }
     }
