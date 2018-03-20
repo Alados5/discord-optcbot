@@ -859,7 +859,7 @@ client.on('message', msg => {
     if(args.length < 2) return msg.reply("Enter valid data!")
     var k = args[0];
     var n = args[1];
-    if (n < k) return msg.reply("It goes the other way around: [skillups] [copies]")
+    if (parseInt(n) < parseInt(k)) return msg.reply("It goes the other way around: [skillups] [copies]")
     
     if(args.length == 2) {
       var Event = '2';
