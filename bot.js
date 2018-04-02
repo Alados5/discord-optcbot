@@ -363,12 +363,22 @@ client.on('message', msg => {
     
   //Returns if author is a bot
   if(msg.author.bot) return;
-  
+
+//------------------------------------------------------------------------- START NO PREFIX DETECTION 
+    
   var lowtext = msg.content.toLowerCase();
   if(lowtext.indexOf("globest") >= 0) {
     var xdoubtlink = "http://i0.kym-cdn.com/entries/icons/mobile/000/023/021/e02e5ffb5f980cd8262cf7f0ae00a4a9_press-x-to-doubt-memes-memesuper-la-noire-doubt-meme_419-238.jpg";
     msg.reply("Did you say Globest? ...", {files: [xdoubtlink]})
   }
+    
+  if(lowtext.indexOf("kappa") >= 0) {
+    var kappalink = "https://i.imgur.com/cpzYXCI.png";
+    msg.channel.send(msg.author.username + ":", {files: [kappalink]})
+  }
+    
+//------------------------------------------------------------------------- END NO PREFIX DETECTION 
+
     
   //Returns if message doesn't start with prefix
   if(!msg.content.startsWith(prefix)) return;
@@ -501,12 +511,6 @@ client.on('message', msg => {
   if (command == 'tableflip') {
     msg.delete()
     msg.channel.send(msg.author.username + ": \n (╯°□°）╯︵ ┻━┻")
-  }
-    
-  if (command == 'kappa') {
-    msg.delete()
-    var kappalink = "https://i.imgur.com/cpzYXCI.png";
-    msg.channel.send(msg.author.username + ":", {files: [kappalink]})
   }
     
   if (command == 'chopper') {
