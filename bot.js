@@ -373,7 +373,7 @@ client.on('message', msg => {
   }
     
   if(lowtext.indexOf("kappa") >= 0) {
-    var kappalink = "https://i.imgur.com/8fxRHhY.png";
+    var kappalink = "https://i.imgur.com/9LNAbKY.png";
     msg.channel.send(msg.author.username + ":", {files: [kappalink]})
   }
     
