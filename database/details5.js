@@ -459,7 +459,7 @@ var db5 = {
         sailor: {
             "base": "None",
             "level1": "Boosts base ATK of Fighter characters by 50",
-            "level1": "Makes [INT] orbs \"beneficial\" for Fighter characters",
+            "level2": "Makes [INT] orbs \"beneficial\" for Fighter characters",
         },
         specialName: "The Greatest Villian's Bluff",
     },
