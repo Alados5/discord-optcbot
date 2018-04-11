@@ -536,6 +536,12 @@ client.on('message', msg => {
     var bvlink = "https://www.youtube.com/watch?v=f5thLVGziNQ";
     msg.channel.send(bvlink)
   }
+    
+  if (command == 'sarcasm') {
+    msg.delete()
+    var sarcasmlink = "http://oi58.tinypic.com/29cwbp1.jpg";
+    msg.channel.send(msg.author.username + ":", {files: [sarcasmlink]})
+  }
 
 //------------------------------------------------------------------------- END MEMES  
   
