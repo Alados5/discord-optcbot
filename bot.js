@@ -251,6 +251,10 @@ function ProbSkill(k, n, event, OC) {
     if(OC == 'S' || OC == 'Y') return Bin_R(k, n, 3/5)
     else return Bin_R(k, n, 1/2)
   }
+  if(event == '4') {
+    if(OC == 'S' || OC == 'Y') return Bin_R(k, n, 4/5)
+    else return Bin_R(k, n, 2/3)
+  }
   else {
     if(OC == 'S' || OC == 'Y') return Bin_R(k, n, 1/5)
     else return Bin_R(k, n, 1/6)
