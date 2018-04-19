@@ -2026,16 +2026,54 @@ var cdlist = [
     [ 20, 15 ], //V2 Akainu
     [ 20, 15 ],
     [ 20, 15 ], //V2 Aokiji
-    [ 21, 21 ],
-    [ 21, 21 ],
     [ 21, 15 ],
     [ 21, 15 ],
-    [ 17, 17 ],
-    [ 17, 17 ],
+    [ 21, 15 ],
+    [ 21, 15 ],
+    [ 17, 10 ],
+    [ 17, 10 ],
     [ 28, 14 ],
     [ 28, 14 ],
     [ 15, 12 ],
     [ 16, 11 ],
+    [ 28, 14 ],
+    [ 28, 14 ],
+    [ 11, 11 ],
+    [ 11, 11 ],
+    [ 10, 10 ],
+    [ 10, 10 ],
+    [ 8, 8 ],
+    [ 8, 8 ],   //Blitz Kizaru
+    [ 16, 10 ],
+    [ 16, 10 ],
+    [ 20, 14 ],
+    [ 17, 13 ],
+    [ 17, 13 ],
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,//Germa bros
+    null,//Germa bros
+    null,//Germa bros
+    [ 11, 11 ],
+    [ 11, 11 ],
+    [ 11, 11 ],
+    [ 11, 11 ],
+    null,
+    null,
+    null,
+    null,//Pudding
+    null,
+    null,
+    null,
+    null,
+    null,//Chopper
+    null,//Chopper
+    
 ];
 
 module.exports.cdlist = cdlist;
