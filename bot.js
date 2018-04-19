@@ -891,7 +891,7 @@ client.on('message', msg => {
     var probability = ProbSkill(k, n, Event, OC);
     
     probability *= 100;
-    if(Event != '2' && Event != '3') {
+    if(Event != '2' && Event != '3' && Event != '4') {
       Event = '1'
     }
     msg.channel.send("The chance of having "+k+" skillups or more with "+n+" copies is: "+probability+"% \n Calculations done with Skillup x"+Event)
