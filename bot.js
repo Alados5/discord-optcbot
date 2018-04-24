@@ -546,6 +546,13 @@ client.on('message', msg => {
     var sarcasmlink = "http://oi58.tinypic.com/29cwbp1.jpg";
     msg.channel.send(msg.author.username + ":", {files: [sarcasmlink]})
   }
+    
+  if (command == 'onlybandaiknows') {
+    msg.delete()
+    var newscoolink = "https://cdn.discordapp.com/attachments/402992536148377602/438209169930321932/descarga_1.jpeg";
+    msg.channel.send(msg.author.username + ":", {files: [newscoolink]})
+  }
+    
 
 //------------------------------------------------------------------------- END MEMES  
   
