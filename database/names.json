@@ -127,7 +127,7 @@
   "0569":["569", "foxy", "the silver fox foxy", "foxy historia", "story foxy"],
   "0575":["575", "aokiji", "aokiji raid", "aokiji int", "aokiji ice human"],
   "0578":["578", "log luffy", "old log luffy", "luffy log", "monkey d. luffy voyage dream pirate king", "ll", "log luffy 6*", "log luffy legend"],
-  "0584":["584", "aisa"],
+  "0584":["584", "aisa", "skypiea girl", "shandia girl", "psy nullifier girl"],
   "0590":["590", "koza", "kohza", "koza rebel leader", "kohza rebel leader"],
   "0603":["603", "eneru raid", "enel raid", "eneru lightning incarnate 200,000,000 volt amaru"],
   "0639":["639", "doma", "doma v1", "doma rr", "doma qck", "bohemian knight doma"],
@@ -230,7 +230,6 @@
   "0927":["927", "dobberman navy hq vice admiral", "dobberman coliseo", "dobberman coli", "dobberman coliseum"],
   "0929":["929", "hannyabal impel down vice warden", "hannyabal fn", "hannyabal dex"], 
   "0933":["933", "pica donquixote pirates", "pica raid", "raid pica", "pica raid boss", "raid boss pica", "pica psy raid"],
-  "0935":["935", "knight of the sea jinbe", "jinbe legend", "jinbe int", "jinbe esperando 6+", "jinbe 6*"], 
   "0937":["937", "monkey d. luffy crew's promise 3d2y", "3d2y luffy", "luffy 3d2y", "training luffy", "luffy entrenamiento"],
   "0939":["939", "nami weatheria's cat burglar", "3d2y nami", "nami 3d2y", "training nami", "nami entrenamiento", "bind nami"],
   "0941":["941", "usopp swindling forest's resolute warrior", "3d2y usopp", "usopp 3d2y", "training usopp", "usopp entrenamiento", "fat usopp rr"],
@@ -641,12 +640,14 @@
   "2048":["2048", "koala the revolutionary army exposing the darkness", "koala lrr", "koala limited rr", "koala qck"],
   "2060":["2060", "ben beckman light-threatening gunpoint", "ben beckman str", "beckman str", "ben beckman tm rr", "beckman tm rr"],
   "2062":["2062", "roar of the sea scratchman apoo the explosion that trembles light", "apoo tm rr"],
-  "2066":["2066", "charlotte pudding 4th anni", "pudding free", "pudding 4th anni", "pudding psy"],
+  "2064":["2064", "kizaru raging waves of light", "kizaru tm", "tm kizaru", "kizaru dex", "borsalino tm"],
+  "2065":["2065", "charlotte pudding 4th anni", "pudding free", "pudding 4th anni", "pudding psy"],
+  "2066":["2066", "knight of the sea jinbe strawhat luffy's accomplice", "jinbe 6+", "jinbe 6*+", "6+ jinbe", "jinbe superevo", "good jinbe"],
+  "2068":["2068", "tashigi ambitions of a female swordsman", "it should be swordswoman", "tashigi lrr", "tashigi limited rr", "tashigi psy", "tashigi vs monet"],
+  "2070":["2070", "empress boa hancock neo kuja pirates captain", "hancock kai", "boa kai", "boa hancock raid kai", "boa hancock raid int"],
   "2072":["2072", "sweet country's chobro", "choniki", "diabetes chopper", "chopper diabetes", "chopper 4th anni"],
   
-  
-  
-  
+
   
   "2201":["2201", "donquixote doflamingo plot to destroy the world", "doffy raid v2", "doffy raid 2", "doflamingo raid 2", "3rd anni doffy", "global doffy"]
 }
