@@ -2051,24 +2051,24 @@ var cdlist = [
     [ 17, 13 ],
     null,
     null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,//Germa bros
-    null,//Germa bros
-    null,//Germa bros
+    [ 23, 23 ],
+    [ 23, 23 ],
+    [ 18, 18 ],
+    [ 16, 16 ],
+    [ 18, 18 ],
+    [ 16, 16 ], //Germa bros
+    [ 18, 18 ], //Germa bros
+    [ 18, 18 ], //Germa bros
     [ 11, 11 ],
     [ 11, 11 ],
     [ 11, 11 ],
     [ 11, 11 ],
-    null,
-    null,
-    null,
-    null,//Pudding
-    null,
-    null,
+    [ 34, 27 ],
+    [ 34, 27 ],
+    [ 9, 9 ],
+    [ 17, 12 ], //Pudding
+    [ 15, 11 ],
+    [ 15, 11 ],
     null,
     null,
     null,//Chopper
