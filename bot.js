@@ -950,7 +950,7 @@ client.on('message', msg => {
     if (args.length > 0 && args[0].toLowerCase() == 'multi') {
       if (args.length == 2) {
         numofpulls = 11*parseInt(args[1]);
-        if (isNan(numofpulls)) numofpulls = 11;
+        if (isNaN(numofpulls)) numofpulls = 11;
       }
       else {
         numofpulls = 11;
@@ -961,8 +961,8 @@ client.on('message', msg => {
     for(pulli=0; pulli<numofpulls; pulli++) {
       var randnum = Math.random()*100;
       
-      if ((pulli+1)%11 != 0) {
-        //if ((pulli+1)%11 == 0) pulls.push("Extra pull (+1):");
+      if ((pulli+1)%22 != 0) {
+        if ((pulli+1)%11 == 0) pulls.push("Extra pull (+1):");
         for (var chname in sugolist) {
           if (sugolist.hasOwnProperty(chname)) {
             var prange = sugolist[chname];
