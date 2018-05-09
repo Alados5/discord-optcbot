@@ -949,15 +949,15 @@ client.on('message', msg => {
     var randnum = Math.random()*100;
     var pulls = [];
     msg.channel.send(randnum)
-    for (var chname in sugolist) {
-      if (dic.hasOwnProperty(chname)) {
-        var prange = sugolist[chname];
-        if (randnum >= prange[0] && randnum < prange[1]) {
-          pulls.push(chname);
-        }
-      }
-    }
-    msg.channel.send(pulls)  
+    //for (var chname in sugolist) {
+    //  if (dic.hasOwnProperty(chname)) {
+    //    var prange = sugolist[chname];
+    //    if (randnum >= prange[0] && randnum < prange[1]) {
+    //      pulls.push(chname);
+    //    }
+    //  }
+    //}
+    //msg.channel.send(pulls)  
       
   }
     
