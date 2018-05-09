@@ -952,7 +952,7 @@ client.on('message', msg => {
       numofpulls = 11;
     }
     var pulls = [];
-    for(pulli=0; pulli<numofpulls; pulli++) {
+    //for(pulli=0; pulli<numofpulls; pulli++) {
       var randnum = Math.random()*100;
       for (var chname in sugolist) {
         if (sugolist.hasOwnProperty(chname)) {
@@ -962,8 +962,9 @@ client.on('message', msg => {
           }
         }
       }
-    }
-    msg.channel.send(pulls.toString())  
+    //}
+    msg.channel.send(numofpulls)
+    msg.channel.send(pulls)  
       
   }
     
