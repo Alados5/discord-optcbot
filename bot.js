@@ -948,7 +948,6 @@ client.on('message', msg => {
     //sugolist
     var randnum = Math.random()*100;
     var pulls = [];
-    msg.channel.send(randnum)
     for (var chname in sugolist) {
       if (sugolist.hasOwnProperty(chname)) {
         var prange = sugolist[chname];
