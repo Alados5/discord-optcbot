@@ -948,9 +948,10 @@ client.on('message', msg => {
     //sugolist
     var randnum = Math.random()*100;
     var pulls = [];
+    msg.channel.send(randnum)
     for (var chname in sugolist) {
       if (dic.hasOwnProperty(chname)) {
-        var prange = sugolist[cname];
+        var prange = sugolist[chname];
         if (randnum >= prange[0] && randnum < prange[1]) {
           pulls.push(chname);
         }
