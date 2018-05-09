@@ -946,11 +946,13 @@ client.on('message', msg => {
     
   if (command == 'pull') {
     //sugolist
-    //var pulltype = args[0].toLowerCase();
-    var numofpulls = 11;
-    //if (pulltype == 'multi') {
-    //  numofpulls = 11;
-    //}
+    var numofpulls = 1;
+    if (args.length > 0 && args[0].toLowerCase() == 'multi') {
+      if (args.length == 2) {
+        numofpulls = 11*parseInt(args[1]);
+      }
+    }
+
     var pulls = [];
     for(pulli=0; pulli<numofpulls; pulli++) {
       var randnum = Math.random()*100;
