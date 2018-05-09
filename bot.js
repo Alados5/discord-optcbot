@@ -962,12 +962,13 @@ client.on('message', msg => {
       var randnum = Math.random()*100;
       
       if ((pulli+1)%22 != 0) {
-        if ((pulli+1)%11 == 0) pulls.push("Extra pull (+1):");
         for (var chname in sugolist) {
           if (sugolist.hasOwnProperty(chname)) {
             var prange = sugolist[chname];
             if (randnum >= prange[0] && randnum < prange[1]) {
+              if ((pulli+1)%11 == 0) pulls.push("Extra pull (+1):");
               pulls.push(chname);
+              if ((pulli+1)%11 == 0) pulls.push(" ");
             }
           }
         }
