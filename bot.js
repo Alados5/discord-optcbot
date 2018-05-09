@@ -947,23 +947,22 @@ client.on('message', msg => {
   if (command == 'pull') {
     //sugolist
     //var pulltype = args[0].toLowerCase();
-    var numofpulls = 1;
+    var numofpulls = 11;
     //if (pulltype == 'multi') {
     //  numofpulls = 11;
     //}
     var pulls = [];
-    //for(pulli=0; pulli<numofpulls; pulli++) {
-    var randnum = Math.random()*100;
-    for (var chname in sugolist) {
-      if (sugolist.hasOwnProperty(chname)) {
-        var prange = sugolist[chname];
-        if (randnum >= prange[0] && randnum < prange[1]) {
-          pulls.push(chname);
+    for(pulli=0; pulli<numofpulls; pulli++) {
+      var randnum = Math.random()*100;
+      for (var chname in sugolist) {
+        if (sugolist.hasOwnProperty(chname)) {
+          var prange = sugolist[chname];
+          if (randnum >= prange[0] && randnum < prange[1]) {
+            pulls.push(chname);
+          }
         }
       }
     }
-    //}
-    msg.channel.send(numofpulls)
     msg.channel.send(pulls)  
       
   }
