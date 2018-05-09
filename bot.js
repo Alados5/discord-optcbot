@@ -950,17 +950,37 @@ client.on('message', msg => {
     if (args.length > 0 && args[0].toLowerCase() == 'multi') {
       if (args.length == 2) {
         numofpulls = 11*parseInt(args[1]);
+        if (isNan(numofpulls)) numofpulls = 11;
+      }
+      else {
+        numofpulls = 11;
       }
     }
 
     var pulls = [];
     for(pulli=0; pulli<numofpulls; pulli++) {
       var randnum = Math.random()*100;
-      for (var chname in sugolist) {
-        if (sugolist.hasOwnProperty(chname)) {
-          var prange = sugolist[chname];
-          if (randnum >= prange[0] && randnum < prange[1]) {
-            pulls.push(chname);
+      
+      if (pulli%22 != 0) {
+        if (pulli%11 == 0) pulls.push("Extra pull (+1):");
+        for (var chname in sugolist) {
+          if (sugolist.hasOwnProperty(chname)) {
+            var prange = sugolist[chname];
+            if (randnum >= prange[0] && randnum < prange[1]) {
+              pulls.push(chname);
+            }
+          }
+        }
+      }
+      else { //Extra pull with Legend!
+        pulls.push("Extra pull (+1) - Guaranteed Legend!");
+        for (var chname in sugolist) {
+          if (sugolist.hasOwnProperty(chname) && chname.slice(0,6) == "(RED!)") {
+            var prange = sugolist[chname];
+            if (randnum >= prange[2] && randnum < prange[3]) {
+              pulls.push(chname);
+              pulls.push(" ");
+            }
           }
         }
       }
