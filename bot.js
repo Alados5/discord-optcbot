@@ -946,13 +946,18 @@ client.on('message', msg => {
     
   if (command == 'pull') {
     //sugolist
-    var randnum = Math.random()*100;
-    var pulls = [];
-    for (var chname in sugolist) {
-      if (sugolist.hasOwnProperty(chname)) {
-        var prange = sugolist[chname];
-        if (randnum >= prange[0] && randnum < prange[1]) {
-          pulls.push(chname);
+    var pulltype = args[0].toLowerCase();
+    var numofpulls = 1;
+    if (pulltype == 'multi') numofpulls = 11;
+    for(var pulli=1; pulli<=numofpulls; pulli++) {
+      var randnum = Math.random()*100;
+      var pulls = [];
+      for (var chname in sugolist) {
+        if (sugolist.hasOwnProperty(chname)) {
+          var prange = sugolist[chname];
+          if (randnum >= prange[0] && randnum < prange[1]) {
+            pulls.push(chname);
+          }
         }
       }
     }
