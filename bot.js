@@ -974,7 +974,7 @@ client.on('message', msg => {
         }
       }
       else { //Extra pull with Legend!
-        pulls.push("Extra pull (+1) - Guaranteed Legend!");
+        pulls.push("Extra RED pull (+1):");
         for (var chname in sugolist) {
           if (sugolist.hasOwnProperty(chname) && chname.slice(0,6) == "(RED!)") {
             var prange = sugolist[chname];
