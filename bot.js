@@ -948,10 +948,12 @@ client.on('message', msg => {
     //sugolist
     var pulltype = args[0].toLowerCase();
     var numofpulls = 1;
-    if (pulltype == 'multi') numofpulls = 11;
-    for(var pulli=1; pulli<=numofpulls; pulli++) {
+    if (pulltype == 'multi') {
+      numofpulls = 11;
+    }
+    var pulls = [];
+    for(pulli=1; pulli<=numofpulls; pulli++) {
       var randnum = Math.random()*100;
-      var pulls = [];
       for (var chname in sugolist) {
         if (sugolist.hasOwnProperty(chname)) {
           var prange = sugolist[chname];
