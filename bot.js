@@ -39,6 +39,8 @@ var fulldb = merge(db14, db5);
 var cdlist = require("./database/cooldowns");
 cdlist = cdlist.cdlist;
 
+var sugolist = require("./sugorates/anni.json");
+
 var teams = {};
 
 //------------------------------------------------------------------------- START FINDNUM FS
@@ -939,6 +941,26 @@ client.on('message', msg => {
   }
   
 //------------------------------------------------------------------------- END SKILLUP
+
+//------------------------------------------------------------------------- START PULL
+    
+  if (command == 'pull') {
+    //sugolist
+    var randnum = Math.random()*100;
+    var pulls = [];
+    for (var chname in sugolist) {
+      if (dic.hasOwnProperty(chname)) {
+        var prange = sugolist[cname];
+        if (randnum >= prange[0] && randnum < prange[1]) {
+          pulls.push(chname);
+        }
+      }
+    }
+    msg.channel.send(pulls)  
+      
+  }
+    
+//------------------------------------------------------------------------- END PULL
     
 //------------------------------------------------------------------------- START EMBED
     
