@@ -904,7 +904,7 @@ client.on('message', msg => {
       fields: [
         {
           "name": "Ship Name",
-          "value":shipinfo.name
+          "value":shipinfo.name + "\n ~"
         },
         {
           "name": "Ship Effects (Max Level)",
