@@ -8,6 +8,7 @@ var dbchar = 'http://optc-db.github.io/characters/#/search/';
 var dbcharid = 'http://optc-db.github.io/characters/#/view/';
 var dbcharpic = 'https://onepiece-treasurecruise.com/wp-content/uploads/c';
 var dbcharicon = 'https://onepiece-treasurecruise.com/wp-content/uploads/f';
+var dbshippic = 'https://onepiece-treasurecruise.com/wp-content/uploads/';
 var basetrans = 'http://optc-db.github.io/damage/#/transfer/D';
 
 var dpj = require("./database/names.json");
@@ -901,6 +902,9 @@ client.on('message', msg => {
         text: "Bot by Alados5 | Info by optc-db.github.io",
         icon_url: client.user.avatarURL
       },
+      thumbnail: {
+        "url": dbshippic + shipinfo.thumb
+      },
       fields: [
         {
           "name": "Ship Name",
@@ -908,7 +912,7 @@ client.on('message', msg => {
         },
         {
           "name": "Ship Effects (Max Level)",
-          "value":shipinfo.effect
+          "value":shipinfo.description
         }
       ]
     }})     
