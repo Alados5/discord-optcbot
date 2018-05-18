@@ -166,4 +166,4 @@ var shipfx = {
 
 };
 
-module.exports.cdlist = shipfx;
+module.exports.shipfx = shipfx;
