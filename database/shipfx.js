@@ -160,7 +160,7 @@ var shipfx = {
         effect: "--"
     }, 
     40: {
-        name: "--",
+        name: "4th Anniversary Thousand Sunny",
         effect: "--"
     }
 
