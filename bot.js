@@ -892,27 +892,28 @@ client.on('message', msg => {
     var shipid = findnum(searchship, dship);
     if (shipid == 'X') return msg.channel.send("Not a valid ship name!");
     shipid = parseInt(shipid);
+    msg.channel.send(shipid);
     var shipinfo = shipfx[shipid];
+    msg.channel.send(shipinfo);
       
-    msg.channel.send({embed: {
-      color: 11362048,
-      title: "OPTC DATABASE - SHIP INFO",
-      footer: {
-        text: "Bot by Alados5 | Info by optc-db.github.io",
-        icon_url: client.user.avatarURL
-      },
-      fields: [
-        {
-          "name": "Ship Name",
-          "value":shipinfo.name
-        },
-        {
-          "name": "Ship Effects (Max Level)",
-          "value":shipinfo.effect
-        }
-      ]
-
-    }})     
+    //msg.channel.send({embed: {
+    //  color: 11362048,
+    //  title: "OPTC DATABASE - SHIP INFO",
+    //  footer: {
+    //    text: "Bot by Alados5 | Info by optc-db.github.io",
+    //    icon_url: client.user.avatarURL
+    //  },
+    //  fields: [
+    //    {
+    //      "name": "Ship Name",
+    //      "value":shipinfo.name
+    //    },
+    //    {
+    //      "name": "Ship Effects (Max Level)",
+    //      "value":shipinfo.effect
+    //    }
+    //  ]
+    //}})     
   }
     
 //------------------------------------------------------------------------- END SHIP FX
