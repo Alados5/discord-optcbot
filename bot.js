@@ -38,6 +38,8 @@ var fulldb = merge(db14, db5);
 
 var cdlist = require("./database/cooldowns");
 cdlist = cdlist.cdlist;
+var shipfx = require("./database/shipfx");
+shipfx = shipfx.shipfx;
 
 var sugolist = require("./sugorates/anni.json");
 
@@ -880,7 +882,38 @@ client.on('message', msg => {
  
   }
     
-//------------------------------------------------------------------------- START LIMITBREAK
+//------------------------------------------------------------------------- END LIMITBREAK
+    
+//------------------------------------------------------------------------- START SHIP FX 
+    
+  if (command == 'ship') {
+    //shipfx
+    var shipid = findnum(args[0], dship);
+    if (shipid == 'X') return msg.channel.send("Not a valid ship name!");
+    var shipinfo = shipfx[shipid];
+      
+    msg.channel.send({embed: {
+      color: 7029248,
+      title: "OPTC DATABASE - SHIP INFO",
+      footer: {
+        text: "Bot by Alados5 | Info by optc-db.github.io",
+        icon_url: client.user.avatarURL
+      },
+      fields: [
+        {
+          "name": "Ship Name",
+          "value":shipinfo.name
+        },
+        {
+          "name": "Ship Effects (Max Level)",
+          "value":shipinfo.effect
+        }
+      ]
+
+    }})     
+  }
+    
+//------------------------------------------------------------------------- END SHIP FX
     
 //------------------------------------------------------------------------- START SKILLUP
   
