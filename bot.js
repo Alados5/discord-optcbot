@@ -462,6 +462,10 @@ client.on('message', msg => {
   if (command == 'calendar') {
     msg.channel.send("https://optc-agenda.github.io/jap.html")
   }
+    
+  if (command == 'kanji') {
+    msg.channel.send(":QCK: = 速")
+  }
   
   if (command == 'ambush') {
     var fecha = new Date();
