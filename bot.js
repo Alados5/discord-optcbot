@@ -464,7 +464,10 @@ client.on('message', msg => {
   }
     
   if (command == 'kanji') {
-    msg.channel.send(":QCK: = 速")
+    var kanjitypes = "力 = STR,   技 = DEX,    速 = QCK,   心 = PSY,   知 = INT";
+    var kanjiclass1 = "格闘 = Fighter,   斬撃 = Slasher,   打突 = Striker,   射撃 = Shooter";
+    var kanjiclass2 = "XX = Free Spirit,   XX = Cerebral,   XX = Powerhouse,   XX = Driven";
+    msg.channel.send(kanjitypes + "\n" + kanjiclass1 + "\n" + kanjiclass2)
   }
   
   if (command == 'ambush') {
