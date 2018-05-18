@@ -467,7 +467,7 @@ client.on('message', msg => {
     var kanjitypes = "力 = STR,   技 = DEX,    速 = QCK,   心 = PSY,   知 = INT";
     var kanjiclass1 = "格闘 = Fighter,       斬撃 = Slasher,    打突 = Striker,      射撃 = Shooter";
     var kanjiclass2 = "自由 = Free Spirit,   博識 = Cerebral,   強靭 = Powerhouse,   野心 = Driven";
-    msg.channel.send("```prolog \n" + kanjitypes + "\n \n" + kanjiclass1 + "\n" + kanjiclass2 + "\n ```")
+    msg.channel.send("``` \n" + kanjitypes + "\n \n" + kanjiclass1 + "\n" + kanjiclass2 + "```")
   }
   
   if (command == 'ambush') {
