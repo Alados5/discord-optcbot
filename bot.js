@@ -902,7 +902,7 @@ client.on('message', msg => {
         text: "Bot by Alados5 | Info by optc-db.github.io",
         icon_url: client.user.avatarURL
       },
-      thumbnail: {
+      image: {
         "url": dbshippic + shipinfo.thumb
       },
       fields: [
