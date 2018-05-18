@@ -104,15 +104,15 @@ var shipfx = {
         thumb: 'ship_0020_c.png',
         description: 'Boosts ATK of Driven Characters by 1.5x and their HP by 1.35x. Makes Perfects easier to Hit for Driven characters. ACTIVATED Special: Adds 0.2 to Chain  (cooldown MAX: 15 Turns)',
     },   
-    21: { // 21
-        name: 'Burning Moby Dick',
-        thumb: 'ship_0022_c.png',
-        description: '__Boosted Ability:__ Boosts ATK by 1.5x and HP by 1.4x, reduces HP by 7% at the end of the turn. Special: Cuts the current HP of each enemy by 20% (cooldown: 18 turns). \n __Base Ability:__ Boosts HP by 1.3x.',
-    },
-    22: { // 20
+    21: { // 20
         name: 'The Rocket Man',
         thumb: 'ship_0021_c.png',
         description: 'Boosts ATK of Powerhouse characters by 1.55x, and heals at the end of every turn for a variable amount depending on the number of Powerhouse characters on the team. (At MAX, heals 900 per turn with 6 Powerhouse characters) Sharply reduces HP of non-Powerhouse units. Special: Deals 99,999 typeless damage to one unit.  (cooldown MAX: 17 Turns)',
+    },
+    22: { // 21
+        name: 'Burning Moby Dick',
+        thumb: 'ship_0022_c.png',
+        description: '__Boosted Ability:__ Boosts ATK by 1.5x and HP by 1.4x, reduces HP by 7% at the end of the turn. Special: Cuts the current HP of each enemy by 20% (cooldown: 18 turns). \n __Base Ability:__ Boosts HP by 1.3x.',
     },
     23: { // 22
         name: 'Garp Ship',
