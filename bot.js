@@ -890,11 +890,10 @@ client.on('message', msg => {
     //shipfx
     var searchship = msg.content.slice(6).toLowerCase();
     var shipid = findnum(searchship, dship);
-    if (shipid == 'X') return msg.channel.send("Not a valid ship name!");
+    if (shipid == 'X') return msg.reply("Invalid ship name!");
     shipid = parseInt(shipid);
-    msg.channel.send(shipid);
     var shipinfo = shipfx[shipid];
-    msg.channel.send(shipinfo);
+    msg.channel.send(shipinfo.name);
       
     //msg.channel.send({embed: {
     //  color: 11362048,
