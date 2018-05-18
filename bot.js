@@ -888,12 +888,14 @@ client.on('message', msg => {
     
   if (command == 'ship') {
     //shipfx
-    var shipid = findnum(args[0], dship);
+    var searchship = msg.content.slice(6).toLowerCase();
+    var shipid = findnum(searchship, dship);
     if (shipid == 'X') return msg.channel.send("Not a valid ship name!");
+    shipid = parseInt(shipid);
     var shipinfo = shipfx[shipid];
       
     msg.channel.send({embed: {
-      color: 7029248,
+      color: 11362048,
       title: "OPTC DATABASE - SHIP INFO",
       footer: {
         text: "Bot by Alados5 | Info by optc-db.github.io",
