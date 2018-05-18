@@ -465,9 +465,9 @@ client.on('message', msg => {
     
   if (command == 'kanji') {
     var kanjitypes = "力 = STR,   技 = DEX,    速 = QCK,   心 = PSY,   知 = INT";
-    var kanjiclass1 = "格闘 = Fighter,   斬撃 = Slasher,   打突 = Striker,   射撃 = Shooter";
-    var kanjiclass2 = "XX = Free Spirit,   XX = Cerebral,   XX = Powerhouse,   XX = Driven";
-    msg.channel.send(kanjitypes + "\n" + kanjiclass1 + "\n" + kanjiclass2)
+    var kanjiclass1 = "格闘 = Fighter,       斬撃 = Slasher,    打突 = Striker,      射撃 = Shooter";
+    var kanjiclass2 = "自由 = Free Spirit,   博識 = Cerebral,   強靭 = Powerhouse,   野心 = Driven";
+    msg.channel.send(kanjitypes + "\n \n" + kanjiclass1 + "\n" + kanjiclass2)
   }
   
   if (command == 'ambush') {
