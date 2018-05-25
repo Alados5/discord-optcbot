@@ -408,7 +408,13 @@ client.on('message', msg => {
     
   if (msg.member.permissions.has('ADMINISTRATOR')) {
     if (command == 'clear') {
-      msg.reply("Soon...")
+      var ntoclear = parseInt(args[0]);
+      if (!ntoclear || isNaN(ntoclear)) return msg.reply("You didn't say how many messages mate!")
+      msg.delete();
+      const fetched = msg.channel.fetchMessages({limit: ntoclear});
+      msg.channel.bulkDelete(fetched)
+        .catch(error => msg.channel.send(`Error: ${error}`));
+      
     }
       
       
