@@ -416,12 +416,16 @@ client.on('message', msg => {
     if (command == 'kick') {
       const tokick = msg.mentions.members.first();
       if (!tokick) return msg.reply("You didn't say who deserves a Kick")
-      msg.channel.send(tokick)
+      msg.delete();
       tokick.kick();
     }
       
     if (command == 'addrole') {
-      msg.reply("Soon!")
+      const userx = msg.mentions.members.first();
+      if (!userx) return msg.reply("You didn't say who deserves a new Role")
+      var rolename = msg.content.split(" | ")[1];
+      if (!rolename) return msg.reply("You didn't put a role in there!")
+      userx.addRole(rolename);
         
     }
       
