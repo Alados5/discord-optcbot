@@ -368,6 +368,13 @@ client.on('ready', () => {
 });
 
 
+client.on('guildMemberAdd', member => {
+  const channel = member.guild.channels.find('name', 'general');
+  if (!channel) return;
+  channel.send(`Muy buenas, ${member}, qué tal andamos?`);
+});
+
+
 client.on('message', msg => {
     
   //Returns if author is a bot
@@ -395,6 +402,22 @@ client.on('message', msg => {
   //Handles arguments to just take the first word
   const args = msg.content.slice(prefix.length).split(/ +/);
   const command = args.shift().toLowerCase(); 
+    
+    
+//------------------------------------------------------------------------- START ADMIN COMMANDS
+    
+  if (msg.author.permissions.has('ADMINISTRATOR')) {
+    if (command == 'clear') {
+      msg.reply("Soon...")
+    }
+      
+      
+      
+      
+      
+  }
+    
+//------------------------------------------------------------------------- END ADMIN COMMANDS
 
 
 //------------------------------------------------------------------------- START HELP  
