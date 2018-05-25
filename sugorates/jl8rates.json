@@ -1,12 +1,12 @@
 {
-  gods:[
+  "gods":[
     "(BLUE!) JoseLu, the Raging Whale",
     "(BLUE!) Iron, the Meme Master",
     "(BLUE!) Adri, the Mastermind Hacker",
     "(BLUE!) Jonan, the P2W God”
   ],
 
-  legends:[ 
+  "legends":[ 
     "(RED!) Whitebeard",
     "(RED!) V1 Rayleigh",
     "(RED!) V1 Boa Hancock",
@@ -60,7 +60,7 @@
     "(RED!) Tesoro"
   ],
   
-  golds:[
+  "golds":[
     "(GOLD!) Carina",
     "(GOLD!) Tanaka-san",
     "(GOLD!) Baccarat",
@@ -267,7 +267,7 @@
     "(GOLD!) Gear 2nd Luffy",
   ],
  
-  silvers:[
+  "silvers":[
     "(Silver) Iceburg",
     "(Silver) Usopp Kids",
     "(Silver) Kuina",
