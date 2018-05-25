@@ -406,7 +406,7 @@ client.on('message', msg => {
     
 //------------------------------------------------------------------------- START ADMIN COMMANDS
     
-  if (msg.author.permissions.has('ADMINISTRATOR')) {
+  if (msg.member.permissions.has('ADMINISTRATOR')) {
     if (command == 'clear') {
       msg.reply("Soon...")
     }
