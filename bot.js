@@ -364,7 +364,7 @@ function MkSpecials(args, useri) {
 //-------------------------------------------------------------------------------------------
 
 client.on('ready', () => {
-  client.user.setGame(`!ayuda`)
+  client.user.setActivity('!ayuda');
 });
 
 
