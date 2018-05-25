@@ -412,8 +412,17 @@ client.on('message', msg => {
       if (!ntoclear || isNaN(ntoclear)) return msg.reply("You didn't say how many messages mate!")
       msg.channel.bulkDelete(ntoclear+1);
     }
+       
+    if (command == 'kick') {
+      var tokick = msg.mentions.members.first();
+      if (!tokick) return msg.reply("You didn't say who deserves a Kick")
+      tokick.kick(); 
+    }
       
-      
+    if (command == 'addrole') {
+      msg.reply("Soon!")
+        
+    }
       
       
       
