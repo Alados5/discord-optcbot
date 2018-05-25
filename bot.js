@@ -364,14 +364,14 @@ function MkSpecials(args, useri) {
 //-------------------------------------------------------------------------------------------
 
 client.on('ready', () => {
-  client.user.setActivity('!ayuda');
+  client.user.setPresence({ game: { name: '!ayuda' }, status: 'online' });
 });
 
 
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find('name', 'general');
   if (!channel) return;
-  channel.send(`Muy buenas ${member}, ¿qué tal andamos? Bienvenido al Server!`);
+  channel.send(`Muy buenas ${member}, ¿qué tal andamos? ¡Bienvenido al Server!`);
 });
 
 
