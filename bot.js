@@ -410,8 +410,7 @@ client.on('message', msg => {
     if (command == 'clear') {
       var ntoclear = parseInt(args[0]);
       if (!ntoclear || isNaN(ntoclear)) return msg.reply("You didn't say how many messages mate!")
-      msg.delete()
-      msg.channel.bulkDelete(ntoclear);
+      msg.channel.bulkDelete(ntoclear+1);
     }
       
       
