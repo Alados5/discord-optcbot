@@ -423,9 +423,14 @@ client.on('message', msg => {
     if (command == 'addrole') {
       const userx = msg.mentions.members.first();
       if (!userx) return msg.reply("You didn't say who deserves a new Role")
+        
       var rolename = msg.content.split(" | ")[1];
       if (!rolename) return msg.reply("You didn't put a role in there!")
-      userx.addRole(rolename);
+        
+      var therole = msg.guild.roles.find("name", rolename);
+      if (!therole) return msg.reply("This role does not exist")
+        
+      userx.addRole(therole);
         
     }
       
