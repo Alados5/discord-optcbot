@@ -434,6 +434,20 @@ client.on('message', msg => {
         
     }
       
+    if (command == 'removerole') {
+      const userx = msg.mentions.members.first();
+      if (!userx) return msg.reply("You didn't say who doesn't deserve his Role")
+        
+      var rolename = msg.content.split(" | ")[1];
+      if (!rolename) return msg.reply("You didn't put a role in there!")
+        
+      var therole = msg.guild.roles.find("name", rolename);
+      if (!therole) return msg.reply("This role does not exist")
+        
+      userx.removeRole(therole);
+        
+    }
+      
       
       
   }
