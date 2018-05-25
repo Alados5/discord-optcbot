@@ -414,9 +414,11 @@ client.on('message', msg => {
     }
        
     if (command == 'kick') {
-      var tokick = msg.mentions.members.first();
+      const tokick = msg.mentions.members.first();
       if (!tokick) return msg.reply("You didn't say who deserves a Kick")
-      tokick.kick(); 
+      msg.reply("Kicking " + tokick)
+      tokick.kick()
+        .then(() => msg.channel.send("Kicked" + tokick); 
     }
       
     if (command == 'addrole') {
