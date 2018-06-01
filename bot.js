@@ -42,7 +42,8 @@ cdlist = cdlist.cdlist;
 var shipfx = require("./database/shipfx");
 shipfx = shipfx.shipfx;
 
-var sugolist = require("./sugorates/anni.json");
+var annisugolist = require("./sugorates/anni.json");
+var sugolist = require("./sugorates/jl8rates.json");
 
 var teams = {};
 
@@ -1045,10 +1046,10 @@ client.on('message', msg => {
   
 //------------------------------------------------------------------------- END SKILLUP
 
-//------------------------------------------------------------------------- START PULL
+//------------------------------------------------------------------------- START ANNIPULL
     
-  if (command == 'pull') {
-    //sugolist
+  if (command == 'annipull') {
+    //annisugolist
     var numofpulls = 1;
     if (args.length > 0 && args[0].toLowerCase() == 'multi') {
       if (args.length == 2) {
@@ -1065,9 +1066,9 @@ client.on('message', msg => {
       var randnum = Math.random()*100;
       
       if ((pulli+1)%22 != 0) {
-        for (var chname in sugolist) {
-          if (sugolist.hasOwnProperty(chname)) {
-            var prange = sugolist[chname];
+        for (var chname in annisugolist) {
+          if (annisugolist.hasOwnProperty(chname)) {
+            var prange = annisugolist[chname];
             if (randnum >= prange[0] && randnum < prange[1]) {
               if ((pulli+1)%11 == 0) pulls.push("Extra pull (+1):");
               pulls.push(chname);
@@ -1078,9 +1079,9 @@ client.on('message', msg => {
       }
       else { //Extra pull with Legend!
         pulls.push("Extra RED pull (+1):");
-        for (var chname in sugolist) {
-          if (sugolist.hasOwnProperty(chname) && chname.slice(0,6) == "(RED!)") {
-            var prange = sugolist[chname];
+        for (var chname in annisugolist) {
+          if (annisugolist.hasOwnProperty(chname) && chname.slice(0,6) == "(RED!)") {
+            var prange = annisugolist[chname];
             if (randnum >= prange[2] && randnum < prange[3]) {
               pulls.push(chname);
               pulls.push(" ");
@@ -1090,6 +1091,62 @@ client.on('message', msg => {
       }
     }
     msg.channel.send(pulls)  
+      
+  }
+    
+//------------------------------------------------------------------------- END ANNIPULL
+    
+//------------------------------------------------------------------------- START PULL
+    
+  if (command == 'pull') {
+    //sugolist = {"type":["name", "name"], "type":["name", "name"]}
+    // 3%Blue, 7%Red, 50%Gold, 40%Silver
+    var numofpulls = 1;
+    if (args.length > 0 && args[0].toLowerCase() == 'multi') {
+      if (args.length == 2) {
+        numofpulls = 11*parseInt(args[1]);
+        if (isNaN(numofpulls)) numofpulls = 11;
+      }
+      else {
+        numofpulls = 11;
+      }
+    }
+      
+    var probs = [1, 1, 1, 1];
+    probs[0] = 3/sugolist["gods"].length;
+    probs[1] = 7/sugolist["legends"].length;
+    probs[2] = 50/sugolist["golds"].length;
+    probs[3] = 40/sugolist["silvers"].length;
+
+    var pulls = [];
+    for(pulli=0; pulli<numofpulls; pulli++) {
+      if ((pulli+1)%11 == 0) pulls.push("Extra pull (+1):");
+      var randnum = Math.random()*100;
+        
+      if (randnum < 3) {
+        var unitindex = parseInt(randnum/probs[0]);
+        pulls.push(sugolist["gods"][unitindex]);
+      }
+      else if (randnum < 10) {
+        randnum -= 3;
+        var unitindex = parseInt(randnum/probs[1]);
+        pulls.push(sugolist["legends"][unitindex]);
+      }
+      else if (randnum < 60) {
+        randnum -= 10;
+        var unitindex = parseInt(randnum/probs[2]);
+        pulls.push(sugolist["golds"][unitindex]);
+      }
+      else {
+        randnum -= 60;
+        var unitindex = parseInt(randnum/probs[3]);
+        pulls.push(sugolist["silvers"][unitindex]);
+      }
+        
+      if ((pulli+1)%11 == 0) pulls.push(" ");
+
+    }
+    msg.channel.send(pulls)   
       
   }
     
