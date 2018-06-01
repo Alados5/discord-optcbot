@@ -1122,7 +1122,7 @@ client.on('message', msg => {
     for(pulli=0; pulli<numofpulls; pulli++) {
       if ((pulli+1)%11 == 0) pulls.push("__Extra pull (+1):__");
       var multinum = "**__MULTI " + parseInt(pulli/11 + 1) + "__**";
-      if (pulli%11 == 0) pulls.push(multinum);
+      if (pulli%11 == 0 && numofpulls>1) pulls.push(multinum);
       var randnum = Math.random()*100;
         
       if (randnum < 3) {
