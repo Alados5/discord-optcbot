@@ -1120,7 +1120,7 @@ client.on('message', msg => {
 
     var pulls = [];
     for(pulli=0; pulli<numofpulls; pulli++) {
-      if ((pulli+1)%11 == 0) pulls.push("Extra pull (+1):");
+      if ((pulli+1)%11 == 0) pulls.push("\n Extra pull (+1):");
       var randnum = Math.random()*100;
         
       if (randnum < 3) {
