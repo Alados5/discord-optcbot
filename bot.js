@@ -1102,6 +1102,7 @@ client.on('message', msg => {
     //sugolist = {"type":["name", "name"], "type":["name", "name"]}
     // 3%Blue, 7%Red, 50%Gold, 40%Silver
     var numofpulls = 1;
+    var pulls = [];
     if (args.length > 0 && args[0].toLowerCase() == 'multi') {
       if (args.length == 2) {
         numofpulls = 11*parseInt(args[1]);
@@ -1118,9 +1119,10 @@ client.on('message', msg => {
     probs[2] = 50/sugolist["golds"].length;
     probs[3] = 40/sugolist["silvers"].length;
 
-    var pulls = [];
     for(pulli=0; pulli<numofpulls; pulli++) {
       if ((pulli+1)%11 == 0) pulls.push("__Extra pull (+1):__");
+      var multinum = "**__MULTI " + parseInt(pulli/11 + 1) + "__**";
+      if (pulli%11 == 0) pulls.push(multinum);
       var randnum = Math.random()*100;
         
       if (randnum < 3) {
@@ -1143,7 +1145,7 @@ client.on('message', msg => {
         var pulltxt = "`" + sugolist["silvers"][unitindex] + "`";
       }
       pulls.push(pulltxt);
-      if ((pulli+1)%11 == 0) pulls.push(" ");
+      if ((pulli+1)%11 == 0) pulls.push(" \n ");
 
     }
     msg.channel.send(pulls)   
