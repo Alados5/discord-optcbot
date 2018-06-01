@@ -1125,24 +1125,24 @@ client.on('message', msg => {
         
       if (randnum < 3) {
         var unitindex = parseInt(randnum/probs[0]);
-        pulls.push(sugolist["gods"][unitindex]);
+        var pulltxt = '```prolog \n "' + sugolist["gods"][unitindex] + '" ```';
       }
       else if (randnum < 10) {
         randnum -= 3;
         var unitindex = parseInt(randnum/probs[1]);
-        pulls.push(sugolist["legends"][unitindex]);
+        var pulltxt = "```prolog \n " + sugolist["legends"][unitindex] + " ```";
       }
       else if (randnum < 60) {
         randnum -= 10;
         var unitindex = parseInt(randnum/probs[2]);
-        pulls.push(sugolist["golds"][unitindex]);
+        var pulltxt = "`" + sugolist["golds"][unitindex] + "`";
       }
       else {
         randnum -= 60;
         var unitindex = parseInt(randnum/probs[3]);
-        pulls.push(sugolist["silvers"][unitindex]);
+        var pulltxt = "`" + sugolist["silvers"][unitindex] + "`";
       }
-        
+      pulls.push(pulltxt);
       if ((pulli+1)%11 == 0) pulls.push(" ");
 
     }
