@@ -1125,12 +1125,12 @@ client.on('message', msg => {
         
       if (randnum < 3) {
         var unitindex = parseInt(randnum/probs[0]);
-        var pulltxt = '```prolog \n "' + sugolist["gods"][unitindex] + '" ```';
+        var pulltxt = '```prolog\n"' + sugolist["gods"][unitindex] + '" ```';
       }
       else if (randnum < 10) {
         randnum -= 3;
         var unitindex = parseInt(randnum/probs[1]);
-        var pulltxt = "```prolog \n " + sugolist["legends"][unitindex] + " ```";
+        var pulltxt = "```prolog\n" + sugolist["legends"][unitindex] + " ```";
       }
       else if (randnum < 60) {
         randnum -= 10;
