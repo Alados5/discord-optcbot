@@ -1156,7 +1156,7 @@ client.on('message', msg => {
     
 //------------------------------------------------------------------------- START PULL
     
-  if (command == 'jpull') {
+  if (command == 'pull') {
     //sugolist = {"type":["name", "name"], "type":["name", "name"]}
     // 7%Red, 53%Gold, 40%Silver
     var numofpulls = 1;
