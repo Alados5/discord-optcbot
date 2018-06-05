@@ -1096,9 +1096,9 @@ client.on('message', msg => {
     
 //------------------------------------------------------------------------- END ANNIPULL
     
-//------------------------------------------------------------------------- START PULL
+//------------------------------------------------------------------------- START JPULL
     
-  if (command == 'pull') {
+  if (command == 'jpull') {
     //sugolist = {"type":["name", "name"], "type":["name", "name"]}
     // 3%Blue, 7%Red, 50%Gold, 40%Silver
     var numofpulls = 1;
@@ -1142,6 +1142,58 @@ client.on('message', msg => {
       else {
         randnum -= 60;
         var unitindex = parseInt(randnum/probs[3]);
+        var pulltxt = "`" + sugolist["silvers"][unitindex] + "`";
+      }
+      pulls.push(pulltxt);
+      if ((pulli+1)%11 == 0) pulls.push(" \n ");
+
+    }
+    msg.channel.send(pulls)   
+      
+  }
+    
+//------------------------------------------------------------------------- END JPULL
+    
+//------------------------------------------------------------------------- START PULL
+    
+  if (command == 'jpull') {
+    //sugolist = {"type":["name", "name"], "type":["name", "name"]}
+    // 7%Red, 53%Gold, 40%Silver
+    var numofpulls = 1;
+    var pulls = [];
+    if (args.length > 0 && args[0].toLowerCase() == 'multi') {
+      if (args.length == 2) {
+        numofpulls = 11*parseInt(args[1]);
+        if (isNaN(numofpulls)) numofpulls = 11;
+      }
+      else {
+        numofpulls = 11;
+      }
+    }
+      
+    var probs = [1, 1, 1];
+    probs[0] = 7/sugolist["legends"].length;
+    probs[1] = 53/sugolist["golds"].length;
+    probs[2] = 40/sugolist["silvers"].length;
+
+    for(pulli=0; pulli<numofpulls; pulli++) {
+      if ((pulli+1)%11 == 0) pulls.push("__Extra pull (+1):__");
+      var multinum = "**__MULTI " + parseInt(pulli/11 + 1) + "__**";
+      if (pulli%11 == 0 && numofpulls>1) pulls.push(multinum);
+      var randnum = Math.random()*100;
+        
+      if (randnum < 7) {
+        var unitindex = parseInt(randnum/probs[0]);
+        var pulltxt = "```prolog\n" + sugolist["legends"][unitindex] + " ```";
+      }
+      else if (randnum < 60) {
+        randnum -= 7;
+        var unitindex = parseInt(randnum/probs[1]);
+        var pulltxt = "`" + sugolist["golds"][unitindex] + "`";
+      }
+      else {
+        randnum -= 60;
+        var unitindex = parseInt(randnum/probs[2]);
         var pulltxt = "`" + sugolist["silvers"][unitindex] + "`";
       }
       pulls.push(pulltxt);
