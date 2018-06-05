@@ -1,3 +1,5 @@
+//Copied from the optc-db.github.io database files. All credit goes to them.
+
 var shipfx = {  
     0: { // 0
         name: 'Dinghy',
@@ -201,8 +203,13 @@ var shipfx = {
     },
     40: { //38
         name: "4th Anniversary Thousand Sunny",
-        thumb: null,
-        description: '__Boosted Ability 1:__ Boosts ATK of all units by 1.5x. Boosts EXP gained by 3x and Beli gained by 3x. \n __Boosted Ability 2:__ Boosts ATK of all units by 1.5x. At the start of the adventure, all specials start at MAX charge.',
+        thumb: 'ship_0039_c.png',
+        description: '__Boosted Ability 1:__ Boosts ATK of all units by 1.5x. Boosts EXP gained by 3x and Beli gained by 3x. \n __Boosted Ability 2:__ Boosts ATK of all units by 1.5x. At the start of the adventure, all specials start at MAX charge. \n __Default Ability:__ Boosts ATK of all units by 1.2x',
+    },
+    41: { //38
+        name: "Nostra Castello",
+        thumb: 'ship_0040_c.png',
+        description: 'Boosts ATK of all units by 1.55x and their HP by 1.3x. Makes PERFECTS easier to Hit. Cuts the current HP of each enemy by 3% at the end of each turn. Reduces ATK based on how many Slasher, Free Spirit or Powerhouse characters you have on your crew.',
     }
 
 };
