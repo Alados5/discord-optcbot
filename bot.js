@@ -396,7 +396,8 @@ client.on('message', msg => {
     
   if(lowtext.indexOf("alexa play") >= 0) {
     var ytquery = msg.content.slice(lowtext.indexOf("alexa play")+11);
-    msg.channel.send("+play " + ytquery)
+    msg.channel.send("__**Now Playing:**__ \n" + ytquery + "\n```[-----o - - - - - - - - - - - - - - - - - - -]``` :track_previous: :pause_button: :track_next:")
+
   }
     
 //------------------------------------------------------------------------- END NO PREFIX DETECTION 
