@@ -397,6 +397,7 @@ client.on('message', msg => {
   if(lowtext.indexOf("alexa play") >= 0) {
     var ytquery = msg.content.slice(lowtext.indexOf("alexa play")+11);
     msg.channel.send("+play " + ytquery)
+  }
     
 //------------------------------------------------------------------------- END NO PREFIX DETECTION 
 
