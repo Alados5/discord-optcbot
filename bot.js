@@ -394,6 +394,11 @@ client.on('message', msg => {
     msg.channel.send(msg.author.username + ":", {files: [kappalink]})
   }
     
+  if(lowtext.indexOf("alexa play") >= 0) {
+    var ytquery = msg.content.slice(lowtext.indexOf("alexa play")+11);
+    msg.channel.send("+play " + ytquery);
+    msg.remove();
+    
 //------------------------------------------------------------------------- END NO PREFIX DETECTION 
 
     
