@@ -397,7 +397,11 @@ client.on('message', msg => {
   if(lowtext.indexOf("alexa play") >= 0) {
     var ytquery = msg.content.slice(lowtext.indexOf("alexa play")+11);
     msg.channel.send("__**Now Playing:**__ \n" + ytquery + "\n```[-----o - - - - - - - - - - - - - - - - - - -]``` :track_previous: :pause_button: :track_next:")
-
+  }
+    
+  if(lowtext.indexOf("hello there") >= 0) {
+    var genkenobi = "https://i.imgur.com/VDRXqTn.jpg";
+    msg.channel.send("General " + msg.author.username + ", you are a bold one!", {files: [genkenobi]})
   }
     
 //------------------------------------------------------------------------- END NO PREFIX DETECTION 
