@@ -404,6 +404,15 @@ client.on('message', msg => {
     msg.channel.send("General " + msg.author.username + ", you are a bold one!", {files: [genkenobi]})
   }
     
+  if(lowtext.indexOf("perfectly balanced") >= 0) {
+    if(lowtext.indexOf("as all things should be") >= 0) {
+      msg.channel.send(" ", {files: ["https://pbs.twimg.com/media/DgystgIW4AADpPN.jpg"]})
+    }
+    else {
+      msg.reply("As all things should be.")
+    }
+  }
+    
 //------------------------------------------------------------------------- END NO PREFIX DETECTION 
 
     
