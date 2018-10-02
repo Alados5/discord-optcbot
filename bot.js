@@ -392,6 +392,7 @@ client.on('message', msg => {
   if(lowtext.indexOf("http://optc-db.github.io/damage/#/transfer") >= 0) {
     msg.reply("Database transfer link detected!")
     //D1941:99:0:0:0,1314:99:0:0:0,1916:99:0:0:0,1368:99:0:0:0,2080:99:0:0:0,2109:99:100:0:0C33,10B0D0E1Q0L0G0R63S100H
+    
     var viewlink = "http://optc-db.github.io/characters/#/view/";
     var link = lowtext.slice(lowtext.indexOf("transfer") + 10);
     var units = link.split('c')[0].split(',');
@@ -405,7 +406,7 @@ client.on('message', msg => {
     }
       
     msg.channel.send({embed: {
-      color: COLOR,
+      color: 16728832,
       author: {
         name: msg.author.username,
         icon_url: msg.author.avatarURL
