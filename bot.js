@@ -402,10 +402,10 @@ client.on('message', msg => {
       var uniti = units[unitn].split(':')[0];
         
       var namei = "";
-      if (!dpj[charid] || !dpj[charid][2]) {
+      if (!dpj[uniti] || !dpj[uniti][2]) {
         namei = "Common Name not known";
       }
-      else namei = dpj[charid][2];
+      else namei = dpj[uniti][2];
         
       var linki = "";
       if (unitn == 0) linki += "Friend Captain: ";
