@@ -397,10 +397,21 @@ client.on('message', msg => {
     var units = link.split('c')[0].split(',');
     var other = link.split('c')[1];
     var unitstring = "";
-
+      
     for (unitn=0; unitn<6; unitn++) {
       var uniti = units[unitn].split(':')[0];
-      var linki = "[Unit " + uniti + "](" + viewlink + uniti + ")\n";
+        
+      var namei = "";
+      if (!dpj[charid] || !dpj[charid][2]) {
+        namei = "Common Name not known";
+      }
+      else namei = dpj[charid][2];
+        
+      var linki = "";
+      if (unitn == 0) linki += "Friend Captain: ";
+      if (unitn == 1) linki += "Own Captain: ";
+        
+      linki = linki + "[Unit " + uniti + ": " + namei + "](" + viewlink + uniti + ")\n";
       unitstring += linki;
     }
       
