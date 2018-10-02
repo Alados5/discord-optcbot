@@ -401,13 +401,10 @@ client.on('message', msg => {
 
     for (unitn=0; unitn<6; unitn++) {
       var uniti = units[unitn].split(':')[0];
-      var linki = "[Unit " + unitn + "](" + viewlink + uniti + ")";
+      var linki = "[Unit " + unitn+1 + "](" + viewlink + uniti + ")";
       listlinks.push(linki);
     }
       
-    msg.channel.send(listlinks[0])
-      
-    /*
     msg.channel.send({embed: {
       color: 16728832,
       author: {
@@ -417,7 +414,6 @@ client.on('message', msg => {
       title: "TEAM LINK",
       description: listlinks[0]
     }})
-    */
          
   }
   
