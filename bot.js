@@ -399,13 +399,13 @@ client.on('message', msg => {
     var other = link.split('c')[1];
     var listlinks = [];
 
-    /*
-    for (i=0; i<6; i++) {
-      var uniti = units[i].split(':')[0];
-      var linki = "[Unit " + i + "](" + viewlink + uniti + ")";
+    for (unitn=0; unitn<6; unitn++) {
+      var uniti = units[unitn].split(':')[0];
+      var linki = "[Unit " + unitn + "](" + viewlink + uniti + ")";
       listlinks.push(linki);
     }
-    */
+      
+    msg.channel.send(listlinks[0])
       
     /*
     msg.channel.send({embed: {
