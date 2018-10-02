@@ -398,13 +398,16 @@ client.on('message', msg => {
     var units = link.split('c')[0].split(',');
     var other = link.split('c')[1];
     var listlinks = [];
-    
-    for (int i=0; i<6; i++) {
-        var uniti = units[i].split(':')[0];
-        var linki = "[Unit " + i + "](" + viewlink + uniti + ")";
-        listlinks.push(linki);
+
+    /*
+    for (i=0; i<6; i++) {
+      var uniti = units[i].split(':')[0];
+      var linki = "[Unit " + i + "](" + viewlink + uniti + ")";
+      listlinks.push(linki);
     }
+    */
       
+    /*
     msg.channel.send({embed: {
       color: 16728832,
       author: {
@@ -414,6 +417,7 @@ client.on('message', msg => {
       title: "TEAM LINK",
       description: listlinks[0]
     }})
+    */
          
   }
   
