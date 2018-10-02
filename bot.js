@@ -390,19 +390,18 @@ client.on('message', msg => {
   }
   
   if(lowtext.indexOf("http://optc-db.github.io/damage/#/transfer") >= 0) {
-    msg.reply("Database transfer link detected!")
-    //D1941:99:0:0:0,1314:99:0:0:0,1916:99:0:0:0,1368:99:0:0:0,2080:99:0:0:0,2109:99:100:0:0C33,10B0D0E1Q0L0G0R63S100H
+    //[...D] 1941:99:0:0:0,1314:99:0:0:0,1916:99:0:0:0,1368:99:0:0:0,2080:99:0:0:0,2109:99:100:0:0C33,10B0D0E1Q0L0G0R63S100H
     
     var viewlink = "http://optc-db.github.io/characters/#/view/";
     var link = lowtext.slice(lowtext.indexOf("transfer") + 10);
     var units = link.split('c')[0].split(',');
     var other = link.split('c')[1];
-    var listlinks = [];
+    var unitstring = "";
 
     for (unitn=0; unitn<6; unitn++) {
       var uniti = units[unitn].split(':')[0];
-      var linki = "[Unit " + unitn+1 + "](" + viewlink + uniti + ")";
-      listlinks.push(linki);
+      var linki = "[Unit " + (unitn+1) + "](" + viewlink + uniti + ")\n";
+      unitstring += linki;
     }
       
     msg.channel.send({embed: {
@@ -412,7 +411,7 @@ client.on('message', msg => {
         icon_url: msg.author.avatarURL
       },
       title: "TEAM LINK",
-      description: listlinks[0]
+      description: unitstring
     }})
          
   }
