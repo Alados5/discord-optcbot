@@ -388,6 +388,34 @@ client.on('message', msg => {
     var xdoubtlink = "http://i0.kym-cdn.com/entries/icons/mobile/000/023/021/e02e5ffb5f980cd8262cf7f0ae00a4a9_press-x-to-doubt-memes-memesuper-la-noire-doubt-meme_419-238.jpg";
     msg.reply("Did you say Globest? ...", {files: [xdoubtlink]})
   }
+  
+  if(lowtext.indexOf("http://optc-db.github.io/damage/#/transfer") >= 0) {
+    msg.reply("Database transfer link detected!")
+    //D1941:99:0:0:0,1314:99:0:0:0,1916:99:0:0:0,1368:99:0:0:0,2080:99:0:0:0,2109:99:100:0:0C33,10B0D0E1Q0L0G0R63S100H
+    var viewlink = "http://optc-db.github.io/characters/#/view/";
+    var link = lowtext.slice(lowtext.indexOf("transfer") + 10);
+    var units = link.split('c')[0].split(',');
+    var other = link.split('c')[1];
+    var listlinks = [];
+    
+    for (int i=0; i<6; i++) {
+        var uniti = units[i].split(':')[0];
+        var linki = "[Unit " + i + "](" + viewlink + uniti + ")";
+        listlinks.push(linki);
+    }
+      
+    msg.channel.send({embed: {
+      color: COLOR,
+      author: {
+        name: msg.author.username,
+        icon_url: msg.author.avatarURL
+      },
+      title: "TEAM LINK",
+      description: listlinks[0]
+    }})
+         
+  }
+  
     
   if(lowtext.indexOf("kappa") >= 0) {
     var kappalink = "https://i.imgur.com/9LNAbKY.png";
