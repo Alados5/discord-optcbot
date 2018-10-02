@@ -405,7 +405,7 @@ client.on('message', msg => {
       if (!dpj[uniti] || !dpj[uniti][2]) {
         namei = "Common Name not known";
       }
-      else namei = dpj[uniti][2];
+      else namei = dpj[uniti][2].toUpperCase();
         
       var linki = "";
       if (unitn == 0) linki += "Friend Captain: ";
@@ -421,7 +421,7 @@ client.on('message', msg => {
         name: msg.author.username,
         icon_url: msg.author.avatarURL
       },
-      title: "TEAM LINK",
+      title: "TEAM LINK - UNITS:",
       description: unitstring
     }})
          
