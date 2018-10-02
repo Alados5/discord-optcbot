@@ -400,7 +400,7 @@ client.on('message', msg => {
 
     for (unitn=0; unitn<6; unitn++) {
       var uniti = units[unitn].split(':')[0];
-      var linki = "[Unit " + (unitn+1) + "](" + viewlink + uniti + ")\n";
+      var linki = "[Unit " + uniti + "](" + viewlink + uniti + ")\n";
       unitstring += linki;
     }
       
