@@ -246,7 +246,7 @@ function Bin_R(k, n, p) {
   return 1-Bin_F(k-1, n, p)
 }
 
-//Probability of getting k skillups with n copies, with event or not, OC rates or not
+//Probability of getting k s with n copies, with event or not, OC rates or not
 //OC rates are 1/5 (2/5 with event), normal rates are 1/6 (1/3 with event)
 function ProbSkill(k, n, event, OC) {
   if(event == '2') {
@@ -1062,9 +1062,9 @@ client.on('message', msg => {
     var probability = ProbSkill(k, n, Event, OC);
     
     probability *= 100;
-    if(Event != '2' && Event != '3' && Event != '4') {
-      Event = '1'
-    }
+    //if(Event != '2' && Event != '3' && Event != '4') {
+    //  Event = '1'
+    //}
     msg.channel.send("The chance of having "+k+" skillups or more with "+n+" copies is: "+probability+"% \n Calculations done with Skillup x"+Event)
     
   }
