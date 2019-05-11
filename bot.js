@@ -249,22 +249,12 @@ function Bin_R(k, n, p) {
 //Probability of getting k s with n copies, with event or not, OC rates or not
 //OC rates are 1/5 (2/5 with event), normal rates are 1/6 (1/3 with event)
 function ProbSkill(k, n, event, OC) {
-  if(event == '2') {
-    if(OC == 'S' || OC == 'Y') return Bin_R(k, n, 2/5)
-    else return Bin_R(k, n, 1/3)
-  }
-  if(event == '3') {
-    if(OC == 'S' || OC == 'Y') return Bin_R(k, n, 3/5)
-    else return Bin_R(k, n, 1/2)
-  }
-  if(event == '4') {
-    if(OC == 'S' || OC == 'Y') return Bin_R(k, n, 4/5)
-    else return Bin_R(k, n, 2/3)
-  }
-  else {
-    if(OC == 'S' || OC == 'Y') return Bin_R(k, n, 1/5)
-    else return Bin_R(k, n, 1/6)
-  }
+  
+  if(isNaN(event)) event = 1;
+  
+  if(OC == 'S' || OC == 'Y') return Bin_R(k, n, event/5)
+  else return Bin_R(k, n, event/6)
+
 }
 
 //------------------------------------------------------------------------- END SKILLUP FS
