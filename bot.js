@@ -456,10 +456,10 @@ client.on('message', msg => {
   if(!msg.content.startsWith(prefix)) return;
     
   if(msg.author.id == 399169003249074176) {
-    msg.reply("Dani, probaré, pero si peto es culpa tuya! T_T");
+    return msg.reply("Dani, probaré, pero si peto es culpa tuya! T_T");
   }
   if(msg.author.id == 392719367651196928) {
-    msg.reply("Tigrex, probaré, pero si peto es culpa tuya! T_T");
+    return msg.reply("Tigrex, probaré, pero si peto es culpa tuya! T_T");
   }
     
   //Handles arguments to just take the first word
