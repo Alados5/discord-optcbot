@@ -623,13 +623,15 @@ client.on('message', msg => {
   if (command == 'xdoubt') {
     msg.delete()
     var xdoubtlink = "http://i0.kym-cdn.com/entries/icons/mobile/000/023/021/e02e5ffb5f980cd8262cf7f0ae00a4a9_press-x-to-doubt-memes-memesuper-la-noire-doubt-meme_419-238.jpg"
-    msg.channel.send(msg.author.username + ":", {files: [xdoubtlink]})
+    var doubtstring = msg.content.slice(prefix.length + command.length + 1);
+    msg.channel.send(msg.author.username + ": \n" + doubtstring, {files: [xdoubtlink]})
   }
     
   if (command == 'stressful') {
     var stresslink = "https://cdn.discordapp.com/attachments/391192337562468354/585240879305064467/its_stressful.png";
     msg.delete()
-    msg.channel.send(msg.author.username + ":", {files: [stresslink]})
+    var stressstring =  msg.content.slice(prefix.length + command.length + 1);
+    msg.channel.send(msg.author.username + ": \n" + stressstring, {files: [stresslink]})
   }
     
   if (command == 'shrug') {
