@@ -613,25 +613,25 @@ client.on('message', msg => {
 //------------------------------------------------------------------------- START MEMES
 
   if (command == 'thejoselu8') {
-    msg.reply('TIIIIOOOO!!!!!')
+    return msg.reply('TIIIIOOOO!!!!!')
   }
   
   if (command == 'gettingoverit') {
-    msg.reply('Consejo: coge la serpiente')
+    return msg.reply('Consejo: coge la serpiente')
   }
     
   if (command == 'xdoubt') {
-    msg.delete()
     var xdoubtlink = "http://i0.kym-cdn.com/entries/icons/mobile/000/023/021/e02e5ffb5f980cd8262cf7f0ae00a4a9_press-x-to-doubt-memes-memesuper-la-noire-doubt-meme_419-238.jpg"
     var doubtstring = msg.content.slice(prefix.length + command.length + 1);
-    msg.channel.send(msg.author.username + ": \n" + doubtstring, {files: [xdoubtlink]})
+    msg.delete();
+    return msg.channel.send(msg.author.username + ": \n \n" + doubtstring, {files: [xdoubtlink]});
   }
     
   if (command == 'stressful') {
     var stresslink = "https://cdn.discordapp.com/attachments/391192337562468354/585240879305064467/its_stressful.png";
-    msg.delete()
     var stressstring =  msg.content.slice(prefix.length + command.length + 1);
-    msg.channel.send(msg.author.username + ": \n" + stressstring, {files: [stresslink]})
+    msg.delete();
+    return msg.channel.send(msg.author.username + ": \n \n" + stressstring, {files: [stresslink]});
   }
     
   if (command == 'shrug') {
