@@ -367,13 +367,17 @@ client.on('ready', () => {
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find('name', 'general');
   if (!channel) return;
-  channel.send(`Muy buenas ${member}, ¿qué tal andamos? ¡Bienvenido al Server!`);
+  if (channel.id = "391192337562468354") {
+      channel.send(`Muy buenas ${member}, ¿qué tal andamos? ¡Bienvenido al Server!`);
+  }
 });
 
 
 client.on('message', msg => {
     
   //Returns if author is a bot
+  if(msg.author.id = 399169003249074176) return msg.channel.send("Sorry, I can't");
+  if(msg.author.id = 284104569586450434) msg.channel.send("I shall proceed, Master");
   if(msg.author.bot) return;
 
 //------------------------------------------------------------------------- START NO PREFIX DETECTION 
@@ -508,12 +512,6 @@ client.on('message', msg => {
     
 //------------------------------------------------------------------------- END ADMIN COMMANDS
     
-    
-//------------------------------------------------------------------------- START WEIRD USER HANDLE
-  if (msg.author.id = 399169003249074176) {
-      return msg.channel.send("Dani, quizá esto haya sido mala idea");
-  }
-//------------------------------------------------------------------------- END
     
 
 //------------------------------------------------------------------------- START HELP  
