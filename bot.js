@@ -455,8 +455,9 @@ client.on('message', msg => {
   //Returns if message doesn't start with prefix
   if(!msg.content.startsWith(prefix)) return;
     
-  if(msg.author.id = 399169003249074176) {return msg.channel.send("Sorry, I can't");}
-  if(msg.author.id = 284104569586450434) {msg.channel.send("I shall proceed, Master");}
+  if(msg.author.id == 399169003249074176) {
+      return msg.reply("Sorry, I can't");
+  }
     
   //Handles arguments to just take the first word
   const args = msg.content.slice(prefix.length).split(/ +/);
