@@ -626,6 +626,12 @@ client.on('message', msg => {
     msg.channel.send(msg.author.username + ":", {files: [xdoubtlink]})
   }
     
+  if (command == 'stressful') {
+    var stresslink = "https://cdn.discordapp.com/attachments/391192337562468354/585240879305064467/its_stressful.png";
+    msg.delete()
+    msg.channel.send(msg.author.username + ":", {files: [stresslink]})
+  }
+    
   if (command == 'shrug') {
     msg.delete()
     msg.channel.send(msg.author.username + ": \n ¯\\\_(ツ)_/¯")
