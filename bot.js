@@ -461,7 +461,9 @@ client.on('message', msg => {
     
   if(msg.author.id == 399169003249074176) {
     if(command == 'stressful') {
-      return msg.reply("Dani: \n" + "https://cdn.discordapp.com/attachments/391192337562468354/585240879305064467/its_stressful.png");
+      var stresslink = "https://cdn.discordapp.com/attachments/391192337562468354/585240879305064467/its_stressful.png";
+      var stressstring =  msg.content.slice(prefix.length + command.length + 1);
+      return msg.channel.send("Dani: \n \n" + stressstring, {files: [stresslink]});
     }
   }
     
