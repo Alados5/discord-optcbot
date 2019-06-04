@@ -455,13 +455,6 @@ client.on('message', msg => {
   //Returns if message doesn't start with prefix
   if(!msg.content.startsWith(prefix)) return;
     
-  if(msg.author.id == 399169003249074176) {
-    return msg.reply("Dani, probaré, pero si peto es culpa tuya! T_T");
-  }
-  if(msg.author.id == 392719367651196928) {
-    return msg.reply("Tigrex, probaré, pero si peto es culpa tuya! T_T");
-  }
-    
   //Handles arguments to just take the first word
   const args = msg.content.slice(prefix.length).split(/ +/);
   const command = args.shift().toLowerCase(); 
@@ -638,8 +631,20 @@ client.on('message', msg => {
   }
     
   if (command == 'stressful') {
+      
     var stresslink = "https://cdn.discordapp.com/attachments/391192337562468354/585240879305064467/its_stressful.png";
     var stressstring =  msg.content.slice(prefix.length + command.length + 1);
+      
+    if(msg.author.id == 399169003249074176) {
+      return msg.reply("Dani: \n" + stresslink);
+    }
+    if(msg.author.id == 392719367651196928) {
+      return msg.reply("Tigrex: \n" + stresslink);
+    }
+    if(msg.author.id == 284104569586450434) {
+      return msg.reply("Adri: \n" + stresslink);
+    }
+      
     msg.delete();
     return msg.channel.send(msg.author.username + ": \n \n" + stressstring, {files: [stresslink]});
   }
