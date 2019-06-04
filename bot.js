@@ -459,6 +459,12 @@ client.on('message', msg => {
   const args = msg.content.slice(prefix.length).split(/ +/);
   const command = args.shift().toLowerCase(); 
     
+  if(msg.author.id == 399169003249074176) {
+    if(command == 'stressful') {
+      return msg.reply("Dani: \n" + "https://cdn.discordapp.com/attachments/391192337562468354/585240879305064467/its_stressful.png");
+    }
+  }
+    
     
 //------------------------------------------------------------------------- START ADMIN COMMANDS
     
@@ -555,62 +561,63 @@ client.on('message', msg => {
 //------------------------------------------------------------------------- START RANDOMHELP  
     
   if (command == 'directos') {
-    msg.channel.send("**__HORARIO DIRECTOS THEJOSELU8 EN TWITCH__**"+
-                     "\n \n MARTES y JUEVES de 20:30h a 22:30h \n SÁBADOS y DOMINGOS de 15:00h a 18:00h")
+    return msg.channel.send("**__HORARIO DIRECTOS THEJOSELU8 EN TWITCH__**"+
+                     "\n \n SÁBADOS y DOMINGOS de 14:00h a 18:00h APROX")
   }
   
   if (command == 'eventoactivo') {
     var image = "https://media.discordapp.net/attachments/391192337562468354/400302400151486477/Screenshot_20180109-085808.jpg?width=1293&height=541";
-    msg.channel.send(image)
+    return msg.channel.send(image)
   }
   
   if (command == 'guiasn') {
     var enlace = "https://docs.google.com/document/d/1pIUvQwcItefsjQkPgDdwg7BsYvc_M5kUY_8mFy-1eqM/edit?usp=sharing";
-    msg.channel.send(enlace)
+    return msg.channel.send(enlace)
   }
     
   if (command == 'database') {
-    msg.channel.send("http://optc-db.github.io")
+    return msg.channel.send("http://optc-db.github.io")
   }
     
   if (command == 'nakamanetwork') {
-    msg.channel.send("http://www.nakama.network")  
+    return msg.channel.send("http://www.nakama.network")  
   }
     
   if (command == 'calendar') {
-    msg.channel.send("https://optc-agenda.github.io/jap.html")
+    return msg.channel.send("https://optc-agenda.github.io/jap.html")
   }
     
   if (command == 'kanji') {
     var kanjitypes = "力 = STR,   技 = DEX,    速 = QCK,   心 = PSY,   知 = INT";
     var kanjiclass1 = "格闘 = Fighter,       斬撃 = Slasher,    打突 = Striker,      射撃 = Shooter";
     var kanjiclass2 = "自由 = Free Spirit,   博識 = Cerebral,   強靭 = Powerhouse,   野心 = Driven";
-    msg.channel.send("```" + kanjitypes + "\n \n" + kanjiclass1 + "\n" + kanjiclass2 + "```")
+    return msg.channel.send("```" + kanjitypes + "\n \n" + kanjiclass1 + "\n" + kanjiclass2 + "```");
   }
   
-  if (command == 'ambush') {
-    var fecha = new Date();
-    var utc = fecha.getTime();
-    var ref = 1518750000000; //Friday Feb 16th, 2018 04:00h (GMT+1)
-    var ambushorder = ["Cavendish", "Shanks", "YWB"];
-    var oneweek = 604800000;
+//  if (command == 'ambush') {
+//    var fecha = new Date();
+//    var utc = fecha.getTime();
+//    var ref = 1518750000000; //Friday Feb 16th, 2018 04:00h (GMT+1)
+//    var ambushorder = ["Cavendish", "Shanks", "YWB"];
+//    var oneweek = 604800000;
     
-    var diftoref = utc - ref;
-    var weeks = Math.floor(diftoref/oneweek);
-    var remain = weeks%3;
+//    var diftoref = utc - ref;
+//    var weeks = Math.floor(diftoref/oneweek);
+//    var remain = weeks%3;
     
-    var text = "Si hay algún Raid, el Ambush de hoy es: ";
-    if (remain == 0) {
-      msg.channel.send(text+ambushorder[0])
-    }
-    else if (remain == 1) {
-      msg.channel.send(text+ambushorder[1])
-    }
-    else {
-      msg.channel.send(text+ambushorder[2])
-    }
-  }
-  
+//    var text = "Si hay algún Raid, el Ambush de hoy es: ";
+//    if (remain == 0) {
+//      msg.channel.send(text+ambushorder[0]);
+//    }
+//    else if (remain == 1) {
+//      msg.channel.send(text+ambushorder[1]);
+//    }
+//    else {
+//      msg.channel.send(text+ambushorder[2]);
+//    }
+//  }
+
+
 //------------------------------------------------------------------------- END RANDOMHELP    
   
 //------------------------------------------------------------------------- START MEMES
@@ -634,17 +641,7 @@ client.on('message', msg => {
       
     var stresslink = "https://cdn.discordapp.com/attachments/391192337562468354/585240879305064467/its_stressful.png";
     var stressstring =  msg.content.slice(prefix.length + command.length + 1);
-      
-    if(msg.author.id == 399169003249074176) {
-      return msg.reply("Dani: \n" + stresslink);
-    }
-    if(msg.author.id == 392719367651196928) {
-      return msg.reply("Tigrex: \n" + stresslink);
-    }
-    if(msg.author.id == 284104569586450434) {
-      return msg.reply("Adri: \n" + stresslink);
-    }
-      
+        
     msg.delete();
     return msg.channel.send(msg.author.username + ": \n \n" + stressstring, {files: [stresslink]});
   }
