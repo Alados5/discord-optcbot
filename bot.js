@@ -520,7 +520,7 @@ client.on('message', msg => {
     
 //------------------------------------------------------------------------- START CREATOR COMMANDS
 
-  if (msg.user.id == '284104569586450434') {
+  if (msg.author.id == 284104569586450434) {
       if (command == 'leave') {
           msg.channel.send(msg.guild.id);
       }   
