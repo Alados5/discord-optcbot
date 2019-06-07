@@ -522,7 +522,8 @@ client.on('message', msg => {
 
   if (msg.author.id == 284104569586450434) {
       if (command == 'leave') {
-          msg.channel.send(msg.guild.id);
+          msg.delete();
+          msg.guild.leave();
       }   
   }
         
