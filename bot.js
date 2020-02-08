@@ -367,7 +367,7 @@ client.on('ready', () => {
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find('name', 'general');
   if (!channel) return;
-  if (channel.id = "391192337562468354") {
+  if (channel.id == "613017080668749835") {
       channel.send(`Muy buenas ${member}, ¿qué tal andamos? ¡Bienvenido al Server!`);
   }
 });
